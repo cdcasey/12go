@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `On to Grow On`,
+    description: `One to Grow On is a podcast where we dig into questions about agriculture and try to understand how food production impacts us and our world.`,
+    author: `@onetogrowonpod, Hallie Casey, Chris Casey, Catherine Arjet`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
