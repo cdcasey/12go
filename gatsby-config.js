@@ -36,6 +36,10 @@ module.exports = {
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
+        includedRoutes: [
+          "**/posts",
+          "**/pages"
+        ]
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
