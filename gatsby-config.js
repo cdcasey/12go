@@ -27,15 +27,17 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-source-wordpress`,
-    //   options: 'onetogrowonpod.com',
-    //   protocol: 'https',
-    //   // is it hosted on wordpress.com, or self-hosted?
-    //   hostingWPCOM: false,
-    //   // does your site use the Advanced Custom Fields Plugin?
-    //   useACF: false,
-    // },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: 'onetogrowonpod.com',
+        protocol: 'https',
+        // is it hosted on wordpress.com, or self-hosted?
+        hostingWPCOM: false,
+        // does your site use the Advanced Custom Fields Plugin?
+        useACF: false,
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
