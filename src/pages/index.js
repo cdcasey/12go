@@ -13,16 +13,14 @@ const IndexPage = ({data}) => {
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Hi 12go people!!!</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
     {edges.map(edge => {
       const { node } = edge;
       return (
         <div key={node.id}>
-        <hr />
-        <p><strong  dangerouslySetInnerHTML={{ __html: node.title }}></strong></p>
-        <p>{node.date}</p>
-        <p dangerouslySetInnerHTML={{ __html: node.content }}/>
+          <hr />
+          <p><strong  dangerouslySetInnerHTML={{ __html: node.title }}></strong></p>
+          <p>{node.date}</p>
+          <p dangerouslySetInnerHTML={{ __html: node.content }}/>
         </div>
       )
     })}
@@ -38,9 +36,10 @@ export const query = graphql`query
   allWordpressPost {
     edges {
       node {
+        id
         title
         excerpt
-        date
+        date(formatString: "MMMM DD, YYYY")
         author
         path
         tags
