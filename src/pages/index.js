@@ -20,7 +20,7 @@ const IndexPage = ({data}) => {
       return (
         <div key={node.id}>
         <hr />
-        <p><strong>{node.title}</strong></p>
+        <p><strong  dangerouslySetInnerHTML={{ __html: node.title }}></strong></p>
         <p>{node.date}</p>
         <p dangerouslySetInnerHTML={{ __html: node.content }}/>
         </div>
