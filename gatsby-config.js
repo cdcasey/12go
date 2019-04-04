@@ -5,6 +5,7 @@ module.exports = {
     author: `@onetogrowonpod, Hallie Casey, Chris Casey, Catherine Arjet`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -36,14 +37,11 @@ module.exports = {
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
-        includedRoutes: [
-          "**/posts",
-          "**/pages"
-        ]
-      }
+        includedRoutes: ['**/posts', '**/pages'],
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
