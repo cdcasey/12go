@@ -16,16 +16,15 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
+        wordpressSiteMetadata {
+          name
+          description
         }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.wordpressSiteMetadata.name} description={data.wordpressSiteMetadata.description} />
         <div
           style={{
             margin: `0 auto`,
@@ -51,3 +50,13 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+// query={graphql`
+// query SiteTitleQuery {
+//   site {
+//     siteMetadata {
+//       title
+//     }
+//   }
+// }
+// `}
