@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
-              path: `${edge.node.path}/`,
+              path: `${edge.node.path}`,
               component: slash(postTemplate),
               context: {
                 id: edge.node.id,
