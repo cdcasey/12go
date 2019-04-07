@@ -19,10 +19,12 @@ const IndexPage = ({ data }) => {
           <div key={node.id}>
             <hr />
             <p>
-              <strong dangerouslySetInnerHTML={{ __html: node.title }} />
+              <Link to={node.path}>
+                <strong dangerouslySetInnerHTML={{ __html: node.title }} />
+              </Link>
             </p>
             <p>{node.date}</p>
-            <div dangerouslySetInnerHTML={{ __html: node.content }} />
+            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
           </div>
         );
       })}
@@ -43,9 +45,14 @@ export const query = graphql`
           title
           excerpt
           date(formatString: "MMMM DD, YYYY")
-          author
+          author {
+            name
+          }
           path
-          tags
+          tags {
+            id
+            name
+          }
           slug
           content
         }
