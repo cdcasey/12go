@@ -1,4 +1,17 @@
+/* Universal reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+
   @include respond(tab-land) {
     /* 9px on landscape tablets */
     font-size: 56.25%;
@@ -14,8 +27,14 @@ html {
     font-size: 75%;
   }
 }
-
 body {
+  margin: 0;
+  font-size: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  /* padding: 3rem; */
+
   @include respond(tab-port) {
     padding: 0;
   }
