@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/layout/layout';
 import Image from '../components/image';
@@ -18,11 +19,11 @@ const IndexPage = ({ data }) => {
         return (
           <div key={node.id}>
             <hr />
-            <p>
-              <Link to={node.path}>
-                <strong dangerouslySetInnerHTML={{ __html: node.title }} />
-              </Link>
-            </p>
+
+            <Link to={node.path}>
+              <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
+            </Link>
+
             <p>{node.date}</p>
             <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
           </div>
@@ -34,6 +35,10 @@ const IndexPage = ({ data }) => {
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   );
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
@@ -54,7 +59,6 @@ export const query = graphql`
             name
           }
           slug
-          content
         }
       }
     }

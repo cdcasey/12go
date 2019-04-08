@@ -67,12 +67,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           });
         });
 
-        // Create page with all Posts
-        createPage({
-          path: `/posts/`,
-          component: slash(postsTemplate),
-        });
-
         // Individual post pages
         const posts = result.data.allWordpressPost.edges;
 
