@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../header';
+import MainMenu from '../menus/mainmenu';
 import styles from './layout.module.scss';
 
 const Layout = ({ children }) => (
@@ -28,6 +29,9 @@ const Layout = ({ children }) => (
           siteTitle={data.wordpressSiteMetadata.name}
           description={data.wordpressSiteMetadata.description}
         />
+        <ul>
+          <MainMenu />
+        </ul>
         <div className={styles.container}>
           <main>{children}</main>
           <footer>
