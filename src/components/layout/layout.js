@@ -12,6 +12,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Header from '../header';
 import MainMenu from '../menus/mainmenu';
 import styles from './layout.module.scss';
+import SEO from '../seo';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -25,6 +26,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Header
           siteTitle={data.wordpressSiteMetadata.name}
           description={data.wordpressSiteMetadata.description}
