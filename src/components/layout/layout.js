@@ -27,13 +27,15 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <ul>
+          <MainMenu />
+        </ul>
+
         <Header
           siteTitle={data.wordpressSiteMetadata.name}
           description={data.wordpressSiteMetadata.description}
         />
-        <ul>
-          <MainMenu />
-        </ul>
+
         <div className={styles.container}>
           <main>{children}</main>
           <footer>
