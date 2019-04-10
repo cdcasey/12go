@@ -34,6 +34,9 @@ const queryAll = `
           status
           template
           format
+          title
+          date
+          excerpt
         }
       }
     }
@@ -84,11 +87,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         createPaginatedPages({
           edges: posts,
           createPage: createPage,
-          pageTemplate: 'src/templates/posts.js',
+          pageTemplate: 'src/templates/index.js',
           pageLength: 5,
-          pathPrefix: '/posts',
-          // buildPath: (index, pathPrefix) =>
-          //   index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
+          pathPrefix: 'page',
+          buildPath: (index, pathPrefix) =>
+            index > 1 ? `${pathPrefix}/${index}` : `/`, // This is optional and this is the default
         });
       })
     );
