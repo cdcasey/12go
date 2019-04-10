@@ -14,8 +14,8 @@ class PageTemplate extends Component {
         <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
         <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
 
-        <p dangerouslySetInnerHTML={{ __html: currentPage.date }} />
-        <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} />
+        {/* <p dangerouslySetInnerHTML={{ __html: currentPage.date }} />
+        <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} /> */}
       </Layout>
     );
   }
