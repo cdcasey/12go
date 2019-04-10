@@ -10,6 +10,7 @@ const _ = require(`lodash`);
 const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
+const createPaginatedPages = require('gatsby-paginate');
 
 const queryAll = `
   {
@@ -78,6 +79,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               id: edge.node.id,
             },
           });
+        });
+
+        createPaginatedPages({
+          edges: posts,
+          createPage: createPage,
+          pageTemplate: 'src/templates/posts.js',
+          pageLength: 5,
+          pathPrefix: '/posts',
+          // buildPath: (index, pathPrefix) =>
+          //   index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
         });
       })
     );
