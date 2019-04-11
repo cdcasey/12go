@@ -12,7 +12,16 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="Home"
+        keywords={[
+          `agriculture`,
+          `science`,
+          `podcast`,
+          'green new deal',
+          'aoc',
+        ]}
+      />
       <h1>Hi 12go people!!!</h1>
       {edges.map(edge => {
         const { node } = edge;

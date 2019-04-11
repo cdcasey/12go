@@ -9,10 +9,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
+import SEO from '../seo';
 import Header from '../header';
 import MainMenu from '../menus/mainmenu';
+import Footer from '../footer/footer';
 import styles from './layout.module.scss';
-import SEO from '../seo';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -38,10 +39,7 @@ const Layout = ({ children }) => (
 
         <div className={styles.container}>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()},{` `}
-            One to Grow On
-          </footer>
+          <Footer />
         </div>
       </>
     )}
