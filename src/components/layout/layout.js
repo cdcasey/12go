@@ -15,34 +15,40 @@ import MainMenu from '../menus/mainmenu';
 import Footer from '../footer/footer';
 import styles from './layout.module.scss';
 
+const layoutQuery = graphql`
+  query SiteTitleQuery {
+    wordpressSiteMetadata {
+      name
+      description
+    }
+  }
+`;
+
+function LayoutComponent(data, children) {
+  return (
+    <React.Fragment>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <ul>
+        <MainMenu />
+      </ul>
+
+      <Header
+        siteTitle={data.wordpressSiteMetadata.name}
+        description={data.wordpressSiteMetadata.description}
+      />
+
+      <div className={styles.container}>
+        <main>{children}</main>
+        <Footer />
+      </div>
+    </React.Fragment>
+  );
+}
+
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        wordpressSiteMetadata {
-          name
-          description
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <ul>
-          <MainMenu />
-        </ul>
-
-        <Header
-          siteTitle={data.wordpressSiteMetadata.name}
-          description={data.wordpressSiteMetadata.description}
-        />
-
-        <div className={styles.container}>
-          <main>{children}</main>
-          <Footer />
-        </div>
-      </>
-    )}
+    query={layoutQuery}
+    render={data => LayoutComponent(data, children)}
   />
 );
 

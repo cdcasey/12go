@@ -23,7 +23,10 @@ function TagMenu(data) {
 
   return edges.map(({ node }) => {
     return (
-      <span style={{ fontSize: `${scaler(Number(node.count))}rem` }}>
+      <span
+        key={node.id}
+        style={{ fontSize: `${scaler(Number(node.count))}rem` }}
+      >
         {node.name}
       </span>
     );
