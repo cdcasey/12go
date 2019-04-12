@@ -8,7 +8,20 @@ import Tags from '../tags/tags';
 export default () => {
   return (
     <footer>
-      <ul style={{ listStyleType: 'none' }}>
+      <div>
+        © {new Date().getFullYear()},{` `}
+        One to Grow On
+      </div>
+      <SocialMenu />
+      <Tags />
+      <ul
+        style={{
+          listStyleType: 'none',
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexWrap: 'wrap',
+        }}
+      >
         <li>
           <a
             href="http://subscribeonandroid.com/www.onetogrowonpod.com/feed/podcast"
@@ -77,12 +90,6 @@ export default () => {
           </a>
         </li>
       </ul>
-      <div>
-        © {new Date().getFullYear()},{` `}
-        One to Grow On
-      </div>
-      <SocialMenu />
-      <Tags />
     </footer>
   );
 };
