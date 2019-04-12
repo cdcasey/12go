@@ -41,9 +41,7 @@ function LayoutComponent(data, children) {
         ]}
       />
       <div className={styles.mainMenuContainer}>
-        <ul className={styles.mainMenu}>
-          <MainMenu />
-        </ul>
+        <MainMenu />
         <div>Not Search Yet</div>
       </div>
 

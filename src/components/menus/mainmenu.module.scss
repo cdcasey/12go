@@ -1,0 +1,18 @@
+.mainMenu {
+  display: flex;
+  list-style-type: none;
+
+  li {
+    margin-right: 1rem;
+
+    a,
+    a:link,
+    a:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+.active {
+  color: orange;
+}
