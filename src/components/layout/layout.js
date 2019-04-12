@@ -27,10 +27,25 @@ const layoutQuery = graphql`
 function LayoutComponent(data, children) {
   return (
     <React.Fragment>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <ul>
-        <MainMenu />
-      </ul>
+      <SEO
+        title="Home"
+        keywords={[
+          `agriculture`,
+          `science`,
+          `podcast`,
+          'green new deal',
+          'aoc',
+          'biodiesel',
+          'farming',
+          'food',
+        ]}
+      />
+      <div className={styles.mainMenuContainer}>
+        <ul className={styles.mainMenu}>
+          <MainMenu />
+        </ul>
+        <div>Not Search Yet</div>
+      </div>
 
       <Header
         siteTitle={data.wordpressSiteMetadata.name}
