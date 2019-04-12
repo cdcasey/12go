@@ -1,0 +1,19 @@
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.previewContainer {
+  display: inline-block;
+  // flex: 1 1 30%;
+  width: 300px;
+  height: 200px;
+
+  border: 1px solid black;
+  padding: 1rem;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
 import Layout from '../components/layout/layout';
+import styles from './index.module.scss';
 
 const NavLink = props => {
   console.log('PROPS', props);
@@ -22,27 +23,32 @@ const IndexPage = ({ pageContext }) => {
 
   return (
     <Layout>
-      <div>
+      <div className={styles.mainContainer}>
         {group.map(({ node }) => (
-          <div key={node.slug} className={'post'} style={{ marginBottom: 50 }}>
+          <div
+            key={node.slug}
+            className={'post'}
+            style={{ marginBottom: 50 }}
+            className={styles.previewContainer}
+          >
             <Link to={node.path}>
               <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
             </Link>
 
-            <div
+            {/* <div
               className={'post-content'}
               dangerouslySetInnerHTML={{ __html: node.excerpt }}
-            />
+            /> */}
 
             {node.date}
           </div>
         ))}
-        <div className="previousLink">
-          <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
-        </div>
-        <div className="nextLink">
-          <NavLink test={last} url={nextUrl} text="Go to Next Page" />
-        </div>
+      </div>
+      <div className="previousLink">
+        <NavLink test={first} url={previousUrl} text="Newer Posts" />
+      </div>
+      <div className="nextLink">
+        <NavLink test={last} url={nextUrl} text="Older Posts" />
       </div>
     </Layout>
   );

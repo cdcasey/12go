@@ -35,7 +35,7 @@ const queryAll = `
           template
           format
           title
-          date
+          date(formatString: "MMMM DD, YYYY")
           excerpt
         }
       }
@@ -88,7 +88,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges: posts,
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
-          pageLength: 5,
+          pageLength: 6,
           pathPrefix: 'page',
           buildPath: (index, pathPrefix) =>
             index > 1 ? `${pathPrefix}/${index}` : `/`, // This is optional and this is the default
