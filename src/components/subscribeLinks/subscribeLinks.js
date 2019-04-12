@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default () => (
   <ul
     style={{
@@ -34,7 +36,7 @@ export default () => (
     <li>
       <a href="https://open.spotify.com/show/2N8ibfalcLcqK5qVOD6WKI">
         <img
-          src="https://www.onetogrowonpod.com/wp-content/uploads/2018/10/Spotify_Logo_RGB_Green.png"
+          src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/spotify-podcast-badge-blk-grn-165x40.png"
           alt="Listen on Spotify"
           height="34"
         />
