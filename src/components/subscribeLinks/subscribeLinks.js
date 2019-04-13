@@ -10,10 +10,7 @@ export default () => (
     }}
   >
     <li>
-      <a
-        href="http://subscribeonandroid.com/www.onetogrowonpod.com/feed/podcast"
-        title="Subscribe on Android"
-      >
+      <a href="http://subscribeonandroid.com/www.onetogrowonpod.com/feed/podcast">
         <img
           height="34"
           src="https://www.onetogrowonpod.com/wp-content/uploads/2018/10/android.png"
@@ -54,10 +51,7 @@ export default () => (
     </li>
 
     <li>
-      <a
-        href="http://www.onetogrowonpod.com/feed/podcast"
-        title="Subscribe on Android"
-      >
+      <a href="http://www.onetogrowonpod.com/feed/podcast">
         <img
           height="34"
           src="https://www.onetogrowonpod.com/wp-content/uploads/2018/10/subscribe-rss.png"
