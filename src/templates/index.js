@@ -44,11 +44,13 @@ const IndexPage = ({ pageContext }) => {
           </div>
         ))}
       </div>
-      <div className="previousLink">
-        <NavLink test={first} url={previousUrl} text="Newer Posts" />
-      </div>
-      <div className="nextLink">
-        <NavLink test={last} url={nextUrl} text="Older Posts" />
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className="previousLink">
+          <NavLink test={first} url={previousUrl} text="Newer Posts" />
+        </div>
+        <div className="nextLink">
+          <NavLink test={last} url={nextUrl} text="Older Posts" />
+        </div>
       </div>
     </Layout>
   );
