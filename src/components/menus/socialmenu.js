@@ -23,6 +23,10 @@ const menuQuery = graphql`
   }
 `;
 
+const propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 function SocialMenuItems({ data }) {
   return data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => {
     return (
@@ -40,4 +44,7 @@ function SocialMenu(data) {
     </ul>
   );
 }
+
+SocialMenu.propTypes = propTypes;
+
 export default props => <StaticQuery query={menuQuery} render={SocialMenu} />;

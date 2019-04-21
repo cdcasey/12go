@@ -57,8 +57,8 @@ const queryAll = `
   }
 `;
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const pageTemplate = path.resolve('./src/templates/page.js');

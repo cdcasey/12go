@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 
-class PageTemplate extends Component {
-  render() {
-    const siteMetadata = this.props.data.site.siteMetadata;
-    const currentPage = this.props.data.wordpressPage;
+const PageTemplate = ({ data }) => {
+  // const siteMetadata = this.props.data.site.siteMetadata;
 
-    console.log(currentPage);
+  const currentPage = data.wordpressPage;
 
-    return (
-      <Layout>
-        <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-        <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+  return (
+    <Layout>
+      <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+      <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
 
-        {/* <p dangerouslySetInnerHTML={{ __html: currentPage.date }} />
+      {/* <p dangerouslySetInnerHTML={{ __html: currentPage.date }} />
         <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} /> */}
-      </Layout>
-    );
-  }
-}
+    </Layout>
+  );
+};
 
 export default PageTemplate;
 

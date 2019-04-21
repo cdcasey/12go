@@ -33,6 +33,10 @@ const menuQuery = graphql`
   }
 `;
 
+const propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 function MainMenuItems({ data }) {
   return data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => {
     let menuItem;
@@ -56,11 +60,13 @@ function MainMenuItems({ data }) {
 }
 
 function MainMenu(data) {
-  // const { items } = data.allWordpressWpApiMenusMenusItems.edges[0].node;
   return (
     <ul className={styles.mainMenu}>
       <MainMenuItems data={data} />
     </ul>
   );
 }
+
+MainMenu.propTypes = propTypes;
+
 export default props => <StaticQuery query={menuQuery} render={MainMenu} />;

@@ -14,7 +14,6 @@ const TagIndexPage = ({ data }) => {
         {edges.map(({ node }) => (
           <div
             key={node.slug}
-            className={'post'}
             style={{ marginBottom: 50 }}
             className={styles.previewContainer}
           >
