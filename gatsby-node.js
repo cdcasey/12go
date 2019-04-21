@@ -13,7 +13,8 @@ const slash = require(`slash`);
 const createPaginatedPages = require('gatsby-paginate');
 
 const queryAll = `
-  {
+ {
+
     allWordpressPage {
       edges {
         node {
@@ -40,6 +41,19 @@ const queryAll = `
         }
       }
     }
+
+    allWordpressTag {
+      edges {
+        node {
+          id
+          count
+          name
+          link
+          slug
+        }
+      }
+    }
+
   }
 `;
 
@@ -49,7 +63,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     const pageTemplate = path.resolve('./src/templates/page.js');
     const postTemplate = path.resolve('./src/templates/post.js');
-    const postsTemplate = path.resolve('./src/templates/posts.js');
+    const tagTemplate = path.resolve('./src/templates/tagIndex.js');
 
     resolve(
       graphql(queryAll).then(result => {
@@ -92,6 +106,19 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           pathPrefix: 'page',
           buildPath: (index, pathPrefix) =>
             index > 1 ? `${pathPrefix}/${index}` : `/`, // This is optional and this is the default
+        });
+
+        // Tags
+        const tags = result.data.allWordpressPost.edges;
+
+        _.each(result.data.allWordpressTag.edges, edge => {
+          createPage({
+            path: `tag/${edge.node.slug}`,
+            component: slash(tagTemplate),
+            context: {
+              tag: edge.node.slug,
+            },
+          });
         });
       })
     );

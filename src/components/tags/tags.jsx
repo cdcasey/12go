@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 import styles from './tags.module.scss';
 
@@ -12,6 +12,7 @@ const tagQuery = graphql`
           count
           name
           link
+          slug
         }
       }
     }
@@ -27,12 +28,13 @@ function TagMenuItems({ data }) {
 
   return edges.map(({ node }) => {
     return (
-      <span
+      <Link
         key={node.id}
+        to={'/tag/' + node.slug}
         style={{ fontSize: `${scaler(Number(node.count))}rem` }}
       >
         {node.name}{' '}
-      </span>
+      </Link>
     );
   });
 }
