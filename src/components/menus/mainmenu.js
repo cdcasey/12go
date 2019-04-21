@@ -48,9 +48,15 @@ function MainMenuItems({ data }) {
           {item.title}
         </Link>
       );
+    } else if (item.type === 'custom') {
+      menuItem = (
+        <a href={item.url} activeClassName={styles.active}>
+          {item.title}
+        </a>
+      );
     } else {
       menuItem = (
-        <Link to={item.object_slug} activeClassName={styles.active}>
+        <Link to={`/${item.object_slug}`} activeClassName={styles.active}>
           {item.title}
         </Link>
       );
