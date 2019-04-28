@@ -16,7 +16,7 @@ const Header = ({ siteTitle, description }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0, fontFamily: 'Lilita One, cursive' }}>
         <Link
           to="/"
           style={{
@@ -33,6 +33,7 @@ const Header = ({ siteTitle, description }) => (
           style={{
             color: `white`,
             textDecoration: `none`,
+            fontFamily: 'Cabin, cursive',
           }}
         >
           {description}
