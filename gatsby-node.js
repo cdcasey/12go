@@ -38,6 +38,18 @@ const queryAll = `
           title
           date(formatString: "MMMM DD, YYYY")
           excerpt
+          featured_media {
+            localFile {
+              childImageSharp {
+                fixed(width:300, height:200) {
+                  width
+                  height
+                  src
+                  srcSet
+                }
+              }
+            }
+          }
         }
       }
     }

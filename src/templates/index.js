@@ -21,19 +21,28 @@ const IndexPage = ({ pageContext }) => {
   return (
     <Layout>
       <div className={styles.mainContainer}>
-        {group.map(({ node }) => (
-          <div
-            key={node.slug}
-            style={{ marginBottom: 50 }}
-            className={styles.previewContainer}
-          >
-            <Link to={node.path}>
-              <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
-            </Link>
+        {group.map(({ node }) => {
+          const bgUrl = node.featured_media
+            ? node.featured_media.localFile.childImageSharp.fixed.src
+            : '';
 
-            {node.date}
-          </div>
-        ))}
+          return (
+            <div
+              key={node.slug}
+              className={styles.previewContainer}
+              style={{
+                backgroundImage: `url(${bgUrl})`,
+              }}
+            >
+              <Link to={node.path}>
+                <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
+              </Link>
+
+              {node.date}
+              {/* <img src={bgUrl} /> */}
+            </div>
+          );
+        })}
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className="previousLink">
