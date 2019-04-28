@@ -38,14 +38,14 @@ module.exports = {
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
-        // includedRoutes: [
-        //   '**/posts',
-        //   '**/pages',
-        //   '**/users',
-        //   '**/tags',
-        //   '**/menus',
-        //   '**/media',
-        // ],
+        includedRoutes: [
+          '**/posts',
+          '**/pages',
+          '**/users',
+          '**/tags',
+          '**/menus',
+          '**/media',
+        ],
         verboseOutput: true,
       },
     },
