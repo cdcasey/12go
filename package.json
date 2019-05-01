@@ -5,9 +5,9 @@
   "version": "0.1.0",
   "author": "Chris Casey @cdcasey",
   "dependencies": {
-    "gatsby": "^2.3.33",
+    "gatsby": "^2.3.34",
     "gatsby-cli": "^2.5.12",
-    "gatsby-image": "^2.0.40",
+    "gatsby-image": "^2.0.41",
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
@@ -15,14 +15,14 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-twitter": "^2.0.13",
-    "gatsby-source-filesystem": "^2.0.32",
-    "gatsby-source-wordpress": "^3.0.57",
+    "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-source-wordpress": "^3.0.58",
     "gatsby-transformer-sharp": "^2.1.18",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "husky": "^2.1.0",
