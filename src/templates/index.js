@@ -31,15 +31,17 @@ const IndexPage = ({ pageContext }) => {
               key={node.slug}
               className={styles.previewContainer}
               style={{
-                backgroundImage: `url(${bgUrl})`,
+                backgroundImage: `linear-gradient(
+                  to right bottom,
+                  rgba(74,136,22, 0.3),
+                  rgba(74,136,22, 0.3)
+              ), url(${bgUrl})`,
               }}
             >
-              <Link to={node.path}>
+              <Link to={node.path} className={styles.previewLink}>
                 <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
+                {node.date}
               </Link>
-
-              {node.date}
-              {/* <img src={bgUrl} /> */}
             </div>
           );
         })}
