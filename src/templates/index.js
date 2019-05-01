@@ -52,12 +52,13 @@ const IndexPage = ({ pageContext }) => {
           );
         })}
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div className={styles.pageTurners}>
         <div className="previousLink">
-          <NavLink test={first} url={previousUrl} text="Newer Posts" />
+          <NavLink test={first} url={previousUrl} text="<< Newer Posts" />
         </div>
+        &nbsp;/&nbsp;
         <div className="nextLink">
-          <NavLink test={last} url={nextUrl} text="Older Posts" />
+          <NavLink test={last} url={nextUrl} text="Older Posts >>" />
         </div>
       </div>
     </Layout>
