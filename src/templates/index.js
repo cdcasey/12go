@@ -46,6 +46,8 @@ const IndexPage = ({ pageContext }) => {
                 <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
                 {node.date}
               </div>
+
+              <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </Link>
           );
         })}
