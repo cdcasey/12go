@@ -27,22 +27,26 @@ const IndexPage = ({ pageContext }) => {
             : '';
 
           return (
-            <div
-              key={node.slug}
-              className={styles.previewContainer}
-              style={{
-                backgroundImage: `linear-gradient(
-                  to right bottom,
-                  rgba(74,136,22, 0.3),
-                  rgba(74,136,22, 0.3)
-              ), url(${bgUrl})`,
-              }}
-            >
-              <Link to={node.path} className={styles.previewLink}>
+            <Link to={node.path} className={styles.previewLink}>
+              <div
+                key={node.slug}
+                className={styles.previewContainer}
+                //   style={{
+                //     backgroundImage: `linear-gradient(
+                //     to right bottom,
+                //     rgba(74,136,22, 0.3),
+                //     rgba(74,136,22, 0.3)
+                // ), url(${bgUrl})`,
+                style={{
+                  backgroundImage: `url(${bgUrl})`,
+                  backgroundColor: `rgba(74,136,22, 0.5)`,
+                  backgroundBlendMode: 'lighten',
+                }}
+              >
                 <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
                 {node.date}
-              </Link>
-            </div>
+              </div>
+            </Link>
           );
         })}
       </div>

@@ -5,20 +5,31 @@
 }
 
 .previewContainer {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   // flex: 1 1 30%;
   width: 300px;
   height: 200px;
 
   // border: 1px solid black;
   padding: 1rem;
-
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
   // &:not(:last-child) {
   //   margin-right: 1rem;
   // }
 
+  text-align: center;
+  font-family: 'Lilita One';
+  color: white;
+
+  & h3 {
+    font-size: 2.5rem;
+  }
+
   &:hover {
+    color: purple;
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2),
       0px 1px 1px 0px rgba(60, 155, 160, 0.14),
       0px 2px 10px -1px rgba(60, 155, 160, 0.12);
@@ -26,7 +37,9 @@
 }
 
 .previewLink {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
+  text-decoration: none;
+  margin-bottom: 5rem;
+  // display: flex;
+  // height: 100%;
+  // width: 100%;
 }
