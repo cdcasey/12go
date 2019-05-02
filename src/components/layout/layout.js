@@ -12,6 +12,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import SEO from '../seo';
 import Header from '../header';
 import MainMenu from '../menus/mainmenu';
+import Search from '../search/search';
 import Footer from '../footer/footer';
 import styles from './layout.module.scss';
 
@@ -42,7 +43,7 @@ function LayoutComponent(data, children) {
       />
       <div className={styles.mainMenuContainer}>
         <MainMenu />
-        <div>Not Search Yet</div>
+        <Search />
       </div>
 
       <Header
