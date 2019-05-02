@@ -46,6 +46,7 @@ export default function SearchBar() {
           type="image"
           id="searchSubmit"
           name="submit"
+          // src="https://www.flaticon.com/free-icon/active-search-symbol_34148"
           src="https://image.flaticon.com/icons/svg/34/34148.svg"
           alt="Go"
           title="Submit Search Query"
