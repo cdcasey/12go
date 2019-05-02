@@ -15,8 +15,26 @@ import React from 'react';
 <gcse:search></gcse:search>
 */
 
+function makeSearch(params) {
+  return {
+    __html: `<script>
+  (function() {
+    var cx = '011161646831758772574:-nua5i_nu3i';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>`,
+  };
+}
+
 export default function SearchBar() {
   return (
+    // <div id="search" dangerouslySetInnerHTML={makeSearch()} />
     <form
       method="get"
       title="Search Form"
