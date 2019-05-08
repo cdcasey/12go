@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: '127.0.0.1:8888',
-        protocol: 'http',
+        baseUrl: 'onetogrowonpod.com',
+        protocol: 'https',
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
