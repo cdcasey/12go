@@ -10,7 +10,7 @@ export default () => {
     <footer>
       <div className={styles.footer1}>
         <Tags />
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, textAlign: 'center' }}>
           © {new Date().getFullYear()},{` `}
           One to Grow On
         </div>
