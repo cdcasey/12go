@@ -1,3 +1,7 @@
+@import '../../sass/variables';
+
 .footer1 {
   display: flex;
+  color: $color-white;
+  background-color: $color-green-medium;
 }

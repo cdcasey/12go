@@ -53,8 +53,9 @@ function LayoutComponent(data, children) {
 
       <div className={styles.container}>
         <main>{children}</main>
-        <Footer />
       </div>
+
+      <Footer />
     </React.Fragment>
   );
 }

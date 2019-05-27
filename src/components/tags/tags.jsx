@@ -28,13 +28,14 @@ function TagMenuItems({ data }) {
 
   return edges.map(({ node }) => {
     return (
-      <Link
-        key={node.id}
-        to={'/tag/' + node.slug}
-        style={{ fontSize: `${scaler(Number(node.count))}rem` }}
-      >
-        {node.name}{' '}
-      </Link>
+      <React.Fragment key={node.id}>
+        <Link
+          to={'/tag/' + node.slug}
+          style={{ fontSize: `${scaler(Number(node.count))}rem` }}
+        >
+          {node.name}
+        </Link>{' '}
+      </React.Fragment>
     );
   });
 }
