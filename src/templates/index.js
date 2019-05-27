@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import Layout from '../components/layout/layout';
+import PreviewLink from '../components/previewLink/previewLink';
 import styles from './index.module.scss';
 
 const NavLink = props => {
@@ -25,30 +26,15 @@ const IndexPage = ({ pageContext }) => {
           const bgUrl = node.featured_media
             ? node.featured_media.localFile.childImageSharp.fixed.src
             : '';
-
           return (
-            <Link to={node.path} className={styles.previewLink}>
-              <div
-                key={node.slug}
-                className={styles.previewContainer}
-                //   style={{
-                //     backgroundImage: `linear-gradient(
-                //     to right bottom,
-                //     rgba(74,136,22, 0.3),
-                //     rgba(74,136,22, 0.3)
-                // ), url(${bgUrl})`,
-                style={{
-                  backgroundImage: `url(${bgUrl})`,
-                  backgroundColor: `rgba(74,136,22, 0.5)`,
-                  backgroundBlendMode: 'lighten',
-                }}
-              >
-                <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
-                {node.date}
-              </div>
-
-              <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </Link>
+            <PreviewLink
+              path={node.path}
+              slug={node.slug}
+              title={node.title}
+              date={node.date}
+              excerpt={node.excerpt}
+              bgUrl={bgUrl}
+            />
           );
         })}
       </div>

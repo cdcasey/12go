@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
+import PreviewLink from '../components/previewLink/previewLink';
 import styles from './index.module.scss';
 
 const TagIndexPage = ({ data }) => {
@@ -11,19 +12,21 @@ const TagIndexPage = ({ data }) => {
   return (
     <Layout>
       <div className={styles.mainContainer}>
-        {edges.map(({ node }) => (
-          <div
-            key={node.slug}
-            style={{ marginBottom: 50 }}
-            className={styles.previewContainer}
-          >
-            <Link to={node.path}>
-              <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
-            </Link>
-
-            {node.date}
-          </div>
-        ))}
+        {edges.map(({ node }) => {
+          const bgUrl = node.featured_media
+            ? node.featured_media.localFile.childImageSharp.fixed.src
+            : '';
+          return (
+            <PreviewLink
+              path={node.path}
+              slug={node.slug}
+              title={node.title}
+              date={node.date}
+              excerpt={node.excerpt}
+              bgUrl={bgUrl}
+            />
+          );
+        })}
       </div>
     </Layout>
   );
