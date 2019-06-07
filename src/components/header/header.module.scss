@@ -1,0 +1,28 @@
+@import '../../sass/main.scss';
+
+.header {
+  background: $color-purple-dark;
+  margin-bottom: 1.45rem;
+  text-align: center;
+  padding: 4rem;
+
+  & a {
+    color: $color-white;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      color: $color-orange-light;
+    }
+  }
+}
+
+.heading {
+  font-family: 'Lilita One', cursive;
+  font-size: 8.4rem;
+  letter-spacing: 0.2rem;
+}
+
+.subheading {
+  font-size: 2rem;
+}

@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import SEO from '../seo';
-import Header from '../header';
+import Header from '../header/header';
 import MainMenu from '../menus/mainmenu';
 import Search from '../search/search';
 import Footer from '../footer/footer';
