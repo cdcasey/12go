@@ -6,7 +6,9 @@
   text-align: center;
   padding: 4rem;
 
-  & a {
+  & a,
+  a:link,
+  a:visited {
     color: $color-white;
     text-decoration: none;
     display: inline-block;
