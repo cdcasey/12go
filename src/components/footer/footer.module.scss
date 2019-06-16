@@ -19,4 +19,13 @@
     color: $color-green-dark;
     background-color: $color-green-light;
   }
+
+  &__item {
+    flex: 1;
+  }
+  
+  &__logo {
+    width: 50%;
+    margin: auto;
+  }
 }

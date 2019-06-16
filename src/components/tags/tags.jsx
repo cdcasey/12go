@@ -1,7 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 
-import styles from './tags.module.scss';
 
 const tagQuery = graphql`
   query {
@@ -42,9 +41,7 @@ function TagMenuItems({ data }) {
 
 function TagMenu(data) {
   return (
-    <div className={styles.tagCloud}>
-      <TagMenuItems data={data} />
-    </div>
+    <TagMenuItems data={data} />
   );
 }
 

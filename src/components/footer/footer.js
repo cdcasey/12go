@@ -10,15 +10,23 @@ export default () => {
   return (
     <footer>
       <div className={styles.footer1}>
-        <Tags />
-        <div>
-          <FooterImage />
-          <div style={{ flex: 1, textAlign: 'center' }}>
+
+        <div className={styles.footer1__item}>
+          <Tags />
+        </div>
+
+        <div className={styles.footer1__item}>
+          <FooterImage className={styles.footer1__logo} />
+          <div style={{ textAlign: 'center' }}>
             © {new Date().getFullYear()},{` `}
             One to Grow On
           </div>
         </div>
-        <SocialMenu />
+
+        <div className={styles.footer1__item}>
+          <SocialMenu />
+        </div>
+
       </div>
       <SubscribeLinks />
     </footer>
