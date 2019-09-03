@@ -20,6 +20,7 @@ const IndexPage = ({ data }) => {
           `podcast`,
           'green new deal',
           'aoc',
+          'shutdown'
         ]}
       />
       <h1>Hi 12go people!!!</h1>
