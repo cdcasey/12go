@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from './Layout';
+import Layout from './layout';
 import Sidebar from '../Sidebar/Sidebar';
 
 export default ({ children }) => (

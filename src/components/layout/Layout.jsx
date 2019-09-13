@@ -14,7 +14,7 @@ import Header from '../header/header';
 import MainMenu from '../menus/mainmenu';
 import Search from '../search/search';
 import Footer from '../footer/footer';
-import styles from './Layout.module.scss';
+import styles from './layout.module.scss';
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
