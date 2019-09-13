@@ -29,7 +29,7 @@ function LayoutComponent(data, children) {
   return (
     <React.Fragment>
       <SEO
-        title="Home"
+        title="One to Grow On"
         keywords={[
           `agriculture`,
           `science`,
@@ -39,6 +39,7 @@ function LayoutComponent(data, children) {
           'biodiesel',
           'farming',
           'food',
+          'superfoods',
         ]}
       />
       <div className={styles.mainMenuContainer}>

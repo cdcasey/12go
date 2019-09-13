@@ -193,7 +193,6 @@ const PageLayout = styled.div.attrs(() => ({
 }))`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-column-gap: 2rem;
 `;
 
 AboutPage.propTypes = propTypes;
