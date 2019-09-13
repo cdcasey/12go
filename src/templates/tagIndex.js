@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout/Layout';
 import PreviewLink from '../components/previewLink/previewLink';
 import styles from './index.module.scss';
 

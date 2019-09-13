@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import PageLayout from '../components/layout/PageLayout';
+import PageLayout from '../components/Layout/PageLayout';
 import Image from '../components/image';
 import Sidebar from '../components/Sidebar/Sidebar';
 

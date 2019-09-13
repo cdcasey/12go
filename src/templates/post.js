@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout/Layout';
 import styles from './post.module.scss';
 
 const PostTemplate = ({ data }) => {
