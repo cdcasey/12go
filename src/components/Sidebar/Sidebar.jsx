@@ -15,8 +15,8 @@ export default () => {
         <li>- Sarah</li>
         <li>- Vikram</li>
       </PatronList>
-      <MaybePicture />
-      <MaybePicture />
+      <MaybePicture>Picture from where?</MaybePicture>
+      <MaybePicture>Picture from where?</MaybePicture>
     </Sidebar>
   );
 };
