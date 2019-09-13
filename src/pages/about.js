@@ -138,7 +138,7 @@ const AboutPage = ({ data }) => {
           </PostContent>
           <Clear />
         </div>
-        <Sidebar className={styles.sidebar} />
+        <Sidebar />
       </PageLayout>
     </Layout>
   );
