@@ -85,9 +85,21 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Pages
-        // const pages = result.data.allWordpressPage.edges;
+        const pages = result.data.allWordpressPage.edges;
 
-        _.each(result.data.allWordpressPage.edges, edge => {
+        // _.each(result.data.allWordpressPage.edges, edge => {
+        //   if (edge.node.slug !== 'about') {
+        //     createPage({
+        //       path: `/${edge.node.slug}/`,
+        //       component: slash(pageTemplate),
+        //       context: {
+        //         id: edge.node.id,
+        //       },
+        //     });
+        //   }
+        // });
+
+        pages.forEach(edge => {
           if (edge.node.slug !== 'about') {
             createPage({
               path: `/${edge.node.slug}/`,
