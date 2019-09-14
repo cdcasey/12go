@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 import styles from './previewLink.module.scss';
 
-const PreviewLink = ({ path, slug, title, date, excerpt, bgUrl }) => (
+export default ({ path, slug, title, date, excerpt, bgUrl }) => (
   <Link to={path} className={styles.previewLink}>
     <div
       key={slug}
@@ -27,5 +27,3 @@ const PreviewLink = ({ path, slug, title, date, excerpt, bgUrl }) => (
     <div dangerouslySetInnerHTML={{ __html: excerpt }} />
   </Link>
 );
-
-export default PreviewLink;

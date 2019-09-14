@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import Layout from '../components/Layout/Layout';
-import PreviewLink from '../components/previewLink/previewLink';
+import PreviewLink from '../components/PreviewLink/PreviewLink';
 import styles from './index.module.scss';
 
 const NavLink = props => {
