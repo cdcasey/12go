@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Layout from './Layout';
 import Sidebar from '../Sidebar/Sidebar';
-import { breakpoints } from '../../constants/breakpoints';
+import { breakpointsUp } from '../../constants/breakpoints';
 
 export default ({ children }) => (
   <Layout>
@@ -21,7 +21,7 @@ const PageLayout = styled.div.attrs(() => ({
   flex-direction: column;
   align-items: center;
 
-  @media ${breakpoints.tablet} {
+  ${breakpointsUp.tablet} {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: unset;

@@ -8,13 +8,35 @@ const size = {
   desktop: 2560,
 };
 
-export const breakpoints = {
-  mobileS: `(min-width: ${size.mobileS}px)`,
-  mobileM: `(min-width: ${size.mobileM}px)`,
-  mobileL: `(min-width: ${size.mobileL}px)`,
-  tablet: `(min-width: ${size.tablet}px)`,
-  laptop: `(min-width: ${size.laptop}px)`,
-  laptopL: `(min-width: ${size.laptopL}px)`,
-  desktop: `(min-width: ${size.desktop}px)`,
-  desktopL: `(min-width: ${size.desktop}px)`,
+/**
+ * Possible replacement:
+ *   breakpoints: {
+    values: {
+      xs: 0,
+      sm: 321,
+      md: 600,
+      lg: 1024,
+      xl: 1920,
+    },
+  },
+ */
+
+export const breakpointsUp = {
+  mobileS: '@media screen and (min-width: 320px)',
+  mobileM: '@media screen and (min-width: 375px)',
+  mobileL: '@media screen and (min-width: 425px)',
+  tablet: '@media screen and (min-width: 768px)',
+  laptop: '@media screen and (min-width: 1024px)',
+  laptopL: '@media screen and (min-width: 1440px)',
+  desktop: '@media screen and (min-width: 2560px)',
+};
+
+export const breakpointsDown = {
+  mobileS: '@media screen and (max-width: 320px)',
+  mobileM: '@media screen and (max-width: 375px)',
+  mobileL: '@media screen and (max-width: 425px)',
+  tablet: '@media screen and (max-width: 768px)',
+  laptop: '@media screen and (max-width: 1024px)',
+  laptopL: '@media screen and (max-width: 1440px)',
+  desktop: '@media screen and (max-width: 2560px)',
 };
