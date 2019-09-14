@@ -100,7 +100,7 @@ exports.createPages = ({ graphql, actions }) => {
         // });
 
         pages.forEach(edge => {
-          if (edge.node.slug !== 'about') {
+          if (edge.node.slug !== 'about' || edge.node.slug !== 'contact') {
             createPage({
               path: `/${edge.node.slug}/`,
               component: slash(pageTemplate),

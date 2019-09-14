@@ -8,7 +8,7 @@ import { breakpointsUp } from '../../constants/breakpoints';
 export default ({ children }) => (
   <Layout>
     <PageLayout>
-      {children}
+      <div>{children}</div>
       <Sidebar />
     </PageLayout>
   </Layout>
