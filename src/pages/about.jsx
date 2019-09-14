@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
+import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
 import {
   PostContent,
@@ -9,13 +9,10 @@ import {
   Clear,
 } from '../components/PageStyles';
 
-const propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-const AboutPage = ({ data }) => {
+export default function() {
   return (
     <PageLayout>
+      <SEO title="About" />
       <PostTitle>About</PostTitle>
       <SectionTitle>Meet the Team</SectionTitle>
       <PostContent>
@@ -135,8 +132,4 @@ const AboutPage = ({ data }) => {
       </PostContent>
     </PageLayout>
   );
-};
-
-AboutPage.propTypes = propTypes;
-
-export default AboutPage;
+}

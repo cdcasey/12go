@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
 import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
 
-export default () => {
+export default function() {
   return (
     <PageLayout>
+      <SEO title="Press Kit" />
       <PostTitle>Press Kit</PostTitle>
       <SectionTitle>What We Do</SectionTitle>
       <PostContent>
@@ -248,7 +250,7 @@ export default () => {
       </Gallery>
     </PageLayout>
   );
-};
+}
 
 const Gallery = styled.ul`
   img {
