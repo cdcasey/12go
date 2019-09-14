@@ -1,7 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 
-
 const tagQuery = graphql`
   query {
     allWordpressTag {
@@ -40,9 +39,7 @@ function TagMenuItems({ data }) {
 }
 
 function TagMenu(data) {
-  return (
-    <TagMenuItems data={data} />
-  );
+  return <TagMenuItems data={data} />;
 }
 
-export default props => <StaticQuery query={tagQuery} render={TagMenu} />;
+export default () => <StaticQuery query={tagQuery} render={TagMenu} />;
