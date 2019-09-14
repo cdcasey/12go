@@ -13,7 +13,7 @@ import SEO from '../seo';
 import Header from '../Header/Header';
 import MainMenu from '../menus/mainmenu';
 import Search from '../search/search';
-import Footer from '../footer/footer';
+import Footer from '../Footer/Footer';
 import styles from './layout.module.scss';
 
 const layoutQuery = graphql`

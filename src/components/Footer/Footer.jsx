@@ -3,14 +3,13 @@ import React from 'react';
 import SocialMenu from '../menus/socialmenu';
 import Tags from '../tags/tags';
 import SubscribeLinks from '../subscribeLinks/subscribeLinks';
-import FooterImage from './footerImage';
+import FooterImage from './FooterImage';
 import styles from './footer.module.scss';
 
 export default () => {
   return (
     <footer>
       <div className={styles.footer1}>
-
         <div className={styles.footer1__item}>
           <Tags />
         </div>
@@ -26,7 +25,6 @@ export default () => {
         <div className={styles.footer1__item}>
           <SocialMenu />
         </div>
-
       </div>
       <SubscribeLinks />
     </footer>
