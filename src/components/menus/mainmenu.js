@@ -36,7 +36,7 @@ const menuQuery = graphql`
 const propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
-
+/*
 function MainMenuItems({ data }) {
   return data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => {
     let menuItem;
@@ -63,6 +63,44 @@ function MainMenuItems({ data }) {
     }
     return <li key={item.wordpress_id}>{menuItem}</li>;
   });
+}
+*/
+
+function MainMenuItems() {
+  return (
+    <React.Fragment>
+      <li>
+        <Link to="/" activeClassName={styles.active}>
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link to="about" activeClassName={styles.active}>
+          About
+        </Link>
+      </li>
+      <li>
+        <Link to="contact" activeClassName={styles.active}>
+          Contact
+        </Link>
+      </li>
+      <li>
+        <Link to="press" activeClassName={styles.active}>
+          Press Kit
+        </Link>
+      </li>
+      <li>
+        <a
+          href="https://www.patreon.com/onetogrowonpod"
+          target="_blank"
+          rel="noopener noreferrer"
+          activeClassName={styles.active}
+        >
+          Support
+        </a>
+      </li>
+    </React.Fragment>
+  );
 }
 
 function MainMenu(data) {

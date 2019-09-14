@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PageLayout from '../components/Layout/PageLayout';
 import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
 
-const PressPage = () => {
+export default () => {
   return (
     <PageLayout>
       <PostTitle>Press Kit</PostTitle>
@@ -255,5 +255,3 @@ const Gallery = styled.ul`
     width: 300px;
   }
 `;
-
-export default PressPage;
