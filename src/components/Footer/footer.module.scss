@@ -1,0 +1,31 @@
+@import '../../sass/variables';
+
+.footer1 {
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  color: $color-white;
+  background-color: $color-green-medium;
+
+  a,
+  a:link,
+  a:visited {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $color-green-dark;
+    background-color: $color-green-light;
+  }
+
+  &__item {
+    flex: 1;
+  }
+  
+  &__logo {
+    width: 50%;
+    margin: auto;
+  }
+}
