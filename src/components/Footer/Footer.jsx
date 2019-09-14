@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SocialMenu from '../Menus/SocialMenu';
-import Tags from '../tags/tags';
+import Tags from '../Tags/Tags';
 import SubscribeLinks from '../subscribeLinks/subscribeLinks';
 import FooterImage from './FooterImage';
 import styles from './footer.module.scss';
