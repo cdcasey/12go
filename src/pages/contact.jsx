@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import PageLayout from '../components/Layout/PageLayout';
+import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -61,50 +61,6 @@ const AboutPage = ({ data }) => {
     </PageLayout>
   );
 };
-
-const PostContent = styled.div.attrs(props => ({
-  className: 'post-content',
-}))`
-  margin-top: 2rem;
-  font-size: 1.7rem;
-
-  p {
-    margin-bottom: 1rem;
-  }
-
-  figure {
-    float: left;
-    margin: 5px 20px 5px 0;
-
-    img {
-      /* height: 300px; */
-      width: 250px;
-    }
-
-    figcaption {
-      font-style: italic;
-    }
-  }
-`;
-
-const SectionTitle = styled.h2.attrs(props => ({
-  className: 'section-title',
-}))`
-  margin-top: 2rem;
-  font-size: 3rem;
-  font-style: italic;
-`;
-
-const PostTitle = styled.h1.attrs(props => ({
-  className: 'post-title',
-}))`
-  font-size: 4rem;
-  font-style: italic;
-`;
-
-const Clear = styled.div`
-  clear: both;
-`;
 
 AboutPage.propTypes = propTypes;
 
