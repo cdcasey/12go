@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import SEO from '../seo';
 import Header from '../Header/Header';
 import MainMenu from '../Menus/MainMenu';
-import Search from '../search/search';
+import Search from '../Search/Search';
 import Footer from '../Footer/Footer';
 import styles from './layout.module.scss';
 
