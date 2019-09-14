@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import HeaderImage from './headerImage';
+import HeaderImage from './HeaderImage';
 import styles from './header.module.scss';
 
 const Header = ({ siteTitle, description }) => (
