@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import SEO from '../seo';
+import SEO from '../SEO';
 import Header from '../Header/Header';
 import MainMenu from '../Menus/MainMenu';
 import Search from '../Search/Search';

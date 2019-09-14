@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout/Layout';
 import Image from '../components/Image';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 
 const IndexPage = ({ data }) => {
   console.log('DATA', data);
