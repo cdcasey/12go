@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Pages
-        const pages = result.data.allWordpressPage.edges;
+        // const pages = result.data.allWordpressPage.edges;
 
         // _.each(result.data.allWordpressPage.edges, edge => {
         //   if (edge.node.slug !== 'about') {
@@ -99,17 +99,21 @@ exports.createPages = ({ graphql, actions }) => {
         //   }
         // });
 
-        pages.forEach(edge => {
-          if (edge.node.slug !== 'about' || edge.node.slug !== 'contact') {
-            createPage({
-              path: `/${edge.node.slug}/`,
-              component: slash(pageTemplate),
-              context: {
-                id: edge.node.id,
-              },
-            });
-          }
-        });
+        // pages.forEach(edge => {
+        //   if (
+        //     edge.node.slug !== 'about' ||
+        //     edge.node.slug !== 'contact' ||
+        //     edge.node.slug !== 'press'
+        //   ) {
+        //     createPage({
+        //       path: `/${edge.node.slug}/`,
+        //       component: slash(pageTemplate),
+        //       context: {
+        //         id: edge.node.id,
+        //       },
+        //     });
+        //   }
+        // });
 
         // Individual post pages
         const posts = result.data.allWordpressPost.edges;
