@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SocialMenu from '../menus/socialmenu';
+import SocialMenu from '../Menus/SocialMenu';
 import Tags from '../tags/tags';
 import SubscribeLinks from '../subscribeLinks/subscribeLinks';
 import FooterImage from './FooterImage';
