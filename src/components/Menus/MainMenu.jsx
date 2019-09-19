@@ -74,7 +74,7 @@ function MainMenuItems() {
   return (
     <React.Fragment>
       <li>
-        <Link to="/" getProps={isPartiallyActive}>
+        <Link to="/" activeClassName={styles.active}>
           Home
         </Link>
       </li>
