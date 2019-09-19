@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
 import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
+import { colors } from '../constants/colors';
 
 export default function() {
   return (
@@ -190,19 +191,21 @@ export default function() {
 
       <Gallery class="wp-block-gallery columns-3 is-cropped">
         <li class="blocks-gallery-item">
-          <figure>
-            <img
-              src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
-              alt=""
-              data-id="112"
-              data-link="https://www.onetogrowonpod.com/about/12go-ca-bio-pic/"
-              class="wp-image-112"
-            />
-            <figcaption>Catherine Arjet</figcaption>
-          </figure>
+          <Figure>
+            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
+              <img
+                src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
+                alt=""
+                data-id="112"
+                data-link="https://www.onetogrowonpod.com/about/12go-ca-bio-pic/"
+                class="wp-image-112"
+              />
+              <Caption>Catherine Arjet</Caption>
+            </a>
+          </Figure>
         </li>
         <li class="blocks-gallery-item">
-          <figure>
+          <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
               alt="brunette girl half smiles in front of trees"
@@ -210,11 +213,11 @@ export default function() {
               data-link="https://www.onetogrowonpod.com/about/img_5692_square/"
               class="wp-image-151"
             />
-            <figcaption>Hallie Casey</figcaption>
-          </figure>
+            <Caption>Hallie Casey</Caption>
+          </Figure>
         </li>
         <li class="blocks-gallery-item">
-          <figure>
+          <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
               alt="Chris in a production of Taming of the Shrew."
@@ -222,11 +225,11 @@ export default function() {
               data-link="https://www.onetogrowonpod.com/about/cdc/"
               class="wp-image-175"
             />
-            <figcaption>Chris Casey</figcaption>
-          </figure>
+            <Caption>Chris Casey</Caption>
+          </Figure>
         </li>
         <li class="blocks-gallery-item">
-          <figure>
+          <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
               alt=""
@@ -234,10 +237,10 @@ export default function() {
               data-link="https://www.onetogrowonpod.com/press/12go_patreonheader_background-2/"
               class="wp-image-658"
             />
-          </figure>
+          </Figure>
         </li>
         <li class="blocks-gallery-item">
-          <figure>
+          <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
               alt=""
@@ -245,7 +248,7 @@ export default function() {
               data-link="https://www.onetogrowonpod.com/press/otgo_logofinal-2/"
               class="wp-image-659"
             />
-          </figure>
+          </Figure>
         </li>
       </Gallery>
     </PageLayout>
@@ -253,7 +256,39 @@ export default function() {
 }
 
 const Gallery = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+
   img {
-    width: 300px;
+    max-width: 300px;
+    height: 100%;
+    object-fit: cover;
   }
+`;
+
+const Figure = styled.figure`
+  position: relative;
+  height: 100%;
+`;
+
+const Caption = styled.figcaption`
+  padding: 10px 40px 10px 9px;
+  color: ${colors.white};
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  /* left: 50%; */
+  /* top: 90%; */
+  bottom: 0;
+  /* transform: translate(-50%, -50%); */
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3) 70%,
+    transparent
+  );
 `;
