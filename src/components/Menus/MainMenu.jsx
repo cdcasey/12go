@@ -67,25 +67,29 @@ function MainMenuItems({ data }) {
 */
 
 function MainMenuItems() {
+  const isPartiallyActive = ({ isPartiallyCurrent }) => {
+    return isPartiallyCurrent ? { className: styles.active } : null;
+  };
+
   return (
     <React.Fragment>
       <li>
-        <Link to="/" activeClassName={styles.active}>
+        <Link to="/" getProps={isPartiallyActive}>
           Home
         </Link>
       </li>
       <li>
-        <Link to="about" activeClassName={styles.active}>
+        <Link to="about" getProps={isPartiallyActive}>
           About
         </Link>
       </li>
       <li>
-        <Link to="contact" activeClassName={styles.active}>
+        <Link to="contact" getProps={isPartiallyActive}>
           Contact
         </Link>
       </li>
       <li>
-        <Link to="press" activeClassName={styles.active}>
+        <Link to="press" getProps={isPartiallyActive}>
           Press Kit
         </Link>
       </li>
@@ -94,7 +98,6 @@ function MainMenuItems() {
           href="https://www.patreon.com/onetogrowonpod"
           target="_blank"
           rel="noopener noreferrer"
-          activeClassName={styles.active}
         >
           Support
         </a>
