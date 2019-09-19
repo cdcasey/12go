@@ -188,9 +188,7 @@ export default function() {
             <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
               <img
                 src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
-                alt=""
-                data-id="112"
-                data-link="https://www.onetogrowonpod.com/about/12go-ca-bio-pic/"
+                alt="woman standing and smiling in front of leafy plants"
               />
               <Caption>Catherine Arjet</Caption>
             </a>
@@ -198,44 +196,44 @@ export default function() {
         </li>
         <li>
           <Figure>
-            <img
-              src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
-              alt="brunette girl half smiles in front of trees"
-              data-id="151"
-              data-link="https://www.onetogrowonpod.com/about/img_5692_square/"
-            />
-            <Caption>Hallie Casey</Caption>
+            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg">
+              <img
+                src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
+                alt="brunette girl half smiles in front of trees"
+              />
+              <Caption>Hallie Casey</Caption>
+            </a>
           </Figure>
         </li>
         <li>
           <Figure>
-            <img
-              src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
-              alt="Chris in a production of Taming of the Shrew."
-              data-id="175"
-              data-link="https://www.onetogrowonpod.com/about/cdc/"
-            />
-            <Caption>Chris Casey</Caption>
+            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg">
+              <img
+                src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
+                alt="Man in sunglasses holding a cigar and a drink and leaning out of a window"
+              />
+              <Caption>Chris Casey</Caption>
+            </a>
           </Figure>
         </li>
         <li>
           <Figure>
-            <img
-              src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
-              alt=""
-              data-id="658"
-              data-link="https://www.onetogrowonpod.com/press/12go_patreonheader_background-2/"
-            />
+            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
+              <img
+                src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
+                alt="Fruits and vegetables against a white background"
+              />
+            </a>
           </Figure>
         </li>
         <li>
           <Figure>
-            <img
-              src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
-              alt=""
-              data-id="659"
-              data-link="https://www.onetogrowonpod.com/press/otgo_logofinal-2/"
-            />
+            <a href="http://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
+              <img
+                src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
+                alt="The words One To Grow On with fruits and vegetables and a microphone"
+              />
+            </a>
           </Figure>
         </li>
       </Gallery>
