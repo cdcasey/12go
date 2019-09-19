@@ -175,22 +175,15 @@ export default function() {
         <p>
           <em>One&nbsp;to&nbsp;Grow&nbsp;On&nbsp;</em>is released every other
           Tuesday on all podcasting platforms. If you're looking for us between
-          episodes, check out @onetogrowonpod on{' '}
-          <g
-            class="gr_ gr_5 gr-alert gr_spell gr_inline_cards gr_disable_anim_appear ContextualSpelling ins-del multiReplace"
-            id="5"
-            data-gr-id="5"
-          >
-            instagram
-          </g>
-          , twitter, and facebook. Media and business communications can be
-          directed to onetogrowonmedia@gmail.com.
+          episodes, check out @onetogrowonpod on instagram, twitter, and
+          facebook. Media and business communications can be directed to
+          onetogrowonmedia@gmail.com.
         </p>
       </PostContent>
       <SectionTitle>Gallery</SectionTitle>
 
-      <Gallery class="wp-block-gallery columns-3 is-cropped">
-        <li class="blocks-gallery-item">
+      <Gallery>
+        <li>
           <Figure>
             <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
               <img
@@ -198,55 +191,50 @@ export default function() {
                 alt=""
                 data-id="112"
                 data-link="https://www.onetogrowonpod.com/about/12go-ca-bio-pic/"
-                class="wp-image-112"
               />
               <Caption>Catherine Arjet</Caption>
             </a>
           </Figure>
         </li>
-        <li class="blocks-gallery-item">
+        <li>
           <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
               alt="brunette girl half smiles in front of trees"
               data-id="151"
               data-link="https://www.onetogrowonpod.com/about/img_5692_square/"
-              class="wp-image-151"
             />
             <Caption>Hallie Casey</Caption>
           </Figure>
         </li>
-        <li class="blocks-gallery-item">
+        <li>
           <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
               alt="Chris in a production of Taming of the Shrew."
               data-id="175"
               data-link="https://www.onetogrowonpod.com/about/cdc/"
-              class="wp-image-175"
             />
             <Caption>Chris Casey</Caption>
           </Figure>
         </li>
-        <li class="blocks-gallery-item">
+        <li>
           <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
               alt=""
               data-id="658"
               data-link="https://www.onetogrowonpod.com/press/12go_patreonheader_background-2/"
-              class="wp-image-658"
             />
           </Figure>
         </li>
-        <li class="blocks-gallery-item">
+        <li>
           <Figure>
             <img
               src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
               alt=""
               data-id="659"
               data-link="https://www.onetogrowonpod.com/press/otgo_logofinal-2/"
-              class="wp-image-659"
             />
           </Figure>
         </li>
@@ -255,7 +243,9 @@ export default function() {
   );
 }
 
-const Gallery = styled.ul`
+const Gallery = styled.ul.attrs(() => ({
+  className: 'ul-gallery',
+}))`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -272,12 +262,16 @@ const Gallery = styled.ul`
   }
 `;
 
-const Figure = styled.figure`
+const Figure = styled.figure.attrs(() => ({
+  className: 'gallery-figure',
+}))`
   position: relative;
   height: 100%;
 `;
 
-const Caption = styled.figcaption`
+const Caption = styled.figcaption.attrs(() => ({
+  className: 'gallery-caption',
+}))`
   padding: 10px 40px 10px 9px;
   color: ${colors.white};
   font-style: italic;
