@@ -261,8 +261,12 @@ const Gallery = styled.ul`
   justify-content: space-between;
   list-style-type: none;
 
+  li {
+    width: calc((100% - 32px) / 2);
+  }
+
   img {
-    max-width: 300px;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -283,7 +287,7 @@ const Caption = styled.figcaption`
   width: 100%;
   /* left: 50%; */
   /* top: 90%; */
-  bottom: 0;
+  bottom: 4px;
   /* transform: translate(-50%, -50%); */
   background: linear-gradient(
     0deg,
