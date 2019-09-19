@@ -65,7 +65,6 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            class="alignleft wp-image-175 size-medium"
             src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc-300x300.jpg"
             alt="Chris popping out of a window in a production of Taming of the Shrew"
           />
@@ -85,7 +84,6 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            class="alignleft wp-image-113 size-medium"
             src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-09-29-at-6.08.09-PM-300x292.jpeg"
             alt="two girls making faces in the back seat of a car"
           />
