@@ -40,6 +40,9 @@ function LayoutComponent(data, children) {
           'farming',
           'food',
           'superfoods',
+          'agriculture podcast',
+          'farming podcast',
+          'food podcast',
         ]}
       />
       <div className={styles.mainMenuContainer}>
