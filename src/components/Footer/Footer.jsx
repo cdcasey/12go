@@ -5,6 +5,11 @@ import Tags from '../Tags/Tags';
 import SubscribeLinks from '../SubscribeLinks/SubscribeLinks';
 import FooterImage from './FooterImage';
 import styles from './footer.module.scss';
+import Patreon from '../Icons/Patreon';
+import Envelope from '../Icons/Envelope';
+import Facebook from '../Icons/Facebook';
+import Twitter from '../Icons/Twitter';
+import Instagram from '../Icons/Instagram';
 
 export default () => {
   return (
@@ -24,6 +29,11 @@ export default () => {
 
         <div className={styles.footer1__item}>
           <SocialMenu />
+          <Patreon />
+          <Envelope />
+          <Facebook />
+          <Twitter />
+          <Instagram />
         </div>
       </div>
       <SubscribeLinks />
