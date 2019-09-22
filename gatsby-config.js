@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `On to Grow On`,
@@ -32,8 +36,8 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: 'onetogrowonpod.com',
-        protocol: 'https',
+        baseUrl: process.env.GATSBY_API_URL,
+        protocol: process.env.GATSBY_API_PROTOCOL,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
@@ -50,6 +54,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-twitter',
+    'gatsby-plugin-styled-components',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

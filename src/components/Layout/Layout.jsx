@@ -9,11 +9,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import SEO from '../seo';
-import Header from '../header';
-import MainMenu from '../menus/mainmenu';
-import Search from '../search/search';
-import Footer from '../footer/footer';
+import SEO from '../SEO';
+import Header from '../Header/Header';
+import MainMenu from '../Menus/MainMenu';
+import Search from '../Search/Search';
+import Footer from '../Footer/Footer';
 import styles from './layout.module.scss';
 
 const layoutQuery = graphql`
@@ -29,7 +29,7 @@ function LayoutComponent(data, children) {
   return (
     <React.Fragment>
       <SEO
-        title="Home"
+        title="One to Grow On"
         keywords={[
           `agriculture`,
           `science`,
@@ -39,6 +39,10 @@ function LayoutComponent(data, children) {
           'biodiesel',
           'farming',
           'food',
+          'superfoods',
+          'agriculture podcast',
+          'farming podcast',
+          'food podcast',
         ]}
       />
       <div className={styles.mainMenuContainer}>
@@ -53,8 +57,9 @@ function LayoutComponent(data, children) {
 
       <div className={styles.container}>
         <main>{children}</main>
-        <Footer />
       </div>
+
+      <Footer />
     </React.Fragment>
   );
 }

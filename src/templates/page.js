@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout/Layout';
 
 const PageTemplate = ({ data }) => {
   // const siteMetadata = this.props.data.site.siteMetadata;

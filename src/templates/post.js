@@ -1,15 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout/Layout';
+import styles from './post.module.scss';
 
 const PostTemplate = ({ data }) => {
   const post = data.wordpressPost;
 
   return (
     <Layout>
-      <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <h1
+        className={styles.postTitle}
+        dangerouslySetInnerHTML={{ __html: post.title }}
+      />
+      <div dangerouslySetInnerHTML={{ __html: post.date.split('T')[0] }} />
+      <div
+        className={styles.postContent}
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
     </Layout>
   );
 };
@@ -21,6 +29,7 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      date
     }
     site {
       siteMetadata {

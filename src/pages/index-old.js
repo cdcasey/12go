@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Layout from '../components/layout/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
+import Layout from '../components/Layout/Layout';
+import Image from '../components/Image';
+import SEO from '../components/SEO';
 
 const IndexPage = ({ data }) => {
   console.log('DATA', data);
@@ -20,6 +20,7 @@ const IndexPage = ({ data }) => {
           `podcast`,
           'green new deal',
           'aoc',
+          'shutdown',
         ]}
       />
       <h1>Hi 12go people!!!</h1>

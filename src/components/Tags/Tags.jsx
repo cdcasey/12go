@@ -1,8 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 
-import styles from './tags.module.scss';
-
 const tagQuery = graphql`
   query {
     allWordpressTag {
@@ -28,23 +26,20 @@ function TagMenuItems({ data }) {
 
   return edges.map(({ node }) => {
     return (
-      <Link
-        key={node.id}
-        to={'/tag/' + node.slug}
-        style={{ fontSize: `${scaler(Number(node.count))}rem` }}
-      >
-        {node.name}{' '}
-      </Link>
+      <React.Fragment key={node.id}>
+        <Link
+          to={'/tag/' + node.slug}
+          style={{ fontSize: `${scaler(Number(node.count))}rem` }}
+        >
+          {node.name}
+        </Link>{' '}
+      </React.Fragment>
     );
   });
 }
 
 function TagMenu(data) {
-  return (
-    <div className={styles.tagCloud}>
-      <TagMenuItems data={data} />
-    </div>
-  );
+  return <TagMenuItems data={data} />;
 }
 
-export default props => <StaticQuery query={tagQuery} render={TagMenu} />;
+export default () => <StaticQuery query={tagQuery} render={TagMenu} />;
