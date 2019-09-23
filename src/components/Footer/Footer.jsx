@@ -1,8 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import SocialMenu from '../Menus/SocialMenu';
 import Tags from '../Tags/Tags';
-import SubscribeLinks from '../SubscribeLinks/SubscribeLinks';
 import FooterImage from './FooterImage';
 import styles from './footer.module.scss';
 import Patreon from '../Icons/Patreon';
@@ -33,20 +32,46 @@ export default () => {
         </div>
 
         <div className={styles.footer1__item}>
-          <SocialMenu />
-          <Patreon />
-          <Envelope />
-          <Facebook />
-          <Twitter />
-          <Instagram />
-          <Android />
-          <ApplePodcasts />
-          <Stitcher />
-          <Spotify />
-          <RSS />
+          <IconContainer>
+            <IconLabel>Listen Now:</IconLabel>
+            <IconGroup>
+              <Android />
+              <ApplePodcasts />
+              <Stitcher />
+              <Spotify />
+              <RSS />
+            </IconGroup>
+          </IconContainer>
+          <IconContainer>
+            <IconLabel>Connect:</IconLabel>
+            <IconGroup>
+              <Instagram />
+              <Twitter />
+              <Facebook />
+              <Envelope />
+              <Patreon />
+            </IconGroup>
+          </IconContainer>
         </div>
       </div>
-      <SubscribeLinks />
     </footer>
   );
 };
+
+const IconContainer = styled.div`
+  margin-top: 1rem;
+  display: flex;
+`;
+
+const IconLabel = styled.div`
+  font-family: 'Lilita One';
+  font-size: 2.5rem;
+  text-align: right;
+  flex: 1;
+`;
+
+const IconGroup = styled.div`
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+`;

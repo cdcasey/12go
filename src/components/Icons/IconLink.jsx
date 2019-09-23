@@ -32,6 +32,6 @@ const SVGIcon = styled.svg`
   fill: ${colors.white};
 
   &:hover {
-    fill: ${colors.greenLight};
+    fill: ${colors.orangeLight};
   }
 `;
