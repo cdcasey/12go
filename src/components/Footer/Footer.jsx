@@ -10,6 +10,11 @@ import Envelope from '../Icons/Envelope';
 import Facebook from '../Icons/Facebook';
 import Twitter from '../Icons/Twitter';
 import Instagram from '../Icons/Instagram';
+import Android from '../Icons/Android';
+import ApplePodcasts from '../Icons/ApplePodcasts';
+import Stitcher from '../Icons/Stitcher';
+import Spotify from '../Icons/Spotify';
+import RSS from '../Icons/RSS';
 
 export default () => {
   return (
@@ -34,6 +39,11 @@ export default () => {
           <Facebook />
           <Twitter />
           <Instagram />
+          <Android />
+          <ApplePodcasts />
+          <Stitcher />
+          <Spotify />
+          <RSS />
         </div>
       </div>
       <SubscribeLinks />
