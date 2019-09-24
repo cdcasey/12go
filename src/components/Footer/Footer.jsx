@@ -7,8 +7,6 @@ import FooterImage from './FooterImage';
 import IconContainer from '../Icons/IconContainer';
 
 export default props => {
-  console.log('PROPS', props);
-
   return (
     <Footer>
       <FooterItem>
