@@ -1,31 +1,67 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { colors } from '../../constants/colors';
 import Tags from '../Tags/Tags';
 import FooterImage from './FooterImage';
-import styles from './footer.module.scss';
 import IconContainer from '../Icons/IconContainer';
 
-export default () => {
+export default props => {
+  console.log('PROPS', props);
+
   return (
-    <footer>
-      <div className={styles.footer1}>
-        <div className={styles.footer1__item}>
-          <Tags />
-        </div>
+    <Footer>
+      <FooterItem>
+        <Tags />
+      </FooterItem>
 
-        <div className={styles.footer1__item}>
-          <FooterImage className={styles.footer1__logo} />
-          <div style={{ textAlign: 'center' }}>
-            © {new Date().getFullYear()},{` `}
-            One to Grow On
-          </div>
+      <FooterItem>
+        <MyFooterImage />
+        <div style={{ textAlign: 'center' }}>
+          © {new Date().getFullYear()},{` `}
+          One to Grow On
         </div>
+      </FooterItem>
 
-        <div className={styles.footer1__item}>
-          <IconContainer />
-        </div>
-      </div>
-    </footer>
+      <FooterItem>
+        <IconContainer />
+      </FooterItem>
+    </Footer>
   );
 };
+
+const Footer = styled.footer.attrs(() => ({
+  className: 'footer1',
+}))`
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  color: ${colors.white};
+  background-color: ${colors.greenMedium};
+
+  a,
+  a:link,
+  a:visited {
+    color: ${colors.white};
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: ${colors.greenDark};
+    background-color: ${colors.greenLight};
+  }
+`;
+
+const FooterItem = styled.div.attrs(() => ({
+  className: 'footer__item',
+}))`
+  flex: 1;
+`;
+
+const MyFooterImage = styled(FooterImage).attrs(() => ({
+  className: 'footer__logo',
+}))`
+  width: 50%;
+  margin: auto;
+`;
