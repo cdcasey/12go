@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Tags from '../Tags/Tags';
 import FooterImage from './FooterImage';
 import styles from './footer.module.scss';
-import IconContainer from './IconContainer';
+import IconContainer from '../Icons/IconContainer';
 
 export default () => {
   return (

@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Patreon from '../Icons/Patreon';
-import Envelope from '../Icons/Envelope';
-import Facebook from '../Icons/Facebook';
-import Twitter from '../Icons/Twitter';
-import Instagram from '../Icons/Instagram';
-import Android from '../Icons/Android';
-import ApplePodcasts from '../Icons/ApplePodcasts';
-import Stitcher from '../Icons/Stitcher';
-import Spotify from '../Icons/Spotify';
-import RSS from '../Icons/RSS';
+import Patreon from './Patreon';
+import Envelope from './Envelope';
+import Facebook from './Facebook';
+import Twitter from './Twitter';
+import Instagram from './Instagram';
+import Android from './Android';
+import ApplePodcasts from './ApplePodcasts';
+import Stitcher from './Stitcher';
+import Spotify from './Spotify';
+import RSS from './RSS';
 
 export default () => {
   return (
