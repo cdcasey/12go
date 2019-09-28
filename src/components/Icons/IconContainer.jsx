@@ -11,6 +11,7 @@ import ApplePodcasts from './ApplePodcasts';
 import Stitcher from './Stitcher';
 import Spotify from './Spotify';
 import RSS from './RSS';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 export default () => {
   return (
@@ -55,4 +56,8 @@ const IconGroup = styled.div`
   flex: 2;
   display: flex;
   justify-content: space-evenly;
+
+  ${breakpointsDown.tablet} {
+    flex: 4;
+  }
 `;

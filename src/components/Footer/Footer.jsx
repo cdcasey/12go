@@ -54,6 +54,7 @@ const Footer = styled.footer.attrs(() => ({
   ${breakpointsDown.tablet} {
     flex-direction: column;
     row-gap: 3rem;
+    width: 100%;
   }
 `;
 
@@ -61,6 +62,11 @@ const FooterItem = styled.div.attrs(() => ({
   className: 'footer__item',
 }))`
   flex: 1;
+
+  ${breakpointsDown.tablet} {
+    flex: unset;
+    width: 100%;
+  }
 `;
 
 const MyFooterImage = styled(FooterImage).attrs(() => ({
@@ -68,4 +74,8 @@ const MyFooterImage = styled(FooterImage).attrs(() => ({
 }))`
   width: 50%;
   margin: auto;
+
+  ${breakpointsDown.tablet} {
+    max-width: 200px;
+  }
 `;
