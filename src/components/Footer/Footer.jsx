@@ -5,6 +5,7 @@ import { colors } from '../../constants/colors';
 import Tags from '../Tags/Tags';
 import FooterImage from './FooterImage';
 import IconContainer from '../Icons/IconContainer';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 export default props => {
   return (
@@ -48,6 +49,11 @@ const Footer = styled.footer.attrs(() => ({
   a:hover {
     color: ${colors.greenDark};
     background-color: ${colors.greenLight};
+  }
+
+  ${breakpointsDown.tablet} {
+    flex-direction: column;
+    row-gap: 3rem;
   }
 `;
 
