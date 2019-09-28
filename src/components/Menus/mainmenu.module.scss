@@ -1,3 +1,5 @@
+@import '../../sass/variables';
+
 .mainMenu {
   display: flex;
   list-style-type: none;
@@ -11,10 +13,11 @@
     a:link,
     a:visited {
       text-decoration: none;
+      color: $color-purple-dark;
     }
   }
 }
 
 .active {
-  color: orange;
+  color: $color-orange-light !important;
 }
