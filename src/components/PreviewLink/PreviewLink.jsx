@@ -2,8 +2,6 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
-import styles from './previewLink.module.scss';
-
 export default ({ path, slug, title, date, excerpt, bgUrl }) => (
   <PreviewLink to={path}>
     <PreviewContainer
