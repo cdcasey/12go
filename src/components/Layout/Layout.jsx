@@ -43,6 +43,11 @@ function LayoutComponent(data, children) {
           'agriculture podcast',
           'farming podcast',
           'food podcast',
+          'plant science',
+          'gardening',
+          'gardening podcast',
+          'bugs',
+          'pollenators',
         ]}
       />
       <div className={styles.mainMenuContainer}>
