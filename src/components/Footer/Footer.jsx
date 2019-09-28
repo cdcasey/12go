@@ -5,6 +5,7 @@ import { colors } from '../../constants/colors';
 import Tags from '../Tags/Tags';
 import FooterImage from './FooterImage';
 import IconContainer from '../Icons/IconContainer';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 export default props => {
   return (
@@ -49,12 +50,23 @@ const Footer = styled.footer.attrs(() => ({
     color: ${colors.greenDark};
     background-color: ${colors.greenLight};
   }
+
+  ${breakpointsDown.tablet} {
+    flex-direction: column;
+    row-gap: 3rem;
+    width: 100%;
+  }
 `;
 
 const FooterItem = styled.div.attrs(() => ({
   className: 'footer__item',
 }))`
   flex: 1;
+
+  ${breakpointsDown.tablet} {
+    flex: unset;
+    width: 100%;
+  }
 `;
 
 const MyFooterImage = styled(FooterImage).attrs(() => ({
@@ -62,4 +74,8 @@ const MyFooterImage = styled(FooterImage).attrs(() => ({
 }))`
   width: 50%;
   margin: auto;
+
+  ${breakpointsDown.tablet} {
+    max-width: 200px;
+  }
 `;
