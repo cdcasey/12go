@@ -79,17 +79,22 @@ function MainMenuItems() {
         </Link>
       </li>
       <li>
-        <Link to="about" getProps={isPartiallyActive}>
+        <Link to="/about" getProps={isPartiallyActive}>
           About
         </Link>
       </li>
       <li>
-        <Link to="contact" getProps={isPartiallyActive}>
+        <Link to="/series-and-minisodes" getProps={isPartiallyActive}>
+          Series and Minisodes
+        </Link>
+      </li>
+      <li>
+        <Link to="/contact" getProps={isPartiallyActive}>
           Contact
         </Link>
       </li>
       <li>
-        <Link to="press" getProps={isPartiallyActive}>
+        <Link to="/press" getProps={isPartiallyActive}>
           Press Kit
         </Link>
       </li>

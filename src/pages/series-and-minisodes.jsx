@@ -1,0 +1,109 @@
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+import SEO from '../components/SEO';
+import PageLayout from '../components/Layout/PageLayout';
+import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
+
+export default function() {
+  return (
+    <PageLayout>
+      <SEO title="Series and Minisodes" />
+      <PostTitle>Series and Minisodes</PostTitle>
+      <SectionTitle>Series</SectionTitle>
+      <PostContent>
+        <p>
+          Series allow us to dive deep into a particularly complicated topic or
+          idea in agriculture. When we work on a series, will we take a look at
+          a topic and then discuss it over several episodes.{' '}
+        </p>
+      </PostContent>
+      <SeriesSection>
+        <SeriesItem>
+          <SeriesTitle>Organic Agriculture (June-July 2019)</SeriesTitle>
+          <p>
+            In this four-part series, Chris and Hallie dive head first into the
+            tangled world of certified organic agriculture. They go in-depth
+            about the history of the movement, the proper definitions of the
+            term “organic,” and discuss the environmental, economic, and human
+            health costs, benefits, and trade-offs of growing organic.
+          </p>
+        </SeriesItem>
+      </SeriesSection>
+      <SectionTitle>Special Episodes</SectionTitle>
+      <PostContent>
+        <p>
+          Every once in a while, we like to shake up our format a little. In
+          special episodes, we look at topics in agriculture in a slightly
+          different way.
+        </p>
+      </PostContent>
+      <SeriesSection>
+        <SeriesItem>
+          <SeriesTitle>Superfoods</SeriesTitle>
+          <p>
+            Every few months we take a break from our usual format to do a
+            round-up of “superfoods!” In these special episodes, Hallie and
+            Chris discuss four or more foods that have been given the marketing
+            mantle of a “superfood.” They discuss the plant, its history as a
+            crop, and debate just how super it actually is.
+          </p>
+        </SeriesItem>
+        <SeriesItem>
+          <SeriesTitle>Questions with Catherine</SeriesTitle>
+          <p>
+            Producer Catherine Arjet usually is a behind-the-scenes presence on
+            One to Grow On. But once in a while we like to do episodes where
+            Catherine asks some basic questions. Catherine doesn’t have a
+            background in agriculture and so often finds herself shocked and
+            surprised when doing research for the show. These episodes are fun,
+            chatty, and will almost always surprise you.
+          </p>
+        </SeriesItem>
+      </SeriesSection>
+      <SectionTitle>Minisodes</SectionTitle>
+      <PostContent>
+        <p>
+          Occasionally, we have a topic that is super interesting but not long
+          enough to take up a full episode. For these, we do a minisode where we
+          can dive deep into a topic for just a little bit of time.{' '}
+        </p>
+      </PostContent>
+      <SeriesSection>
+        <SeriesItem>
+          <SeriesTitle>#AskOnetoGrowOn</SeriesTitle>
+          <p>
+            If you have a question about agriculture, we want to get you
+            answers. On these minisodes (&lt;10 minutes long), Hallie will take
+            a short query or brief uncertainty and provide some quick answers.
+          </p>
+        </SeriesItem>
+      </SeriesSection>
+    </PageLayout>
+  );
+}
+
+const SeriesSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 1%;
+`;
+
+const SeriesItem = styled.div`
+  flex: 0 49%;
+  & p {
+    font-size: 1.7rem;
+  }
+`;
+
+const SeriesTitle = styled.h3`
+  font-family: 'Lilita One', cursive;
+  /* font-family: Bitter, Georgia, serif; */
+  line-height: 1.3;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+`;
