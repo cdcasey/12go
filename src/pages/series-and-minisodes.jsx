@@ -4,7 +4,12 @@ import styled from 'styled-components';
 
 import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
-import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
+import {
+  PostContent,
+  PostTitle,
+  SectionTitle,
+  SiteLink,
+} from '../components/PageStyles';
 
 export default function() {
   return (
@@ -21,7 +26,11 @@ export default function() {
       </PostContent>
       <SeriesSection>
         <SeriesItem>
-          <SeriesTitle>Organic Agriculture (June-July 2019)</SeriesTitle>
+          <SeriesTitle>
+            <SiteLink to="/tag/organic-ag/">
+              Organic Agriculture (June-July 2019)
+            </SiteLink>
+          </SeriesTitle>
           <p>
             In this four-part series, Chris and Hallie dive head first into the
             tangled world of certified organic agriculture. They go in-depth
@@ -41,7 +50,9 @@ export default function() {
       </PostContent>
       <SeriesSection>
         <SeriesItem>
-          <SeriesTitle>Superfoods</SeriesTitle>
+          <SeriesTitle>
+            <SiteLink to="/tag/superfoods/">Superfoods</SiteLink>
+          </SeriesTitle>
           <p>
             Every few months we take a break from our usual format to do a
             round-up of “superfoods!” In these special episodes, Hallie and
@@ -51,7 +62,11 @@ export default function() {
           </p>
         </SeriesItem>
         <SeriesItem>
-          <SeriesTitle>Questions with Catherine</SeriesTitle>
+          <SeriesTitle>
+            <SiteLink to="/tag/question-episode/">
+              Questions with Catherine
+            </SiteLink>
+          </SeriesTitle>
           <p>
             Producer Catherine Arjet usually is a behind-the-scenes presence on
             One to Grow On. But once in a while we like to do episodes where
@@ -72,7 +87,9 @@ export default function() {
       </PostContent>
       <SeriesSection>
         <SeriesItem>
-          <SeriesTitle>#AskOnetoGrowOn</SeriesTitle>
+          <SeriesTitle>
+            <SiteLink to="/tag/askonetogrowon/">#AskOnetoGrowOn</SiteLink>
+          </SeriesTitle>
           <p>
             If you have a question about agriculture, we want to get you
             answers. On these minisodes (&lt;10 minutes long), Hallie will take
