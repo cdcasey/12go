@@ -28,7 +28,7 @@ export const PostContent = styled.div.attrs(props => ({
 export const SectionTitle = styled.h2.attrs(props => ({
   className: 'section-title',
 }))`
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 3rem;
   font-style: italic;
 `;
