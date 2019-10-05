@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
+
+import { colors } from '../../constants/colors';
 
 export const PostContent = styled.div.attrs(props => ({
   className: 'post-content',
@@ -28,7 +31,7 @@ export const PostContent = styled.div.attrs(props => ({
 export const SectionTitle = styled.h2.attrs(props => ({
   className: 'section-title',
 }))`
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 3rem;
   font-style: italic;
 `;
@@ -42,4 +45,18 @@ export const PostTitle = styled.h1.attrs(props => ({
 
 export const Clear = styled.div`
   clear: both;
+`;
+
+export const SiteLink = styled(Link).attrs(() => ({
+  className: '12goLink',
+}))`
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: ${colors.purpleDark};
+  }
+
+  &:hover {
+    color: ${colors.orangeLight};
+  }
 `;
