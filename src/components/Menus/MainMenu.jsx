@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import styles from './mainmenu.module.scss';
+import { colors } from '../../constants/colors';
 
 const menuQuery = graphql`
   query {
@@ -67,58 +68,86 @@ function MainMenuItems({ data }) {
 */
 
 function MainMenuItems() {
-  const isPartiallyActive = ({ isPartiallyCurrent }) => {
-    return isPartiallyCurrent ? { className: styles.active } : null;
-  };
+  // const isPartiallyActive = ({ isPartiallyCurrent }) => {
+  //   return isPartiallyCurrent;
+  // };
 
   return (
     <React.Fragment>
-      <li>
-        <Link to="/" activeClassName={styles.active}>
+      <StyledMenuItem>
+        <MenuLink to="/" activeStyle={activeStyle}>
           Home
-        </Link>
-      </li>
-      <li>
-        <Link to="/about" getProps={isPartiallyActive}>
-          About
-        </Link>
-      </li>
-      <li>
-        <Link to="/series-and-minisodes" getProps={isPartiallyActive}>
-          Series and Minisodes
-        </Link>
-      </li>
-      <li>
-        <Link to="/contact" getProps={isPartiallyActive}>
-          Contact
-        </Link>
-      </li>
-      <li>
-        <Link to="/press" getProps={isPartiallyActive}>
-          Press Kit
-        </Link>
-      </li>
-      <li>
-        <a
+        </MenuLink>
+      </StyledMenuItem>
+      <StyledMenuItem>
+        <MenuLink to="/about">About</MenuLink>
+      </StyledMenuItem>
+      <StyledMenuItem>
+        <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
+      </StyledMenuItem>
+      <StyledMenuItem>
+        <MenuLink to="/contact">Contact</MenuLink>
+      </StyledMenuItem>
+      <StyledMenuItem>
+        <MenuLink to="/press">Press Kit</MenuLink>
+      </StyledMenuItem>
+      <StyledMenuItem>
+        <ExternalLink
           href="https://www.patreon.com/onetogrowonpod"
           target="_blank"
           rel="noopener noreferrer"
         >
           Support
-        </a>
-      </li>
+        </ExternalLink>
+      </StyledMenuItem>
     </React.Fragment>
   );
 }
 
 function MainMenu(data) {
   return (
-    <ul className={styles.mainMenu}>
+    <StyledMenuList>
       <MainMenuItems data={data} />
-    </ul>
+    </StyledMenuList>
   );
 }
 
 MainMenu.propTypes = propTypes;
 
 export default props => <StaticQuery query={menuQuery} render={MainMenu} />;
+
+const StyledMenuList = styled.ul`
+  display: flex;
+  list-style-type: none;
+`;
+
+const StyledMenuItem = styled.li`
+  margin-right: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+`;
+
+const MenuLink = styled(Link).attrs(() => ({
+  activeStyle: activeStyle,
+  isPartiallyActive: true,
+}))`
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: ${colors.purpleDark};
+  }
+`;
+
+const ExternalLink = styled.a`
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: ${colors.purpleDark};
+  }
+`;
+
+const activeStyle = {
+  color: colors.orangeLight,
+};
