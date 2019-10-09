@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import { colors } from '../../constants/colors';
+
 export default ({ path, slug, title, date, excerpt, bgUrl }) => (
   <PreviewLink to={path}>
     <PreviewContainer
@@ -22,7 +24,7 @@ export default ({ path, slug, title, date, excerpt, bgUrl }) => (
 
 const PreviewLink = styled(Link)`
   text-decoration: none;
-  color: $color-black;
+  color: ${colors.black};
   margin-bottom: 5rem;
   width: 300px;
 `;
@@ -45,7 +47,7 @@ const PreviewContainer = styled.div`
   }
 
   &:hover {
-    color: $color-orange-light;
+    color: ${colors.orangeLight};
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2),
       0px 1px 1px 0px rgba(60, 155, 160, 0.14),
       0px 2px 10px -1px rgba(60, 155, 160, 0.12);
