@@ -17,6 +17,7 @@ const TagIndexPage = ({ data }) => {
             : '';
           return (
             <PreviewLink
+              key={node.id}
               path={node.path}
               slug={node.slug}
               title={node.title}
