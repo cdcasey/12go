@@ -27,7 +27,7 @@ const Sidebar = styled.div.attrs(() => ({
   /* border: 1px solid black;
   width: 300px;
   height: 600px; */
-  padding-top: 10rem;
+  margin-top: 8rem;
   font-size: 1.7rem;
   justify-self: self-end;
 `;

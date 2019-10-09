@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout/Layout';
+import PageLayout from '../components/Layout/PageLayout';
 import styles from './post.module.scss';
 
 const PostTemplate = ({ data }) => {
   const post = data.wordpressPost;
 
   return (
-    <Layout>
+    <PageLayout>
       <h1
         className={styles.postTitle}
         dangerouslySetInnerHTML={{ __html: post.title }}
@@ -18,7 +18,7 @@ const PostTemplate = ({ data }) => {
         className={styles.postContent}
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
-    </Layout>
+    </PageLayout>
   );
 };
 
