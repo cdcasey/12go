@@ -8,13 +8,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import SEO from '../SEO';
 import Header from '../Header/Header';
 import MainMenu from '../Menus/MainMenu';
 import Search from '../Search/Search';
 import Footer from '../Footer/Footer';
-import styles from './layout.module.scss';
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
@@ -50,19 +50,17 @@ function LayoutComponent(data, children) {
           'pollenators',
         ]}
       />
-      <div className={styles.mainMenuContainer}>
+      <MainMenuContainer>
         <MainMenu />
         <Search />
-      </div>
+      </MainMenuContainer>
 
       <Header
         siteTitle={data.wordpressSiteMetadata.name}
         description={data.wordpressSiteMetadata.description}
       />
 
-      <div className={styles.container}>
-        <main>{children}</main>
-      </div>
+      <LayoutContainer>{children}</LayoutContainer>
 
       <Footer />
     </React.Fragment>
@@ -91,3 +89,20 @@ export default Layout;
 //   }
 // }
 // `}
+
+const LayoutContainer = styled.main.attrs(() => ({
+  className: 'layout-container',
+}))`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+`;
+
+const MainMenuContainer = styled.div.attrs(() => ({
+  className: 'mainmenu-container',
+}))`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+`;
