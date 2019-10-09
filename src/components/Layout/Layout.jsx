@@ -60,9 +60,7 @@ function LayoutComponent(data, children) {
         description={data.wordpressSiteMetadata.description}
       />
 
-      <LayoutContainer>
-        <main>{children}</main>
-      </LayoutContainer>
+      <LayoutContainer>{children}</LayoutContainer>
 
       <Footer />
     </React.Fragment>
@@ -92,7 +90,7 @@ export default Layout;
 // }
 // `}
 
-const LayoutContainer = styled.div.attrs(() => ({
+const LayoutContainer = styled.main.attrs(() => ({
   className: 'layout-container',
 }))`
   margin: 0 auto;
