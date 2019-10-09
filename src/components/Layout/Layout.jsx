@@ -15,6 +15,7 @@ import Header from '../Header/Header';
 import MainMenu from '../Menus/MainMenu';
 import Search from '../Search/Search';
 import Footer from '../Footer/Footer';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
@@ -97,6 +98,10 @@ const LayoutContainer = styled.main.attrs(() => ({
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
+
+  ${breakpointsDown.laptop} {
+    margin: 0 4rem;
+  }
 `;
 
 const MainMenuContainer = styled.div.attrs(() => ({
