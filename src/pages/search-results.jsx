@@ -5,15 +5,44 @@ import PreviewLink from '../components/PreviewLink/PreviewLink';
 import { SearchContext } from '../components/Search/SearchProvider';
 
 const SearchResultsPage = ({ data }) => {
-  const { isLoading, searchResults, error, search } = React.useContext(
-    SearchContext
-  );
+  const {
+    isLoading,
+    setIsLoading,
+    searchResults,
+    setSearchResults,
+    error,
+    setError,
+  } = React.useContext(SearchContext);
 
   const term = new URLSearchParams(window.location.search).get('term');
 
   React.useEffect(() => {
+    const search = query => {
+      const searchURL = `${process.env.GATSBY_API_PROTOCOL}://${process.env.GATSBY_API_URL}/wp-json/wp/v2/posts?search=${query}`;
+      setIsLoading(true);
+      setError(null);
+      fetch(searchURL)
+        .then(res => {
+          return res.json();
+        })
+        .then(
+          result => {
+            setSearchResults(result);
+            setError(null);
+            setIsLoading(false);
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          error => {
+            setError(error);
+            setIsLoading(false);
+          }
+        );
+    };
+
     search(term);
-  }, [term]);
+  }, [term, setIsLoading, setSearchResults, setError]);
 
   if (isLoading) {
     return (
