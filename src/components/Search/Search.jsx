@@ -1,30 +1,20 @@
 import React from 'react';
-
-// function makeSearch(params) {
-//   return {
-//     __html: `<script>
-//   (function() {
-//     var cx = '011161646831758772574:-nua5i_nu3i';
-//     var gcse = document.createElement('script');
-//     gcse.type = 'text/javascript';
-//     gcse.async = true;
-//     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-//     var s = document.getElementsByTagName('script')[0];
-//     s.parentNode.insertBefore(gcse, s);
-//   })();
-// </script>
-// <gcse:search></gcse:search>`,
-//   };
-// }
+import { navigate } from 'gatsby';
 
 export default function SearchBar() {
+  const [query, setQuery] = React.useState();
+
+  const handleInputChange = event => {
+    setQuery(event.target.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    navigate(`/search-results/?term=${query.replace(' ', '+')}`);
+  };
+
   return (
-    // <div id="search" dangerouslySetInnerHTML={makeSearch()} />
-    <form
-      method="get"
-      title="Search Form"
-      action="https://cse.google.com/cse/publicurl"
-    >
+    <form method="get" title="Search Form" onSubmit={handleSubmit}>
       <div>
         <input
           type="text"
@@ -34,12 +24,7 @@ export default function SearchBar() {
           alt="Search Text"
           placeholder="Search"
           maxlength="256"
-        />
-        <input
-          type="hidden"
-          id="cx"
-          name="cx"
-          value="011161646831758772574:-nua5i_nu3i"
+          onChange={handleInputChange}
         />
         <input
           style={{ height: 15 }}
