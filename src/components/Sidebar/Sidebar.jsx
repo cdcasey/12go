@@ -14,6 +14,13 @@ export default () => {
         <li>- Lindsay</li>
         <li>- Sarah</li>
         <li>- Vikram</li>
+        <li>- Dan</li>
+        <li>- Megan</li>
+        <li>- Maggie</li>
+        <li>- Kate</li>
+        <li>- Leah</li>
+        <li>- Shianne</li>
+        <li>- Mama Casey</li>
       </PatronList>
       <MaybePicture>Picture from where?</MaybePicture>
       <MaybePicture>Picture from where?</MaybePicture>
