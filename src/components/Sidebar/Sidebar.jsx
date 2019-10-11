@@ -1,7 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import SidebarImage from './SidebarImage';
+
 export default () => {
+  function randomExcluded(min, max, excluded = max + 1) {
+    max = excluded > max ? max : max - 1;
+    var n = Math.floor(Math.random() * (max - min) + min);
+    if (n >= excluded) n++;
+    return n;
+  }
+
+  const min = 1;
+  const max = 7;
+
+  const imageNum1 = randomExcluded(min, max);
+  const imageNum2 = randomExcluded(min, max, imageNum1);
+
   return (
     <Sidebar>
       Special thanks to
@@ -22,8 +37,8 @@ export default () => {
         <li>- Shianne</li>
         <li>- Mama Casey</li>
       </PatronList>
-      <MaybePicture>Picture from where?</MaybePicture>
-      <MaybePicture>Picture from where?</MaybePicture>
+      <StyledSidebarImage imageNumber={imageNum1} />
+      <StyledSidebarImage imageNumber={imageNum2} />
     </Sidebar>
   );
 };
@@ -31,9 +46,6 @@ export default () => {
 const Sidebar = styled.div.attrs(() => ({
   className: 'sidebar',
 }))`
-  /* border: 1px solid black;
-  width: 300px;
-  height: 600px; */
   margin-top: 8rem;
   font-size: 1.7rem;
   justify-self: self-end;
@@ -45,9 +57,9 @@ const PatronList = styled.ul.attrs(() => ({
   list-style-type: none;
 `;
 
-const MaybePicture = styled.div`
-  border: 1px solid black;
+const StyledSidebarImage = styled(SidebarImage).attrs(() => ({
+  className: 'sidebar-image',
+}))`
   margin-top: 1rem;
   width: 200px;
-  height: 200px;
 `;
