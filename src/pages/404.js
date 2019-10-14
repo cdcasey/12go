@@ -1,11 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/Layout/Layout';
 import SEO from '../components/SEO';
 import { colors } from '../constants/colors';
 import { breakpointsDown } from '../constants/breakpoints';
 import { PostContent } from '../components/PageStyles';
+
+const Image = ({ className }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "orange.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 250) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Img
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        className={className}
+      />
+    )}
+  />
+);
 
 const NotFoundPage = () => (
   <Layout>
@@ -16,6 +40,7 @@ const NotFoundPage = () => (
       <br />
       It might be an old link, or it might have moved!
     </CenteredPostContent>
+    <Centered404Image />
   </Layout>
 );
 
@@ -37,4 +62,9 @@ const Styled404Header = styled.h1`
 
 const CenteredPostContent = styled(PostContent)`
   text-align: center;
+`;
+
+const Centered404Image = styled(Image)`
+  margin: 3rem auto 4rem auto;
+  width: 125px;
 `;
