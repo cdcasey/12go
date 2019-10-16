@@ -18,8 +18,6 @@ export default () => {
   return (
     <Sidebar>
       Special thanks to
-      <br />
-      <br />
       <PatronList>
         <li>- Lindsay</li>
         <li>- Vikram</li>
@@ -39,6 +37,9 @@ const Sidebar = styled.div.attrs(() => ({
   margin-top: 8rem;
   font-size: 1.7rem;
   justify-self: self-end;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 `;
 
 const PatronList = styled.ul.attrs(() => ({
@@ -50,6 +51,5 @@ const PatronList = styled.ul.attrs(() => ({
 const StyledSidebarImage = styled(SidebarImage).attrs(() => ({
   className: 'sidebar-image',
 }))`
-  margin-top: 1rem;
   width: 200px;
 `;

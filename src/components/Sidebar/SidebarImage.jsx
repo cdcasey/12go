@@ -96,14 +96,14 @@ const Image = ({ imageNumber, className }) => {
       query={query}
       render={data => {
         return (
-          <React.Fragment>
+          <figure>
             <Img
               fluid={data[`image${imageNumber}`].childImageSharp.fluid}
               alt={IMAGE_INFO[imageNumber].alt}
               className={className}
             />
             <StyledCaption>{IMAGE_INFO[imageNumber].caption}</StyledCaption>
-          </React.Fragment>
+          </figure>
         );
       }}
     />
