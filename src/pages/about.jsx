@@ -18,7 +18,7 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-300x300.jpg"
+            src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-300x300.jpg"
             alt="brunette girl half smiles in front of trees"
           />
         </figure>
@@ -42,7 +42,7 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic-300x300.jpeg"
+            src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic-300x300.jpeg"
             alt=""
           />
         </figure>
@@ -65,7 +65,7 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc-300x300.jpg"
+            src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc-300x300.jpg"
             alt="Chris popping out of a window in a production of Taming of the Shrew"
           />
         </figure>
@@ -84,7 +84,7 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-09-29-at-6.08.09-PM-300x292.jpeg"
+            src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-09-29-at-6.08.09-PM-300x292.jpeg"
             alt="two girls making faces in the back seat of a car"
           />
           <figcaption>Catherine and Hallie, March of 2009</figcaption>
@@ -107,7 +107,7 @@ export default function() {
       <PostContent>
         <figure>
           <img
-            src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-e1539314987888-287x300.jpeg"
+            src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-e1539314987888-287x300.jpeg"
             alt="A young Hallie sits in Chris's lap while they both wear Troy Aikman jerseys"
           />
           <figcaption>Chris and Hallie, January 1997.</figcaption>

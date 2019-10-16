@@ -185,9 +185,9 @@ export default function() {
       <Gallery>
         <li>
           <Figure>
-            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
               <img
-                src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
                 alt="woman standing and smiling in front of leafy plants"
               />
               <Caption>Catherine Arjet</Caption>
@@ -196,9 +196,9 @@ export default function() {
         </li>
         <li>
           <Figure>
-            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg">
               <img
-                src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
                 alt="brunette girl half smiles in front of trees"
               />
               <Caption>Hallie Casey</Caption>
@@ -207,9 +207,9 @@ export default function() {
         </li>
         <li>
           <Figure>
-            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg">
               <img
-                src="https://www.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
                 alt="Man in sunglasses holding a cigar and a drink and leaning out of a window"
               />
               <Caption>Chris Casey</Caption>
@@ -218,9 +218,9 @@ export default function() {
         </li>
         <li>
           <Figure>
-            <a href="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
               <img
-                src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
                 alt="Fruits and vegetables against a white background"
               />
             </a>
@@ -228,9 +228,9 @@ export default function() {
         </li>
         <li>
           <Figure>
-            <a href="http://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
+            <a href="http://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
               <img
-                src="https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
                 alt="The words One To Grow On with fruits and vegetables and a microphone"
               />
             </a>
