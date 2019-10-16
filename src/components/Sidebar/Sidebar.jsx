@@ -52,5 +52,5 @@ const PatronList = styled.ul.attrs(() => ({
 const StyledSidebarImage = styled(SidebarImage).attrs(() => ({
   className: 'sidebar-image',
 }))`
-  /* width: 200px; */
+  width: 200px;
 `;
