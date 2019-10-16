@@ -4,6 +4,13 @@ import styled from 'styled-components';
 import SidebarImage from './SidebarImage';
 
 export default () => {
+  // var arr = [];
+  // while (arr.length < 8) {
+  //   var r = Math.floor(Math.random() * 100) + 1;
+  //   if (arr.indexOf(r) === -1) arr.push(r);
+  // }
+  // document.write(arr);
+
   function randomExcluded(min, max, excluded = max + 1) {
     max = excluded > max ? max : max - 1;
     var n = Math.floor(Math.random() * (max - min) + min);
@@ -23,18 +30,9 @@ export default () => {
       <br />
       <br />
       <PatronList>
-        <li>- Andrew</li>
-        <li>- Christopher</li>
-        <li>- LD</li>
         <li>- Lindsay</li>
-        <li>- Sarah</li>
         <li>- Vikram</li>
-        <li>- Dan</li>
-        <li>- Megan</li>
-        <li>- Maggie</li>
-        <li>- Kate</li>
-        <li>- Leah</li>
-        <li>- Shianne</li>
+        <li>- Christopher</li>
         <li>- Mama Casey</li>
       </PatronList>
       <StyledSidebarImage imageNumber={imageNum1} />
