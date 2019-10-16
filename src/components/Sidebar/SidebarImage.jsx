@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -41,7 +42,7 @@ export const query = graphql`
       ...squareImage
     }
 
-    image5: file(relativePath: { eq: "sidebar/05.png" }) {
+    image5: file(relativePath: { eq: "sidebar/05.jpg" }) {
       ...squareImage
     }
 
@@ -55,14 +56,38 @@ export const query = graphql`
   }
 `;
 
-const ALT_TAGS = {
-  1: 'Chris with headphones on getting ready to record',
-  2: 'Hallie and Catherine smiling at the camera while on a hike',
-  3: 'Hallie, Chris, and Catherine smiling at the camera and celebrating one year of podcasting',
-  4: "Hallie and Catherine smiling at the camera while at the farmer's market",
-  5: 'Chris and Hallie  smiling at the camera while on a hike',
-  6: 'Catherine and Hallie smiling at the camera in front of a sign that says Life is Peachy',
-  7: 'Hallie and Chris smiling at the camera while at lunch together',
+const IMAGE_INFO = {
+  1: {
+    alt: 'Chris with headphones on getting ready to record',
+    caption: 'Chris getting ready to record.',
+  },
+  2: {
+    alt: 'Hallie and Catherine smiling at the camera while on a hike',
+    caption: 'Hallie and Catherine on a hike.',
+  },
+  3: {
+    alt:
+      'Hallie, Chris, and Catherine smiling at the camera and celebrating one year of podcasting',
+    caption: 'Hallie, Chris, and Catherine celebrating one year of podcasting!',
+  },
+  4: {
+    alt:
+      "Hallie and Catherine smiling at the camera while at the farmer's market",
+    caption: "Hallie and Catherine at the farmer's market.",
+  },
+  5: {
+    alt: 'Chris and Hallie smiling at the camera while on a hike',
+    caption: 'Chris and Hallie on a hike.',
+  },
+  6: {
+    alt:
+      'Catherine and Hallie smiling at the camera in front of a sign that says Life is Peachy',
+    caption: 'Catherine and Hallie at the Fredericksburg Farm Stand.',
+  },
+  7: {
+    alt: 'Hallie and Chris smiling at the camera while at lunch together',
+    caption: 'Hallie and Chris at lunch together.',
+  },
 };
 
 const Image = ({ imageNumber, className }) => {
@@ -71,11 +96,14 @@ const Image = ({ imageNumber, className }) => {
       query={query}
       render={data => {
         return (
-          <Img
-            fluid={data[`image${imageNumber}`].childImageSharp.fluid}
-            alt={ALT_TAGS[imageNumber]}
-            className={className}
-          />
+          <React.Fragment>
+            <Img
+              fluid={data[`image${imageNumber}`].childImageSharp.fluid}
+              alt={IMAGE_INFO[imageNumber].alt}
+              className={className}
+            />
+            <StyledCaption>{IMAGE_INFO[imageNumber].caption}</StyledCaption>
+          </React.Fragment>
         );
       }}
     />
@@ -83,3 +111,10 @@ const Image = ({ imageNumber, className }) => {
 };
 
 export default Image;
+
+const StyledCaption = styled.caption`
+  text-align: left;
+  width: 100%;
+  font-style: italic;
+  font-size: 1.5rem;
+`;
