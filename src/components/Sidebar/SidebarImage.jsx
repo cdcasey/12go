@@ -96,14 +96,14 @@ const Image = ({ imageNumber, className }) => {
       query={query}
       render={data => {
         return (
-          <figure>
+          <StyledFigure>
             <Img
               fluid={data[`image${imageNumber}`].childImageSharp.fluid}
               alt={IMAGE_INFO[imageNumber].alt}
               className={className}
             />
             <StyledCaption>{IMAGE_INFO[imageNumber].caption}</StyledCaption>
-          </figure>
+          </StyledFigure>
         );
       }}
     />
@@ -112,7 +112,13 @@ const Image = ({ imageNumber, className }) => {
 
 export default Image;
 
-const StyledCaption = styled.caption`
+// Sometimes the caption ends up on top of the figure. Maybe this helps?
+const StyledFigure = styled.figure`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledCaption = styled.figcaption`
   text-align: left;
   width: 100%;
   font-style: italic;
