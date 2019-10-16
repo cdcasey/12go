@@ -40,6 +40,7 @@ const Sidebar = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  width: 200px;
 `;
 
 const PatronList = styled.ul.attrs(() => ({
@@ -51,5 +52,5 @@ const PatronList = styled.ul.attrs(() => ({
 const StyledSidebarImage = styled(SidebarImage).attrs(() => ({
   className: 'sidebar-image',
 }))`
-  width: 200px;
+  /* width: 200px; */
 `;
