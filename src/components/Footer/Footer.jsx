@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import { colors } from '../../constants/colors';
 import Tags from '../Tags/Tags';
@@ -15,7 +16,9 @@ export default props => {
       </FooterItem>
 
       <FooterItem>
-        <MyFooterImage />
+        <Link to="/">
+          <MyFooterImage />
+        </Link>
         <div style={{ textAlign: 'center' }}>
           © {new Date().getFullYear()},{` `}
           One to Grow On
