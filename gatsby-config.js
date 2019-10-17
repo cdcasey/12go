@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-module.exports = {
+const config = {
   siteMetadata: {
     title: `On to Grow On`,
     subtitle: `Understanding how food production impacts ourselves and our world`,
@@ -60,3 +60,17 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 };
+
+if (process.env.CONTEXT !== 'production') {
+  const googleAnalyticsConfig = {
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      trackingId: 'UA-150285970-1',
+      anonymize: true,
+      head: true,
+    },
+  };
+  config.plugins.push(googleAnalyticsConfig);
+}
+
+module.exports = config;
