@@ -61,7 +61,7 @@ const config = {
   ],
 };
 
-if (process.env.CONTEXT !== 'production') {
+if (process.env.CONTEXT === 'production') {
   const googleAnalyticsConfig = {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
