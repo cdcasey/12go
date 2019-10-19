@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { colors } from '../../constants/colors';
 
@@ -139,7 +140,7 @@ const MenuLink = styled(Link).attrs(() => ({
   }
 `;
 
-const ExternalLink = styled.a`
+const ExternalLink = styled(OutboundLink)`
   &,
   &:link,
   &:visited {

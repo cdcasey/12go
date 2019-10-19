@@ -54,7 +54,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           property: 'og:image',
           content:
-            'https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO-1400.jpg',
+            'https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO-1400.jpg',
         },
         {
           name: `twitter:card`,
@@ -75,7 +75,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           property: 'twitter:image',
           content:
-            'https://www.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO-1400.jpg',
+            'https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO-1400.jpg',
         },
       ]
         .concat(
