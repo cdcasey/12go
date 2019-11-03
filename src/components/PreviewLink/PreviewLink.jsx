@@ -14,8 +14,10 @@ export default ({ path, slug, title, date, excerpt, bgUrl }) => (
         backgroundBlendMode: 'lighten',
       }}
     >
-      <h3 dangerouslySetInnerHTML={{ __html: title }} />
-      {date}
+      <PreviewLinkBand>
+        <h3 dangerouslySetInnerHTML={{ __html: title }} />
+        {date}
+      </PreviewLinkBand>
     </PreviewContainer>
 
     <div dangerouslySetInnerHTML={{ __html: excerpt }} />
@@ -36,7 +38,7 @@ const PreviewContainer = styled.div`
   align-items: center;
   height: 200px;
 
-  padding: 1rem;
+  /* padding: 1rem; */
 
   text-align: center;
   font-family: 'Lilita One';
@@ -53,3 +55,14 @@ const PreviewContainer = styled.div`
       0px 2px 10px -1px rgba(60, 155, 160, 0.12);
   }
 `;
+
+const PreviewLinkBand = styled.div`
+  width: 100%;
+  background-color: rgba(78, 38, 136, 0.75);
+`;
+
+/* background-color: ${colors.purpleDark}${transparencyToHex(0.5)}; */
+// function transparencyToHex(transparency) {
+//   const hex = (255 * transparency).toString(16);
+//   return hex.length === 1 ? '0' + hex : hex;
+// }
