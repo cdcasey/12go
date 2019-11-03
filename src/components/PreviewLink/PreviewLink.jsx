@@ -45,7 +45,7 @@ const PreviewContainer = styled.div`
   color: white;
 
   & h3 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   &:hover {
@@ -59,6 +59,11 @@ const PreviewContainer = styled.div`
 const PreviewLinkBand = styled.div`
   width: 100%;
   background-color: rgba(78, 38, 136, 0.75);
+  min-height: 125px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 /* background-color: ${colors.purpleDark}${transparencyToHex(0.5)}; */
