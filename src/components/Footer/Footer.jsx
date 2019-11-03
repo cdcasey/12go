@@ -75,10 +75,10 @@ const FooterItem = styled.div.attrs(() => ({
 const MyFooterImage = styled(FooterImage).attrs(() => ({
   className: 'footer__logo',
 }))`
-  width: 50%;
+  width: 75%;
   margin: auto;
 
   ${breakpointsDown.tablet} {
-    max-width: 200px;
+    max-width: 325px;
   }
 `;
