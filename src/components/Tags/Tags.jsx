@@ -1,5 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import styled from 'styled-components';
 
 const tagQuery = graphql`
   query {
@@ -39,7 +40,22 @@ function TagMenuItems({ data }) {
 }
 
 function TagMenu(data) {
-  return <TagMenuItems data={data} />;
+  return (
+    <TagContainer>
+      <TagLabel>Browse by tag: </TagLabel>
+      <TagMenuItems data={data} />
+    </TagContainer>
+  );
 }
 
 export default () => <StaticQuery query={tagQuery} render={TagMenu} />;
+
+const TagLabel = styled.div`
+  font-family: 'Lilita One';
+  font-size: 2.5rem;
+  display: inline;
+`;
+
+const TagContainer = styled.div`
+  padding: 12px;
+`;
