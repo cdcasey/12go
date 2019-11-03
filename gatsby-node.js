@@ -132,7 +132,7 @@ exports.createPages = ({ graphql, actions }) => {
           edges: posts,
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
-          pageLength: 6,
+          pageLength: 9,
           pathPrefix: 'page',
           buildPath: (index, pathPrefix) =>
             index > 1 ? `${pathPrefix}/${index}` : `/`, // This is optional and this is the default
