@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SidebarImage from './SidebarImage';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 export default () => {
   const min = 1;
@@ -41,6 +42,13 @@ const Sidebar = styled.div.attrs(() => ({
   flex-direction: column;
   row-gap: 2rem;
   width: 200px;
+
+  ${breakpointsDown.tablet} {
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    align-self: start;
+  }
 `;
 
 const PatronList = styled.ul.attrs(() => ({
