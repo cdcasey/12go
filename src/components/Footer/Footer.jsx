@@ -45,15 +45,16 @@ const Footer = styled.footer.attrs(() => ({
   background-color: ${colors.greenMedium};
 
   ${breakpointsDown.tablet} {
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
+    align-items: unset;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
       "tags"
       "icons"
       "image"; 
-    /* flex-direction: column; */
-    /* row-gap: ${spacing(3)}; */
-    /* width: 100%; */
+      /* flex-direction: column; */
+      /* row-gap: ${spacing(3)}; */
+      /* width: 100%; */
   }
 `;
 
