@@ -15,7 +15,7 @@ const NavLink = props => {
 };
 
 const IndexPage = ({ pageContext }) => {
-  const { group, index, first, last } = pageContext;
+  const { group, index, first, last, pageCount } = pageContext;
   const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
   const nextUrl = (index + 1).toString();
 
@@ -41,11 +41,15 @@ const IndexPage = ({ pageContext }) => {
       </div>
       <div className={styles.pageTurners}>
         <div className="previousLink">
-          <NavLink test={first} url={previousUrl} text="<< Newer Episodes" />
+          <NavLink test={first} url={''} text="<<" />
+          &nbsp;&nbsp;
+          <NavLink test={first} url={previousUrl} text="< Newer Episodes" />
         </div>
         &nbsp;/&nbsp;
         <div className="nextLink">
-          <NavLink test={last} url={nextUrl} text="Older Episodes >>" />
+          <NavLink test={last} url={nextUrl} text="Older Episodes >" />
+          &nbsp;&nbsp;
+          <NavLink test={last} url={pageCount} text=">>" />
         </div>
       </div>
     </Layout>
