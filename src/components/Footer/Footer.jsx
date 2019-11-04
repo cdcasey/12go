@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import { colors } from '../../constants/colors';
+import spacing from '../../constants/spacing';
 import Tags from '../Tags/Tags';
 import FooterImage from './FooterImage';
 import IconContainer from '../Icons/IconContainer';
@@ -36,8 +37,7 @@ const Footer = styled.footer.attrs(() => ({
   className: 'footer1',
 }))`
   display: flex;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: ${spacing(1)};
   align-items: center;
   color: ${colors.white};
   background-color: ${colors.greenMedium};
