@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import SidebarImage from './SidebarImage';
 import { breakpointsDown } from '../../constants/breakpoints';
-import { colors } from '../../constants/colors';
 import spacing from '../../constants/spacing';
 
 export default () => {
