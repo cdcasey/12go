@@ -78,5 +78,6 @@ const Divider = styled.hr`
 
   ${breakpointsDown.tablet} {
     display: ${props => (props.mobile ? '' : 'none')};
+    width: 85vw;
   }
 `;
