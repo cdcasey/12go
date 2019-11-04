@@ -19,7 +19,7 @@ export default () => {
 
   return (
     <Sidebar>
-      <Divider />
+      <Divider mobile />
       Special thanks to
       <PatronList>
         <li>- Lindsay</li>
@@ -77,6 +77,6 @@ const Divider = styled.hr`
   height: 3px;
 
   ${breakpointsDown.tablet} {
-    display: none;
+    display: ${props => (props.mobile ? '' : 'none')};
   }
 `;
