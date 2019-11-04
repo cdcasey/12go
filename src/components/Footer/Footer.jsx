@@ -42,18 +42,6 @@ const Footer = styled.footer.attrs(() => ({
   color: ${colors.white};
   background-color: ${colors.greenMedium};
 
-  a,
-  a:link,
-  a:visited {
-    color: ${colors.white};
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: ${colors.greenDark};
-    background-color: ${colors.greenLight};
-  }
-
   ${breakpointsDown.tablet} {
     flex-direction: column;
     row-gap: 3rem;

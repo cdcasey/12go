@@ -2,6 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { colors } from '../../constants/colors';
+
 const tagQuery = graphql`
   query {
     allWordpressTag {
@@ -28,12 +30,9 @@ function TagMenuItems({ data }) {
   return edges.map(({ node }) => {
     return (
       <React.Fragment key={node.id}>
-        <Link
-          to={'/tag/' + node.slug}
-          style={{ fontSize: `${scaler(Number(node.count))}rem` }}
-        >
+        <TagLink to={'/tag/' + node.slug} nodeCount={node.count}>
           {node.name}
-        </Link>{' '}
+        </TagLink>{' '}
       </React.Fragment>
     );
   });
@@ -58,4 +57,20 @@ const TagLabel = styled.div`
 
 const TagContainer = styled.div`
   padding: 12px;
+`;
+
+const TagLink = styled(Link)`
+  font-size: ${({ nodeCount }) => scaler(Number(nodeCount))}rem;
+
+  &,
+  &:link,
+  &:visited {
+    color: ${colors.white};
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: ${colors.greenDark};
+    background-color: ${colors.greenLight};
+  }
 `;
