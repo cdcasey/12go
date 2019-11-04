@@ -3,6 +3,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
+import { breakpointsDown } from '../../constants/breakpoints';
+
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -116,6 +118,10 @@ export default Image;
 const StyledFigure = styled.figure`
   display: flex;
   flex-direction: column;
+
+  ${breakpointsDown.tablet} {
+    display: none;
+  }
 `;
 
 const StyledCaption = styled.figcaption`

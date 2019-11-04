@@ -10,8 +10,6 @@ export default ({ path, slug, title, date, excerpt, bgUrl }) => (
       key={slug}
       style={{
         backgroundImage: `url(${bgUrl})`,
-        backgroundColor: `rgba(74,136,22, 0.5)`,
-        backgroundBlendMode: 'lighten',
       }}
     >
       <PreviewLinkBand>
