@@ -32,11 +32,11 @@ export const breakpointsUp = {
 };
 
 export const breakpointsDown = {
-  mobileS: '@media screen and (max-width: 320px)',
-  mobileM: '@media screen and (max-width: 375px)',
-  mobileL: '@media screen and (max-width: 425px)',
-  tablet: '@media screen and (max-width: 768px)',
-  laptop: '@media screen and (max-width: 1024px)',
-  laptopL: '@media screen and (max-width: 1440px)',
-  desktop: '@media screen and (max-width: 2560px)',
+  mobileS: '@media screen and (max-width: 319px)',
+  mobileM: '@media screen and (max-width: 374px)',
+  mobileL: '@media screen and (max-width: 424px)',
+  tablet: '@media screen and (max-width: 767px)',
+  laptop: '@media screen and (max-width: 1023px)',
+  laptopL: '@media screen and (max-width: 1439px)',
+  desktop: '@media screen and (max-width: 2559px)',
 };
