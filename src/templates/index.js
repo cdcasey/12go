@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 
 import Layout from '../components/Layout/Layout';
 import PreviewLink from '../components/PreviewLink/PreviewLink';
-import styles from './index.module.scss';
+import { breakpointsDown } from '../constants/breakpoints';
 
 const NavLink = props => {
   const url = props.url === '' ? '/' : '/page/' + props.url;
@@ -21,7 +22,7 @@ const IndexPage = ({ pageContext }) => {
 
   return (
     <Layout>
-      <div className={styles.mainContainer}>
+      <MainContainer>
         {group.map(({ node }) => {
           const bgUrl = node.featured_media
             ? node.featured_media.localFile.childImageSharp.fixed.src
@@ -38,22 +39,46 @@ const IndexPage = ({ pageContext }) => {
             />
           );
         })}
-      </div>
-      <div className={styles.pageTurners}>
+      </MainContainer>
+      <PageTurners>
         <div className="previousLink">
           <NavLink test={first} url={''} text="<<" />
           &nbsp;&nbsp;
-          <NavLink test={first} url={previousUrl} text="< Newer Episodes" />
+          <NavLink
+            test={first}
+            url={previousUrl}
+            text="<&nbsp;Newer&nbsp;Episodes"
+          />
         </div>
-        &nbsp;/&nbsp;
+        <div>&nbsp;/&nbsp;</div>
         <div className="nextLink">
-          <NavLink test={last} url={nextUrl} text="Older Episodes >" />
+          <NavLink
+            test={last}
+            url={nextUrl}
+            text="Older&nbsp;Episodes&nbsp;>"
+          />
           &nbsp;&nbsp;
           <NavLink test={last} url={pageCount} text=">>" />
         </div>
-      </div>
+      </PageTurners>
     </Layout>
   );
 };
 
 export default IndexPage;
+
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`;
+
+const PageTurners = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+
+  ${breakpointsDown.mobileL} {
+    font-size: 2rem;
+  }
+`;
