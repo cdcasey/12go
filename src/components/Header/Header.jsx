@@ -28,8 +28,7 @@ HeaderComponent.defaultProps = {
 export default HeaderComponent;
 
 const Header = styled.header`
-  /* background: $color-purple-dark; */
-  margin-bottom: 1.45rem;
+  margin-bottom: 5rem;
   text-align: center;
   position: relative;
 
