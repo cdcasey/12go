@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { colors } from '../../constants/colors';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 export default function({ title, path, href }) {
   return (
@@ -33,5 +34,13 @@ const SVGIcon = styled.svg`
 
   &:hover {
     fill: ${colors.orangeLight};
+  }
+
+  ${breakpointsDown.tablet} {
+    width: 24px;
+  }
+
+  ${breakpointsDown.mobileM} {
+    width: 18px;
   }
 `;
