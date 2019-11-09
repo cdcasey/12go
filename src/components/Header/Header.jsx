@@ -45,14 +45,19 @@ const Header = styled.header`
     transform: translate(-50%, -50%);
     box-shadow: 0px 0px 100px 90px ${colors.white};
     background-color: ${colors.white};
-
     z-index: 100;
+    width: 80%;
+
     &:hover {
       color: ${colors.orangeLight};
     }
 
     ${breakpointsDown.tablet} {
       box-shadow: 0px 0px 60px 70px ${colors.white};
+    }
+
+    ${breakpointsDown.mobileL} {
+      box-shadow: 0px 0px 60px 40px ${colors.white};
     }
   }
 `;
@@ -61,8 +66,16 @@ const Heading = styled.h1`
   font-family: 'Lilita One', cursive;
   font-size: 6.7vw;
   letter-spacing: 0.2rem;
+
+  ${breakpointsDown.mobileL} {
+    font-size: 3.6rem;
+  }
 `;
 
 const Subheading = styled.h2`
   font-size: 2rem;
+
+  ${breakpointsDown.tablet} {
+    font-size: 1.8rem;
+  }
 `;

@@ -1,6 +1,9 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+
+import { breakpointsDown } from '../../constants/breakpoints';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -27,11 +30,20 @@ const Image = () => (
       }
     `}
     render={data => (
-      <Img
-        fluid={data.placeholderImage.childImageSharp.fluid}
-        style={{ height: '450px' }}
-      />
+      <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />
     )}
   />
 );
 export default Image;
+
+const StyledImg = styled(Img)`
+  height: 450px;
+
+  ${breakpointsDown.tablet} {
+    height: 350px;
+  }
+
+  ${breakpointsDown.mobileL} {
+    height: 200px;
+  }
+`;
