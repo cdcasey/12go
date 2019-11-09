@@ -53,10 +53,6 @@ const Header = styled.header`
     }
 
     ${breakpointsDown.tablet} {
-      box-shadow: 0px 0px 60px 70px ${colors.white};
-    }
-
-    ${breakpointsDown.mobileL} {
       box-shadow: 0px 0px 60px 40px ${colors.white};
     }
   }
