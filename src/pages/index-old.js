@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import Layout from '../components/layout/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
+import Layout from '../components/Layout/Layout';
+import Image from '../components/Image';
+import SEO from '../components/SEO';
 
 const IndexPage = ({ data }) => {
   console.log('DATA', data);
@@ -11,18 +12,30 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="Home"
+        keywords={[
+          `agriculture`,
+          `science`,
+          `podcast`,
+          'green new deal',
+          'aoc',
+          'shutdown',
+        ]}
+      />
       <h1>Hi 12go people!!!</h1>
       {edges.map(edge => {
         const { node } = edge;
         return (
           <div key={node.id}>
             <hr />
-            <p>
-              <strong dangerouslySetInnerHTML={{ __html: node.title }} />
-            </p>
+
+            <Link to={node.path}>
+              <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
+            </Link>
+
             <p>{node.date}</p>
-            <div dangerouslySetInnerHTML={{ __html: node.content }} />
+            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
           </div>
         );
       })}
@@ -34,6 +47,10 @@ const IndexPage = ({ data }) => {
   );
 };
 
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
 export const query = graphql`
   query {
     allWordpressPost {
@@ -43,11 +60,15 @@ export const query = graphql`
           title
           excerpt
           date(formatString: "MMMM DD, YYYY")
-          author
+          author {
+            name
+          }
           path
-          tags
+          tags {
+            id
+            name
+          }
           slug
-          content
         }
       }
     }

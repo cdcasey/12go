@@ -1,0 +1,22 @@
+.post-container {
+  border: 1px solid black;
+}
+
+.post-title {
+  font-size: 4rem;
+  font-style: italic;
+}
+
+.post-content {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    float: left;
+    margin: 5px 20px 5px 0;
+  }
+}
