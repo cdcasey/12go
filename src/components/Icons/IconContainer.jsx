@@ -15,8 +15,8 @@ import { breakpointsDown } from '../../constants/breakpoints';
 
 export default () => {
   return (
-    <React.Fragment>
-      <IconContainer>
+    <IconGrid>
+      <IconContainer className="listen">
         <IconLabel>Listen Now:</IconLabel>
         <IconGroup>
           <Android />
@@ -27,7 +27,7 @@ export default () => {
         </IconGroup>
       </IconContainer>
       <IconContainer>
-        <IconLabel>Connect:</IconLabel>
+        <IconLabel className="connect">Connect:</IconLabel>
         <IconGroup>
           <Instagram />
           <Twitter />
@@ -36,13 +36,37 @@ export default () => {
           <Patreon />
         </IconGroup>
       </IconContainer>
-    </React.Fragment>
+    </IconGrid>
   );
 };
+
+const IconGrid = styled.div`
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  grid-template-areas:
+    'listen'
+    'connect';
+
+  ${breakpointsDown.tablet} {
+    grid-template-areas: 'connect listen';
+    justify-content: space-evenly;
+  }
+`;
 
 const IconContainer = styled.div`
   margin-top: 1rem;
   display: flex;
+
+  &.listen {
+    grid-area: listen;
+  }
+  &.connect {
+    grid-area: connect;
+  }
+
+  ${breakpointsDown.tablet} {
+    flex-direction: column;
+  }
 `;
 
 const IconLabel = styled.div`
@@ -50,6 +74,10 @@ const IconLabel = styled.div`
   font-size: 2.5rem;
   text-align: right;
   flex: 1;
+
+  ${breakpointsDown.tablet} {
+    text-align: left;
+  }
 `;
 
 const IconGroup = styled.div`
@@ -58,6 +86,12 @@ const IconGroup = styled.div`
   justify-content: space-evenly;
 
   ${breakpointsDown.tablet} {
-    flex: 4;
+    flex: unset;
+    display: unset;
+    justify-content: unset;
+
+    & > * {
+      margin-right: 8px;
+    }
   }
 `;
