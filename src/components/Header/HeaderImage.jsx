@@ -39,11 +39,11 @@ export default Image;
 const StyledImg = styled(Img)`
   height: 450px;
 
-  ${breakpointsDown.tablet} {
+  ${breakpointsDown.laptop} {
     height: 350px;
   }
 
-  ${breakpointsDown.mobileL} {
+  ${breakpointsDown.tablet} {
     height: 200px;
   }
 `;

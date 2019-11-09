@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { colors } from '../../constants/colors';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 const menuQuery = graphql`
   query {
@@ -120,6 +121,11 @@ export default props => <StaticQuery query={menuQuery} render={MainMenu} />;
 const StyledMenuList = styled.ul`
   display: flex;
   list-style-type: none;
+
+  ${breakpointsDown.tablet} {
+    flex-direction: column;
+    row-gap: 0.4rem;
+  }
 `;
 
 const StyledMenuItem = styled.li`
