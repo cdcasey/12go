@@ -46,7 +46,8 @@ const Footer = styled.footer.attrs(() => ({
 
   ${breakpointsDown.tablet} {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-row-gap: 16px;
     grid-template-areas:
       "tags"
       "icons"

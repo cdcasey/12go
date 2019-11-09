@@ -3,6 +3,7 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { colors } from '../../constants/colors';
+import { breakpointsDown } from '../../constants/breakpoints';
 
 const tagQuery = graphql`
   query {
@@ -57,6 +58,10 @@ const TagLabel = styled.div`
 
 const TagContainer = styled.div`
   padding: 12px;
+
+  ${breakpointsDown.tablet} {
+    padding: unset;
+  }
 `;
 
 const TagLink = styled(Link)`
