@@ -100,7 +100,7 @@ const LayoutContainer = styled.main.attrs(() => ({
   padding-top: 0;
 
   ${breakpointsDown.laptop} {
-    margin: 0 4rem;
+    margin: 0 1rem;
   }
 `;
 
