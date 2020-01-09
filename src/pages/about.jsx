@@ -48,8 +48,8 @@ export default function() {
         </figure>
         <p>
           <strong>Catherine Arjet</strong> is a One to Grow On producer.She is
-          an avid supporter of new media and its role in public
-          education.Catherine has written for a variety of publications such as{' '}
+          an avid supporter of new media and its role in public education.
+          Catherine has written for a variety of publications such as{' '}
           <i>The Odyssey</i> and her college newspaper,{' '}
           <i>The Purple and White</i>, where she was the opinions editor.In
           addition to writing, Catherine is passionate about STEM education and
