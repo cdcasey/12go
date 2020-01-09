@@ -14,6 +14,21 @@ export default function() {
     <PageLayout>
       <SEO title="About" />
       <PostTitle>About</PostTitle>
+      <PostContent>
+        <p>
+          <i>One to Grow On</i> is a podcast where we dig into questions about
+          agriculture and try to understand how food production impacts us and
+          our world. Each episode, hosts Hallie and Chris pick an area of
+          agriculture or food production to discuss. Listen for plant facts, dad
+          jokes, and the stories behind your food.
+        </p>
+        <p>
+          <em>One to Grow On</em> is an older kid-friendly podcast that is safe
+          and appropriate for listeners of all ages. There are a few clearly
+          marked episodes that contain content that may not be suitable for all
+          ages.
+        </p>
+      </PostContent>
       <SectionTitle>Meet the Team</SectionTitle>
       <PostContent>
         <figure>
@@ -23,13 +38,13 @@ export default function() {
           />
         </figure>
         <p>
-          <strong>Hallie Casey</strong> is a One to Grow On host and producer.
-          She is a native Texan and passionate about agricultural sustainability
-          and communication. Her love of science communication began at 12 when
-          she co-founded Discover Green, a statewide non-profit focused on
-          promoting youth leadership in environmental activism. She continued to
-          work in science communication focused on agriculture and plant
-          science, primarily through work in online video. Hallie got a
+          <strong>Hallie Casey</strong> is a <i>One to Grow On</i> host and
+          producer. She is a native Texan and passionate about agricultural
+          sustainability and communication. Her love of science communication
+          began at 12 when she co-founded Discover Green, a statewide non-profit
+          focused on promoting youth leadership in environmental activism. She
+          continued to work in science communication focused on agriculture and
+          plant science, primarily through work in online video. Hallie got a
           bachelor’s in agribusiness from Texas State University and a master’s
           in International Agricultural Development at the University of
           California, Davis. She now lives in New Mexico where she works as the
@@ -47,9 +62,9 @@ export default function() {
           />
         </figure>
         <p>
-          <strong>Catherine Arjet</strong> is a One to Grow On producer.She is
-          an avid supporter of new media and its role in public education.
-          Catherine has written for a variety of publications such as{' '}
+          <strong>Catherine Arjet</strong> is a <i>One to Grow On</i> producer.
+          She is an avid supporter of new media and its role in public
+          education. Catherine has written for a variety of publications such as{' '}
           <i>The Odyssey</i> and her college newspaper,{' '}
           <i>The Purple and White</i>, where she was the opinions editor.In
           addition to writing, Catherine is passionate about STEM education and
@@ -70,13 +85,13 @@ export default function() {
           />
         </figure>
         <p>
-          <strong>Chris Casey</strong> is a host of One to Grow On. A long-time
-          lover of podcasts, he is thrilled to be learning about agriculture
-          from his daughter along with the audience. Chris is a computer
-          software engineer and semi-professional stage actor. Previously, he
-          hosted the podcast <i>eBook Ninjas</i>. Chris lives in his hometown,
-          Austin, Texas.When not podcasting, acting, or coding, Chris enjoys
-          perfecting his smoked brisket recipe.
+          <strong>Chris Casey</strong> is a host of <i>One to Grow On</i>. A
+          long-time lover of podcasts, he is thrilled to be learning about
+          agriculture from his daughter along with the audience. Chris is a
+          computer software engineer and semi-professional stage actor.
+          Previously, he hosted the podcast <i>eBook Ninjas</i>. Chris lives in
+          his hometown, Austin, Texas.When not podcasting, acting, or coding,
+          Chris enjoys perfecting his smoked brisket recipe.
         </p>
       </PostContent>
       <Clear />
@@ -125,7 +140,7 @@ export default function() {
           case, on the internet.After recording, editing, re - recording,
           getting feedback, and re - recording(again) we were able to launch One
           to Grow On.This is a podcast almost a year in the making and we hope
-          you have as much fun listening to it as we had making it! <br />
+          you have as much fun listening to it as we had making it!
         </p>
       </PostContent>
     </PageLayout>
