@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Layout from './Layout';
 import Sidebar from '../Sidebar/Sidebar';
@@ -14,9 +14,7 @@ export default ({ children }) => (
   </Layout>
 );
 
-const PageLayout = styled.div.attrs(() => ({
-  className: 'page-layout',
-}))`
+const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

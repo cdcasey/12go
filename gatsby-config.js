@@ -54,7 +54,7 @@ const config = {
       },
     },
     'gatsby-plugin-twitter',
-    'gatsby-plugin-styled-components',
+    'gatsby-plugin-emotion',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

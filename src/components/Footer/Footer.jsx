@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
 import { colors } from '../../constants/colors';
@@ -33,9 +33,7 @@ export default props => {
   );
 };
 
-const Footer = styled.footer.attrs(() => ({
-  className: 'footer1',
-}))`
+const Footer = styled.footer`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'tags image icons';
@@ -80,9 +78,7 @@ const FooterIconsArea = styled.div`
 //   }
 // `;
 
-const MyFooterImage = styled(FooterImage).attrs(() => ({
-  className: 'footer__logo',
-}))`
+const MyFooterImage = styled(FooterImage)`
   width: 75%;
   margin: auto;
 

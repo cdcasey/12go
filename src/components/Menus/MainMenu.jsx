@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { colors } from '../../constants/colors';
@@ -143,10 +143,7 @@ const StyledMenuItem = styled.li`
   font-weight: bold;
 `;
 
-const MenuLink = styled(Link).attrs(() => ({
-  activeStyle: activeStyle,
-  isPartiallyActive: true,
-}))`
+const MenuLink = styled(Link)`
   &,
   &:link,
   &:visited {

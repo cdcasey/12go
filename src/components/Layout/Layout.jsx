@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import SEO from '../SEO';
 import Header from '../Header/Header';
@@ -91,9 +91,7 @@ export default Layout;
 // }
 // `}
 
-const LayoutContainer = styled.main.attrs(() => ({
-  className: 'layout-container',
-}))`
+const LayoutContainer = styled.main`
   margin: 0 auto;
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
@@ -104,9 +102,7 @@ const LayoutContainer = styled.main.attrs(() => ({
   }
 `;
 
-const MainMenuContainer = styled.div.attrs(() => ({
-  className: 'mainmenu-container',
-}))`
+const MainMenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1rem;

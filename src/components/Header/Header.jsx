@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import HeaderImage from './HeaderImage';
 import { colors } from '../../constants/colors';

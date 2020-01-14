@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import SidebarImage from './SidebarImage';
 import { breakpointsDown } from '../../constants/breakpoints';
@@ -37,9 +37,7 @@ export default () => {
   );
 };
 
-const Sidebar = styled.div.attrs(() => ({
-  className: 'sidebar',
-}))`
+const Sidebar = styled.div`
   /* margin-top: 8rem; */
   font-size: 1.7rem;
   justify-self: self-end;
@@ -57,15 +55,11 @@ const Sidebar = styled.div.attrs(() => ({
   }
 `;
 
-const PatronList = styled.ul.attrs(() => ({
-  className: 'patron-list',
-}))`
+const PatronList = styled.ul`
   list-style-type: none;
 `;
 
-const StyledSidebarImage = styled(SidebarImage).attrs(() => ({
-  className: 'sidebar-image',
-}))`
+const StyledSidebarImage = styled(SidebarImage)`
   width: 200px;
 `;
 

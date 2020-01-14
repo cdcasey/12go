@@ -5,11 +5,14 @@
   "version": "0.1.0",
   "author": "Chris Casey @cdcasey",
   "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.21",
     "gatsby-cli": "^2.8.26",
     "gatsby-image": "^2.2.38",
     "gatsby-paginate": "^1.1.1",
+    "gatsby-plugin-emotion": "^4.1.21",
     "gatsby-plugin-google-analytics": "^2.1.32",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-offline": "^3.0.31",
@@ -17,7 +20,6 @@
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sass": "^2.1.27",
     "gatsby-plugin-sharp": "^2.3.13",
-    "gatsby-plugin-styled-components": "^3.1.17",
     "gatsby-plugin-twitter": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-wordpress": "^3.1.57",
@@ -26,8 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "styled-components": "^5.0.0"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "husky": "^4.0.7",

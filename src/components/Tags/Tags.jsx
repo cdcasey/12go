@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import { colors } from '../../constants/colors';
 import { breakpointsDown } from '../../constants/breakpoints';

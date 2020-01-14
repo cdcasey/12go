@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
@@ -241,9 +241,7 @@ export default function() {
   );
 }
 
-const Gallery = styled.ul.attrs(() => ({
-  className: 'ul-gallery',
-}))`
+const Gallery = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -260,16 +258,12 @@ const Gallery = styled.ul.attrs(() => ({
   }
 `;
 
-const Figure = styled.figure.attrs(() => ({
-  className: 'gallery-figure',
-}))`
+const Figure = styled.figure`
   position: relative;
   height: 100%;
 `;
 
-const Caption = styled.figcaption.attrs(() => ({
-  className: 'gallery-caption',
-}))`
+const Caption = styled.figcaption`
   padding: 10px 40px 10px 9px;
   color: ${colors.white};
   font-style: italic;
