@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { colors } from '../../constants/colors';
@@ -161,6 +162,7 @@ const ExternalLink = styled(OutboundLink)`
   }
 `;
 
-const activeStyle = {
-  color: colors.orangeLight,
-};
+// NEXT: FIX ACTIVE MENU COLOR
+const activeStyle = css`
+  color: ${colors.orangeLight};
+`;
