@@ -60,8 +60,8 @@ export default function() {
         <p>
           Come interact with us and your fellow podfriends! You can chat with us
           in real time on our{' '}
-          <a href="https://discord.gg/zYtQqW">Discord server</a>, or come have a
-          conversation on our{' '}
+          <a href="https://discordapp.com/invite/YcCCNJv">Discord server</a>, or
+          come have a conversation on our{' '}
           <a href="https://www.facebook.com/groups/2433752683575058/">
             Facebook group
           </a>{' '}
