@@ -14,124 +14,46 @@ export default function() {
       <SectionTitle>What We Do</SectionTitle>
       <PostContent>
         <p>
-          <em>One to Grow On</em>&nbsp;is&nbsp;a podcast where we dig into
-          questions about agriculture and try to understand how food production
-          impacts us and our world.
+          <em>One to Grow On</em> is a podcast where we dig into questions about
+          agriculture and try to understand how food production impacts us and
+          our world. Each episode, hosts Hallie and Chris pick an area of
+          agriculture or food production to discuss. Listen for plant facts, dad
+          jokes, and the stories behind your food.
         </p>
 
         <p>
-          This podcast investigates diverse perspectives, concerns, and
-          intersections in agriculture by illustrating the interconnectedness of
-          food systems and thereby helping consumers put their in-store
-          decisions in a greater context. Increasingly, consumers want more
-          transparency from their food systems. However, without a basic
-          vocabulary, transparency is difficult to interpret. This podcast aims
-          to fill in a fundamental background of larger agricultural concepts,
-          without relying on complex technical information. We are also
-          fostering basic agricultural literacy to help listeners have more
-          in-depth discussions about food systems. &nbsp;
+          <em>One to Grow On</em> is an older kid-friendly podcast that is safe
+          and appropriate for listeners of all ages. There are a few clearly
+          marked episodes that contain content that may not be suitable for all
+          ages
         </p>
 
         <p>
-          <em>One to Grow On</em> also examines different perspectives and
-          stakeholders throughout food systems. By exploring viewpoints and
-          relationships throughout the agricultural industry, this show
-          illustrates the global nature of food and helps explain consequences,
-          challenges, and the future potential of agriculture to consumers.
-          Using these lenses, <em>One to Grow On</em> digs into the questions at
-          the forefront of listeners’ minds. We hope to create a more informed
-          consumer who is aware that there are no easy answers or singular
-          truths in agriculture.
-        </p>
-
-        <p>
-          <em>One&nbsp;to&nbsp;Grow&nbsp;On&nbsp;</em>is an older kid-friendly
-          podcast that is safe and appropriate for listeners of all ages. There
-          are a few clearly marked episodes that contain content that may not be
-          suitable for all ages
+          Our episodes are published every other Tuesday and run 20-40 minutes.
+          You don’t need to listen in order; scroll through episode titles or
+          explore episodes by subject matter on our website.
         </p>
       </PostContent>
-      <SectionTitle>Why We Do It </SectionTitle>
+
+      <SectionTitle>Trailer</SectionTitle>
       <PostContent>
-        <p>
-          Throughout her five years in the industry, Hallie got used to getting
-          questions about agriculture at parties or family events that were just
-          agriculture 101. She turned to her best friend and dad, exasperated by
-          the lack of any education (and absence of transparency) regarding
-          agriculture. Together, they were driven to create media that seeks to
-          bring about a higher level of agricultural literacy and food
-          transparency.
-        </p>
-
-        <p>
-          The food and fiber system affects everyone, yet there is little
-          information about agriculture that is accessible to the average
-          person. With <em>One to Grow On</em>, we aim to educate, to entertain
-          and to communicate often unseen impacts of agriculture.
-        </p>
-      </PostContent>
-      <SectionTitle>What Our Fans Say</SectionTitle>
-      <PostContent>
-        <p>
-          <em>
-            "These guys are so cute and fun to listen to! Hallie's joy for
-            agriculture really comes through making it an engaging and
-            fulfilling listen!"
-          </em>
-        </p>
-
-        <p>
-          <em>
-            "It's like listening to a friend gush about what they're interested
-            in."
-          </em>
-        </p>
-
-        <p>
-          <em>
-            "As an 'Ag nerd', I'm really enjoying this show! Great information
-            for anyone curious about the food system."
-          </em>
-        </p>
-
-        <p>
-          <em>
-            "The conversation style and production value are really top notch,
-            and I appreciate learning about all the science behind these
-            important topics! I'm excited to keep listening."
-          </em>
-        </p>
-
-        <p>
-          <em>"If you eat food, listen to this podcast."</em>
-        </p>
-      </PostContent>
-      <SectionTitle>What the Critics Say </SectionTitle>
-      <PostContent>
-        <p>
-          One to Grow on was recently reviewed by Podcast Manic, you can{' '}
-          <a href="http://podcastmaniac.com/podcast-review-one-to-grow-on/">
-            check it out here
-          </a>
-          . We particularly liked this chunk:
-        </p>
-
-        <p>
-          <em>
-            "One to Grow On is fun and amusing. It’s also full of useful
-            information that explains the world around us. Most importantly, it
-            exposes me to concepts that I wouldn’t necessarily seek or learn
-            about on my own (...) Check your preconceived notions at the door,
-            give it a listen."
-          </em>
-        </p>
+        <iframe
+          title="promo"
+          src="https://player.blubrry.com/?media_url=https%3A%2F%2Fdts.podtrac.com%2Fredirect.mp3%2Fmedia.blubrry.com%2Fonetogrowon%2Fp%2Fcontent.blubrry.com%2Fonetogrowon%2Fpromo.mp3&amp;podcast_link=https%3A%2F%2F12go.onetogrowonpod.com%2Fcoming-soon%2F#darkOrLight-light&shownotes-ffffff&shownotesBackground-444444&download-ffffff&downloadBackground-4e2668&subscribe-ffffff&subscribeBackground-f68722&share-ffffff&shareBackground-1976d2"
+          scrolling="no"
+          width="100%"
+          height="138px"
+          frameborder="0"
+          id="blubrryplayer-40"
+          class="blubrryplayer"
+        ></iframe>
       </PostContent>
 
       <SectionTitle>Who We Are </SectionTitle>
       <PostContent>
         <p>
-          <strong>Hallie Casey</strong>&nbsp;is a <em>One to Grow On</em> host
-          and producer. She is a native Texan and passionate about agricultural
+          <strong>Hallie Casey</strong> is a <em>One to Grow On</em> host and
+          producer. She is a native Texan and passionate about agricultural
           sustainability and communication. Her love of science communication
           began at 12 when she co-founded Discover Green, a statewide non-profit
           focused on promoting youth leadership in environmental activism. She
@@ -144,10 +66,10 @@ export default function() {
         </p>
 
         <p>
-          <strong>Catherine Arjet</strong>&nbsp;is a <em>One to Grow On</em>{' '}
+          <strong>Catherine Arjet</strong> is a <em>One to Grow On</em>{' '}
           producer. She is an avid supporter of new media and its role in public
-          education. Catherine has written for a variety of publications such
-          as&nbsp;<em>The Odysse</em>y and her college newspaper,&nbsp;
+          education. Catherine has written for a variety of publications such as{' '}
+          <em>The Odyssey</em> and her college newspaper,{' '}
           <em>The Purple and White</em>, where she was the opinions editor. In
           addition to writing, Catherine is passionate about STEM education and
           volunteered with youth environmental service organization Discover
@@ -155,33 +77,54 @@ export default function() {
           Mississippi where she double-majored in Global Business and English.
           She is currently pursuing a masters of Global Policy Studies at the
           University of Texas at Austin and works as a legal writer. In her
-          spare time, Catherine enjoys bad crime shows and good coffee
+          spare time, Catherine enjoys bad crime shows and good coffee.{' '}
         </p>
 
         <p>
-          <strong>Chris Casey</strong>&nbsp;is a host of{' '}
-          <em>One to Grow On.</em> A long-time lover of podcasts, he is thrilled
-          to be learning about agriculture from his daughter along with the
-          audience. Chris is a computer software engineer and semi-professional
-          stage actor. Previously, he hosted the podcast&nbsp;
-          <em>eBook Ninjas</em>. Chris lives in his hometown, Austin, Texas.
-          When not podcasting, acting, or coding, Chris enjoys perfecting his
-          smoked brisket recipe.
+          <strong>Chris Casey</strong> is a host of <em>One to Grow On</em>. A
+          long-time lover of podcasts, he is thrilled to be learning about
+          agriculture from his daughter along with the audience. Chris is a
+          computer software engineer and semi-professional stage actor.
+          Previously, he hosted the podcast <em>eBook Ninjas</em>. Chris lives
+          in his hometown, Austin, Texas. When not podcasting, acting, or
+          coding, Chris enjoys perfecting his smoked brisket recipe.
+        </p>
+
+        <p>
+          Show art is by{' '}
+          <a href="http://www.marsupialpudding.com/">Ashe Walker</a>.
+          <br />
+          Music is “Something Elated” by{' '}
+          <a href="https://brokeforfree.bandcamp.com/">Broke For Free</a>{' '}
+          licensed under a Creative Commons Attribution 3.0 license.
+          <br />
+          Superfoods music is written and performed by{' '}
+          <a href="https://www.kckatalbas.com/">KC Katalbas</a>.
         </p>
       </PostContent>
 
       <SectionTitle>Where to Find Us</SectionTitle>
       <PostContent>
         <p>
-          <em>One&nbsp;to&nbsp;Grow&nbsp;On&nbsp;</em>is released every other
-          Tuesday on all podcasting platforms. If you're looking for us between
-          episodes, check out @onetogrowonpod on instagram, twitter, and
-          facebook. Media and business communications can be directed to
-          onetogrowonmedia@gmail.com.
+          <em>One to Grow On</em> is released every other Tuesday on all
+          podcasting platforms. If you're looking for us between episodes, check
+          out @onetogrowonpod on{' '}
+          <a href="http://www.instagram.com/onetogrowonpod">Instagram</a>,{' '}
+          <a href="http://www.twitter.com/onetogrowonpod">Twitter</a>, and{' '}
+          <a href="https://www.facebook.com/onetogrowonpod">Facebook</a>.
+        </p>
+
+        <p>
+          Questions, comments, interview requests, or sponsorship inquiries can
+          be directed to{' '}
+          <a href="mailto:onetogrowonmedia@gmail.com">
+            onetogrowonmedia@gmail.com
+          </a>
+          .
         </p>
       </PostContent>
-      <SectionTitle>Gallery</SectionTitle>
 
+      <SectionTitle>Gallery</SectionTitle>
       <Gallery>
         <li>
           <Figure>
@@ -190,8 +133,8 @@ export default function() {
                 src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
                 alt="woman standing and smiling in front of leafy plants"
               />
-              <Caption>Catherine Arjet</Caption>
             </a>
+            <Caption>Catherine Arjet</Caption>
           </Figure>
         </li>
         <li>
@@ -201,8 +144,8 @@ export default function() {
                 src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg"
                 alt="brunette girl half smiles in front of trees"
               />
-              <Caption>Hallie Casey</Caption>
             </a>
+            <Caption>Hallie Casey</Caption>
           </Figure>
         </li>
         <li>
@@ -212,8 +155,19 @@ export default function() {
                 src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg"
                 alt="Man in sunglasses holding a cigar and a drink and leaning out of a window"
               />
-              <Caption>Chris Casey</Caption>
             </a>
+            <Caption>Chris Casey</Caption>
+          </Figure>
+        </li>
+        <li>
+          <Figure>
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/03/IMG_4016.jpg">
+              <img
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/03/IMG_4016.jpg"
+                alt="A man and two women smiling at the camera"
+              />
+            </a>
+            <Caption>Catherine Arjet, Chris Casey, Hallie Casey</Caption>
           </Figure>
         </li>
         <li>
@@ -228,7 +182,7 @@ export default function() {
         </li>
         <li>
           <Figure>
-            <a href="http://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
               <img
                 src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
                 alt="The words One To Grow On with fruits and vegetables and a microphone"
