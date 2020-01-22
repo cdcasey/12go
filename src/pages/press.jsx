@@ -37,11 +37,13 @@ export default function() {
 
       <iframe
         title="promo"
-        src="https://player.blubrry.com/id/38233218/"
+        src="https://player.blubrry.com/?media_url=https%3A%2F%2Fdts.podtrac.com%2Fredirect.mp3%2Fmedia.blubrry.com%2Fonetogrowon%2Fp%2Fcontent.blubrry.com%2Fonetogrowon%2Fpromo.mp3&amp;podcast_link=https%3A%2F%2F12go.onetogrowonpod.com%2Fcoming-soon%2F#darkOrLight-light&shownotes-ffffff&shownotesBackground-444444&download-ffffff&downloadBackground-4e2668&subscribe-ffffff&subscribeBackground-f68722&share-ffffff&shareBackground-1976d2"
         scrolling="no"
         width="100%"
         height="138px"
         frameborder="0"
+        id="blubrryplayer-40"
+        class="blubrryplayer"
       ></iframe>
 
       <SectionTitle>Who We Are </SectionTitle>
