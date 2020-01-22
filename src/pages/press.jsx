@@ -35,16 +35,19 @@ export default function() {
         </p>
       </PostContent>
 
-      <iframe
-        title="promo"
-        src="https://player.blubrry.com/?media_url=https%3A%2F%2Fdts.podtrac.com%2Fredirect.mp3%2Fmedia.blubrry.com%2Fonetogrowon%2Fp%2Fcontent.blubrry.com%2Fonetogrowon%2Fpromo.mp3&amp;podcast_link=https%3A%2F%2F12go.onetogrowonpod.com%2Fcoming-soon%2F#darkOrLight-light&shownotes-ffffff&shownotesBackground-444444&download-ffffff&downloadBackground-4e2668&subscribe-ffffff&subscribeBackground-f68722&share-ffffff&shareBackground-1976d2"
-        scrolling="no"
-        width="100%"
-        height="138px"
-        frameborder="0"
-        id="blubrryplayer-40"
-        class="blubrryplayer"
-      ></iframe>
+      <SectionTitle>Trailer</SectionTitle>
+      <PostContent>
+        <iframe
+          title="promo"
+          src="https://player.blubrry.com/?media_url=https%3A%2F%2Fdts.podtrac.com%2Fredirect.mp3%2Fmedia.blubrry.com%2Fonetogrowon%2Fp%2Fcontent.blubrry.com%2Fonetogrowon%2Fpromo.mp3&amp;podcast_link=https%3A%2F%2F12go.onetogrowonpod.com%2Fcoming-soon%2F#darkOrLight-light&shownotes-ffffff&shownotesBackground-444444&download-ffffff&downloadBackground-4e2668&subscribe-ffffff&subscribeBackground-f68722&share-ffffff&shareBackground-1976d2"
+          scrolling="no"
+          width="100%"
+          height="138px"
+          frameborder="0"
+          id="blubrryplayer-40"
+          class="blubrryplayer"
+        ></iframe>
+      </PostContent>
 
       <SectionTitle>Who We Are </SectionTitle>
       <PostContent>
@@ -85,6 +88,18 @@ export default function() {
           Previously, he hosted the podcast <em>eBook Ninjas</em>. Chris lives
           in his hometown, Austin, Texas. When not podcasting, acting, or
           coding, Chris enjoys perfecting his smoked brisket recipe.
+        </p>
+
+        <p>
+          Show art is by{' '}
+          <a href="http://www.marsupialpudding.com/">Ashe Walker</a>.
+          <br />
+          Music is “Something Elated” by{' '}
+          <a href="https://brokeforfree.bandcamp.com/">Broke For Free</a>{' '}
+          licensed under a Creative Commons Attribution 3.0 license.
+          <br />
+          Superfoods music is written and performed by{' '}
+          <a href="https://www.kckatalbas.com/">KC Katalbas</a>.
         </p>
       </PostContent>
 
