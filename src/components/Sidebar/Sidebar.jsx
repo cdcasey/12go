@@ -26,6 +26,7 @@ export default () => {
         <li>- Vikram</li>
         <li>- Mama Casey</li>
         <li>- Shianne</li>
+        <li>- Patrick</li>
         <li>- Christopher</li>
       </PatronList>
       <Divider />

@@ -102,7 +102,7 @@ function MainMenuItems() {
           Support
         </ExternalLink>
       </StyledMenuItem>
-      <StyledMenuItem>
+      {/* <StyledMenuItem>
         <ExternalLink
           href="https://iteratehq.com/one-to-grow-on-podcast/5e0f6e39756c7500013a92b3"
           target="_blank"
@@ -110,7 +110,7 @@ function MainMenuItems() {
         >
           Listener Survey
         </ExternalLink>
-      </StyledMenuItem>
+      </StyledMenuItem> */}
     </React.Fragment>
   );
 }
