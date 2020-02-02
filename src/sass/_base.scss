@@ -30,15 +30,15 @@ html {
     font-size: 56.25%;
   }
 
-  @include respond(tab-port) {
-    /* 8px on phones & portrait-based tablets */
-    font-size: 50%;
-  }
+  // @include respond(tab-port) {
+  //   /* 8px on phones & portrait-based tablets */
+  //   font-size: 50%;
+  // }
 
-  @include respond(phone) {
-    /* 8px on phones & portrait-based tablets */
-    font-size: 50%;
-  }
+  // @include respond(phone) {
+  //   /* 8px on phones & portrait-based tablets */
+  //   font-size: 50%;
+  // }
 
   @include respond(big-desk) {
     /* 12px on large desktops */
