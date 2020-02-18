@@ -121,5 +121,5 @@ const SeriesTitle = styled.h3`
   font-size: 2rem;
   font-weight: normal;
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.3rem;
 `;
