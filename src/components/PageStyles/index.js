@@ -6,7 +6,7 @@ import { colors } from '../../constants/colors';
 export const PostContent = styled.div.attrs(props => ({
   className: 'post-content',
 }))`
-  margin-top: 2rem;
+  margin-top: 0.3rem;
   font-size: 1.7rem;
 
   p {
@@ -33,14 +33,13 @@ export const SectionTitle = styled.h2.attrs(props => ({
 }))`
   margin-top: 4rem;
   font-size: 3rem;
-  font-style: italic;
+  font-weight: normal;
 `;
 
 export const PostTitle = styled.h1.attrs(props => ({
   className: 'post-title',
 }))`
   font-size: 4rem;
-  font-style: italic;
 `;
 
 export const Clear = styled.div`
