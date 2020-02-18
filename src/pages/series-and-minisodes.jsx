@@ -38,6 +38,19 @@ export default function() {
             health costs, benefits, and trade-offs of growing organic.
           </p>
         </SeriesItem>
+        <SeriesItem>
+          <SeriesTitle>
+            <SiteLink to="/tag/water/">Water (January 2019)</SiteLink>
+          </SeriesTitle>
+          <p>
+            In this two-part series, our hosts jump into the history and
+            present-day challenges of water. In episode one, Hallie and Chris
+            talk about irrigation development throughout history and around the
+            globe. In the second episode, they learn about how much water is
+            required to produce a plate of food, and talk through some of the
+            challenges facing the agriculture industry today.
+          </p>
+        </SeriesItem>
       </SeriesSection>
       <SectionTitle>Special Episodes</SectionTitle>
       <PostContent>
