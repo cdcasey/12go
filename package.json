@@ -6,13 +6,13 @@
   "author": "Chris Casey @cdcasey",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
-    "gatsby": "^2.19.11",
-    "gatsby-cli": "^2.8.29",
-    "gatsby-image": "^2.2.40",
+    "gatsby": "^2.19.18",
+    "gatsby-cli": "^2.8.30",
+    "gatsby-image": "^2.2.41",
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-google-analytics": "^2.1.35",
     "gatsby-plugin-manifest": "^2.2.41",
-    "gatsby-plugin-offline": "^3.0.34",
+    "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sass": "^2.1.28",
@@ -20,17 +20,17 @@
     "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-plugin-twitter": "^2.1.19",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-source-wordpress": "^3.1.60",
+    "gatsby-source-wordpress": "^3.1.62",
     "gatsby-transformer-sharp": "^2.3.14",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "husky": "^4.2.1",
+    "husky": "^4.2.3",
     "prettier": "^1.19.1"
   },
   "husky": {
