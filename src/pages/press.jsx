@@ -134,7 +134,11 @@ export default function() {
                 alt="woman standing and smiling in front of leafy plants"
               />
             </a>
-            <Caption>Catherine Arjet</Caption>
+            <Caption>
+              Catherine Arjet
+              <br />
+              Headshot
+            </Caption>
           </Figure>
         </GalleryItem>
         <GalleryItem>
@@ -145,7 +149,11 @@ export default function() {
                 alt="brunette girl half smiles in front of trees"
               />
             </a>
-            <Caption>Hallie Casey</Caption>
+            <Caption>
+              Hallie Casey
+              <br />
+              Headshot
+            </Caption>
           </Figure>
         </GalleryItem>
         <GalleryItem>
@@ -156,7 +164,11 @@ export default function() {
                 alt="Man in sunglasses holding a cigar and a drink and leaning out of a window"
               />
             </a>
-            <Caption>Chris Casey</Caption>
+            <Caption>
+              Chris Casey
+              <br />
+              Headshot
+            </Caption>
           </Figure>
         </GalleryItem>
         <GalleryItem>
@@ -178,6 +190,7 @@ export default function() {
                 alt="Fruits and vegetables against a white background"
               />
             </a>
+            <Caption>One to Grow On podcast art</Caption>
           </Figure>
         </GalleryItem>
         <GalleryItem>
@@ -188,6 +201,7 @@ export default function() {
                 alt="The words One To Grow On with fruits and vegetables and a microphone"
               />
             </a>
+            <Caption>One to Grow On banner art</Caption>
           </Figure>
         </GalleryItem>
       </Gallery>
@@ -229,19 +243,14 @@ const Caption = styled.figcaption.attrs(() => ({
 }))`
   padding: 10px 40px 10px 9px;
   color: ${colors.white};
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   position: absolute;
   width: 100%;
   /* left: 50%; */
   /* top: 90%; */
   bottom: 4px;
   /* transform: translate(-50%, -50%); */
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.3) 70%,
-    transparent
-  );
+  background-color: ${colors.greenMedium}bb;
 `;
