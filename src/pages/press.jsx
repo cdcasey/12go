@@ -126,7 +126,7 @@ export default function() {
 
       <SectionTitle>Gallery</SectionTitle>
       <Gallery>
-        <li>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
               <img
@@ -136,8 +136,8 @@ export default function() {
             </a>
             <Caption>Catherine Arjet</Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg">
               <img
@@ -147,8 +147,8 @@ export default function() {
             </a>
             <Caption>Hallie Casey</Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg">
               <img
@@ -158,8 +158,8 @@ export default function() {
             </a>
             <Caption>Chris Casey</Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/03/IMG_4016.jpg">
               <img
@@ -169,8 +169,8 @@ export default function() {
             </a>
             <Caption>Catherine Arjet, Chris Casey, Hallie Casey</Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
               <img
@@ -179,8 +179,8 @@ export default function() {
               />
             </a>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
               <img
@@ -189,7 +189,7 @@ export default function() {
               />
             </a>
           </Figure>
-        </li>
+        </GalleryItem>
       </Gallery>
     </PageLayout>
   );
@@ -202,10 +202,13 @@ const Gallery = styled.ul.attrs(() => ({
   flex-wrap: wrap;
   justify-content: space-between;
   list-style-type: none;
+`;
 
-  li {
-    width: calc((100% - 32px) / 2);
-  }
+const GalleryItem = styled.li.attrs(() => ({
+  className: 'li-gallery',
+}))`
+  width: calc((100% - 35px) / 3);
+  margin-bottom: 2rem;
 
   img {
     width: 100%;
