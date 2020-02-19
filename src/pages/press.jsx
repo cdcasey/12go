@@ -126,7 +126,7 @@ export default function() {
 
       <SectionTitle>Gallery</SectionTitle>
       <Gallery>
-        <li>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
               <img
@@ -134,10 +134,14 @@ export default function() {
                 alt="woman standing and smiling in front of leafy plants"
               />
             </a>
-            <Caption>Catherine Arjet</Caption>
+            <Caption>
+              Catherine Arjet
+              <br />
+              Headshot
+            </Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg">
               <img
@@ -145,10 +149,14 @@ export default function() {
                 alt="brunette girl half smiles in front of trees"
               />
             </a>
-            <Caption>Hallie Casey</Caption>
+            <Caption>
+              Hallie Casey
+              <br />
+              Headshot
+            </Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc.jpg">
               <img
@@ -156,10 +164,14 @@ export default function() {
                 alt="Man in sunglasses holding a cigar and a drink and leaning out of a window"
               />
             </a>
-            <Caption>Chris Casey</Caption>
+            <Caption>
+              Chris Casey
+              <br />
+              Headshot
+            </Caption>
           </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/03/IMG_4016.jpg">
               <img
@@ -169,18 +181,8 @@ export default function() {
             </a>
             <Caption>Catherine Arjet, Chris Casey, Hallie Casey</Caption>
           </Figure>
-        </li>
-        <li>
-          <Figure>
-            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
-              <img
-                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
-                alt="Fruits and vegetables against a white background"
-              />
-            </a>
-          </Figure>
-        </li>
-        <li>
+        </GalleryItem>
+        <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
               <img
@@ -188,8 +190,20 @@ export default function() {
                 alt="The words One To Grow On with fruits and vegetables and a microphone"
               />
             </a>
+            <Caption>One to Grow On podcast art</Caption>
           </Figure>
-        </li>
+        </GalleryItem>
+        <GalleryItem>
+          <Figure>
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
+              <img
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
+                alt="Fruits and vegetables against a white background"
+              />
+            </a>
+            <Caption>One to Grow On banner art</Caption>
+          </Figure>
+        </GalleryItem>
       </Gallery>
     </PageLayout>
   );
@@ -202,10 +216,13 @@ const Gallery = styled.ul.attrs(() => ({
   flex-wrap: wrap;
   justify-content: space-between;
   list-style-type: none;
+`;
 
-  li {
-    width: calc((100% - 32px) / 2);
-  }
+const GalleryItem = styled.li.attrs(() => ({
+  className: 'li-gallery',
+}))`
+  width: calc((100% - 35px) / 3);
+  margin-bottom: 2rem;
 
   img {
     width: 100%;
@@ -226,19 +243,14 @@ const Caption = styled.figcaption.attrs(() => ({
 }))`
   padding: 10px 40px 10px 9px;
   color: ${colors.white};
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   position: absolute;
   width: 100%;
   /* left: 50%; */
   /* top: 90%; */
   bottom: 4px;
   /* transform: translate(-50%, -50%); */
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.3) 70%,
-    transparent
-  );
+  background-color: ${colors.greenMedium}bb;
 `;
