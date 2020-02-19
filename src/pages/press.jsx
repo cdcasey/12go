@@ -184,10 +184,10 @@ export default function() {
         </GalleryItem>
         <GalleryItem>
           <Figure>
-            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
               <img
-                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
-                alt="Fruits and vegetables against a white background"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
+                alt="The words One To Grow On with fruits and vegetables and a microphone"
               />
             </a>
             <Caption>One to Grow On podcast art</Caption>
@@ -195,10 +195,10 @@ export default function() {
         </GalleryItem>
         <GalleryItem>
           <Figure>
-            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png">
               <img
-                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/OTGO_LogoFinal-1-1024x1024.png"
-                alt="The words One To Grow On with fruits and vegetables and a microphone"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/04/12GO_PatreonHeader_background-1-1024x256.png"
+                alt="Fruits and vegetables against a white background"
               />
             </a>
             <Caption>One to Grow On banner art</Caption>
