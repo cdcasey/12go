@@ -2,4 +2,6 @@ One to Grow On is a podcast where we dig into questions about agriculture and tr
 
 One to Grow On is an older kid-friendly podcast that is safe and appropriate for listeners of all ages. There are a few clearly marked episodes that contain content that may not be suitable for all ages.
 
+https://www.onetogrowonpod.com
+
 The One to Grow On website is built with Gatsby on top of a Wordpress backend.
