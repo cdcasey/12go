@@ -40,7 +40,7 @@ export default function() {
         </SeriesItem>
         <SeriesItem>
           <SeriesTitle>
-            <SiteLink to="/tag/water/">Water (January 2019)</SiteLink>
+            <SiteLink to="/tag/water/">Water (January 2020)</SiteLink>
           </SeriesTitle>
           <p>
             In this two-part series, our hosts jump into the history and
