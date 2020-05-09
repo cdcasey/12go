@@ -9,7 +9,7 @@ import {
   Clear,
 } from '../components/PageStyles';
 
-export default function() {
+export default function () {
   return (
     <PageLayout>
       <SEO title="About" />
@@ -44,13 +44,12 @@ export default function() {
           began at 12 when she co-founded Discover Green, a statewide non-profit
           focused on promoting youth leadership in environmental activism. She
           continued to work in science communication focused on agriculture and
-          plant science, primarily through work in online video. Hallie got a
-          bachelor’s in agribusiness from Texas State University and a master’s
-          in International Agricultural Development at the University of
-          California, Davis. She now lives in New Mexico where she works as the
-          Horticulture Extension Manager at Navajo Technical University. While
-          not working, she enjoys gardening, swing dancing, and culinary
-          experiments.
+          plant science. Hallie got a bachelor’s in agribusiness from Texas
+          State University and a master’s in International Agricultural
+          Development at the University of California, Davis. She now lives in
+          Austin, Texas where she works on local supply chain and value chain
+          coordination at the Sustainable Food Center. While not working, she
+          enjoys gardening, swing dancing, and culinary experiments.
         </p>
       </PostContent>
       <Clear />
