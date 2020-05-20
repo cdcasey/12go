@@ -89,6 +89,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         )
         .concat(meta)}
     >
+      {/* <meta name="description" content={metaDescription}/> */}
       {/* <link
         href="https://fonts.googleapis.com/css?family=Cabin|Lilita+One"
         rel="stylesheet"
