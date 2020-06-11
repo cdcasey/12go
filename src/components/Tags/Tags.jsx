@@ -23,7 +23,7 @@ const tagQuery = graphql`
 
 // const scaler = base => Math.pow(base, 1 / 1.3);
 // const scaler = base => Math.log(base) + 1;
-const scaler = base => Math.log(Math.sqrt(base)) + 1.4;
+const scaler = (base) => Math.log(Math.sqrt(base)) + 1.4;
 
 function TagMenuItems({ data }) {
   const { edges } = data.allWordpressTag;
