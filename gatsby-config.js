@@ -1,13 +1,15 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 });
+
+const { GATSBY_API_URL, GATSBY_API_PROTOCOL, GATSBY_SITE_URL } = process.env;
 
 const config = {
   siteMetadata: {
     title: `On to Grow On`,
     subtitle: `Understanding how food production impacts ourselves and our world`,
     description: `One to Grow On is a podcast where we dig into questions about agriculture and try to understand how food production impacts us and our world.`,
-    author: `@onetogrowonpod, Hallie Casey, Chris Casey, Catherine Arjet`
+    author: `@onetogrowonpod, Hallie Casey, Chris Casey, Catherine Arjet`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -16,8 +18,8 @@ const config = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -30,35 +32,41 @@ const config = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/lettuce.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/lettuce.png`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: process.env.GATSBY_API_URL,
-        protocol: process.env.GATSBY_API_PROTOCOL,
+        baseUrl: GATSBY_API_URL,
+        protocol: GATSBY_API_PROTOCOL,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
+        // conert links in source posts to links for the deployed site
+        searchAndReplaceContentUrls: {
+          sourceUrl: `${GATSBY_API_PROTOCOL}://${GATSBY_API_URL}`,
+          replacementUrl: `${GATSBY_API_PROTOCOL}://${GATSBY_SITE_URL}`,
+        },
         includedRoutes: [
           '**/posts',
           '**/pages',
           '**/users',
           '**/tags',
           '**/menus',
-          '**/media'
+          '**/media',
+          '**/categories',
         ],
-        verboseOutput: true
-      }
+        verboseOutput: true,
+      },
     },
     'gatsby-plugin-twitter',
-    'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ]
+  ],
 };
 
 if (process.env.CONTEXT === 'production') {
@@ -67,8 +75,8 @@ if (process.env.CONTEXT === 'production') {
     options: {
       trackingId: 'UA-150285970-1',
       anonymize: true,
-      head: true
-    }
+      head: true,
+    },
   };
   config.plugins.push(googleAnalyticsConfig);
 }
