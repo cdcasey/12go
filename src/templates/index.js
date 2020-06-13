@@ -29,7 +29,7 @@ const IndexPage = ({ pageContext }) => {
               .length > 0;
 
           const bgUrl = node.featured_media
-            ? node.featured_media.localFile.childImageSharp.fixed.src
+            ? node.featured_media.localFile?.childImageSharp.fixed.src
             : '';
 
           if (isEpisode) {
