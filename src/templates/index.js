@@ -6,7 +6,7 @@ import Layout from '../components/Layout/Layout';
 import PreviewLink from '../components/PreviewLink/PreviewLink';
 import { breakpointsDown } from '../constants/breakpoints';
 
-const NavLink = props => {
+const NavLink = (props) => {
   const url = props.url === '' ? '/' : '/page/' + props.url;
   if (!props.test) {
     return <Link to={url}>{props.text}</Link>;
@@ -24,20 +24,28 @@ const IndexPage = ({ pageContext }) => {
     <Layout>
       <MainContainer>
         {group.map(({ node }) => {
+          const isEpisode =
+            node.categories.filter((category) => category?.slug === 'episodes')
+              .length > 0;
+
           const bgUrl = node.featured_media
-            ? node.featured_media.localFile.childImageSharp.fixed.src
+            ? node.featured_media.localFile?.childImageSharp.fixed.src
             : '';
-          return (
-            <PreviewLink
-              key={node.id}
-              path={node.path}
-              slug={node.slug}
-              title={node.title}
-              date={node.date}
-              excerpt={node.excerpt}
-              bgUrl={bgUrl}
-            />
-          );
+
+          if (isEpisode) {
+            return (
+              <PreviewLink
+                key={node.id}
+                path={node.path}
+                slug={node.slug}
+                title={node.title}
+                date={node.date}
+                excerpt={node.excerpt}
+                bgUrl={bgUrl}
+              />
+            );
+          }
+          return null;
         })}
       </MainContainer>
       <PageTurners>

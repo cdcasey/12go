@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 
-const _ = require(`lodash`);
 const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
@@ -50,6 +49,11 @@ const queryAll = `
               }
             }
           }
+          categories {
+            id
+            name
+            slug
+          }
         }
       }
     }
@@ -76,9 +80,12 @@ exports.createPages = ({ graphql, actions }) => {
     const pageTemplate = path.resolve('./src/templates/page.js');
     const postTemplate = path.resolve('./src/templates/post.js');
     const tagTemplate = path.resolve('./src/templates/tagIndex.js');
+    const transcriptTemplate = path.resolve(
+      './src/templates/transcriptIndex.js'
+    );
 
     resolve(
-      graphql(queryAll).then(result => {
+      graphql(queryAll).then((result) => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -116,9 +123,10 @@ exports.createPages = ({ graphql, actions }) => {
         // });
 
         // Individual post pages
-        const posts = result.data.allWordpressPost.edges;
+        // const posts = result.data.allWordpressPost.edges;
+        const { edges } = result.data.allWordpressPost;
 
-        _.each(result.data.allWordpressPost.edges, edge => {
+        edges.forEach((edge) => {
           createPage({
             path: `${edge.node.slug}`,
             component: slash(postTemplate),
@@ -129,7 +137,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         createPaginatedPages({
-          edges: posts,
+          edges,
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
           pageLength: 12,
@@ -139,14 +147,26 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Tags
-        const tags = result.data.allWordpressPost.edges;
+        const tagEdges = result.data.allWordpressTag.edges;
 
-        _.each(result.data.allWordpressTag.edges, edge => {
+        tagEdges.forEach((edge) => {
           createPage({
             path: `tag/${edge.node.slug}`,
             component: slash(tagTemplate),
             context: {
               tag: edge.node.slug,
+            },
+          });
+        });
+
+        // THIS COULD REALLY BE SOMETHING IN /pages WITH A PAGE QUERY
+        // Transcripts
+        edges.forEach((edge) => {
+          createPage({
+            path: `transcripts/`,
+            component: slash(transcriptTemplate),
+            context: {
+              category: 'transcripts',
             },
           });
         });

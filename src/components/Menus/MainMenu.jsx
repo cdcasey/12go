@@ -94,6 +94,9 @@ function MainMenuItems() {
         <MenuLink to="/press">Press Kit</MenuLink>
       </StyledMenuItem>
       <StyledMenuItem>
+        <MenuLink to="/transcripts">Transcripts</MenuLink>
+      </StyledMenuItem>
+      <StyledMenuItem>
         <ExternalLink
           href="https://www.patreon.com/onetogrowonpod"
           target="_blank"
@@ -125,7 +128,7 @@ function MainMenu(data) {
 
 MainMenu.propTypes = propTypes;
 
-export default props => <StaticQuery query={menuQuery} render={MainMenu} />;
+export default (props) => <StaticQuery query={menuQuery} render={MainMenu} />;
 
 const StyledMenuList = styled.ul`
   display: flex;
