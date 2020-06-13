@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 
-const _ = require(`lodash`);
 const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
@@ -124,9 +123,10 @@ exports.createPages = ({ graphql, actions }) => {
         // });
 
         // Individual post pages
-        const posts = result.data.allWordpressPost.edges;
+        // const posts = result.data.allWordpressPost.edges;
+        const { edges } = result.data.allWordpressPost;
 
-        _.each(result.data.allWordpressPost.edges, (edge) => {
+        edges.forEach((edge) => {
           createPage({
             path: `${edge.node.slug}`,
             component: slash(postTemplate),
@@ -137,7 +137,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         createPaginatedPages({
-          edges: posts,
+          edges,
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
           pageLength: 12,
@@ -147,9 +147,9 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Tags
-        const tags = result.data.allWordpressPost.edges;
+        const tagEdges = result.data.allWordpressTag.edges;
 
-        _.each(result.data.allWordpressTag.edges, (edge) => {
+        tagEdges.forEach((edge) => {
           createPage({
             path: `tag/${edge.node.slug}`,
             component: slash(tagTemplate),
@@ -159,7 +159,9 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        posts.forEach((post) => {
+        // THIS COULD REALLY BE SOMETHING IN /pages WITH A PAGE QUERY
+        // Transcripts
+        edges.forEach((edge) => {
           createPage({
             path: `transcripts/`,
             component: slash(transcriptTemplate),
