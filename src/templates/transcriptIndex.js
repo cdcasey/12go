@@ -4,12 +4,16 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import PreviewLink from '../components/PreviewLink/PreviewLink';
 import styles from './index.module.scss';
+import SEO from '../components/SEO';
+import { PostTitle } from '../components/PageStyles';
 
 const TagIndexPage = ({ data }) => {
   const { edges } = data.allWordpressPost;
 
   return (
     <Layout>
+      <SEO title="Transcripts" />
+      <PostTitle>Transcripts</PostTitle>
       <div className={styles.mainContainer}>
         {edges.map(({ node }) => {
           return (
