@@ -13,7 +13,7 @@ const TagIndexPage = ({ data }) => {
       <div className={styles.mainContainer}>
         {edges.map(({ node }) => {
           const bgUrl = node.featured_media
-            ? node.featured_media.localFile.childImageSharp.fixed.src
+            ? node.featured_media.localFile?.childImageSharp.fixed.src
             : '';
           return (
             <PreviewLink
