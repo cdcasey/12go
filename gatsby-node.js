@@ -50,6 +50,11 @@ const queryAll = `
               }
             }
           }
+          categories {
+            id
+            name
+            slug
+          }
         }
       }
     }
@@ -76,9 +81,12 @@ exports.createPages = ({ graphql, actions }) => {
     const pageTemplate = path.resolve('./src/templates/page.js');
     const postTemplate = path.resolve('./src/templates/post.js');
     const tagTemplate = path.resolve('./src/templates/tagIndex.js');
+    const transcriptTemplate = path.resolve(
+      './src/templates/transcriptIndex.js'
+    );
 
     resolve(
-      graphql(queryAll).then(result => {
+      graphql(queryAll).then((result) => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -118,7 +126,7 @@ exports.createPages = ({ graphql, actions }) => {
         // Individual post pages
         const posts = result.data.allWordpressPost.edges;
 
-        _.each(result.data.allWordpressPost.edges, edge => {
+        _.each(result.data.allWordpressPost.edges, (edge) => {
           createPage({
             path: `${edge.node.slug}`,
             component: slash(postTemplate),
@@ -141,12 +149,22 @@ exports.createPages = ({ graphql, actions }) => {
         // Tags
         const tags = result.data.allWordpressPost.edges;
 
-        _.each(result.data.allWordpressTag.edges, edge => {
+        _.each(result.data.allWordpressTag.edges, (edge) => {
           createPage({
             path: `tag/${edge.node.slug}`,
             component: slash(tagTemplate),
             context: {
               tag: edge.node.slug,
+            },
+          });
+        });
+
+        posts.forEach((post) => {
+          createPage({
+            path: `transcripts/`,
+            component: slash(transcriptTemplate),
+            context: {
+              category: 'transcripts',
             },
           });
         });
