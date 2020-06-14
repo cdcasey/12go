@@ -6,7 +6,7 @@ import PageLayout from '../components/Layout/PageLayout';
 import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
 import { colors } from '../constants/colors';
 
-export default function() {
+export default function PressPage() {
   return (
     <PageLayout>
       <SEO title="Press Kit" />
@@ -43,10 +43,10 @@ export default function() {
           scrolling="no"
           width="100%"
           height="138px"
-          frameborder="0"
+          frameBorder="0"
           id="blubrryplayer-40"
-          class="blubrryplayer"
-        ></iframe>
+          className="blubrryplayer"
+        />
       </PostContent>
 
       <SectionTitle>Who We Are </SectionTitle>
