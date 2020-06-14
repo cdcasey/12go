@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { colors } from '../../constants/colors';
 import { breakpointsDown } from '../../constants/breakpoints';
 
-export default function({ title, path, href }) {
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+};
+
+export default function StyledIconLink({ title, path, href }) {
   return (
     <IconLink href={href} target="_blank" rel="noopener noreferrer">
       <SVGIcon
@@ -16,11 +23,13 @@ export default function({ title, path, href }) {
         fill={colors.white}
       >
         <title>{title}</title>
-        <path d={path}></path>
+        <path d={path} />
       </SVGIcon>
     </IconLink>
   );
 }
+
+StyledIconLink.propTypes = propTypes;
 
 const IconLink = styled.a`
   display: inline-block;

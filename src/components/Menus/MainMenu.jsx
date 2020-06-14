@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
@@ -35,6 +35,10 @@ const menuQuery = graphql`
     }
   }
 `;
+
+const activeStyle = {
+  color: colors.orangeLight,
+};
 
 const propTypes = {
   data: PropTypes.shape({}).isRequired,
@@ -128,7 +132,7 @@ function MainMenu(data) {
 
 MainMenu.propTypes = propTypes;
 
-export default (props) => <StaticQuery query={menuQuery} render={MainMenu} />;
+export default () => <StaticQuery query={menuQuery} render={MainMenu} />;
 
 const StyledMenuList = styled.ul`
   display: flex;
@@ -147,7 +151,7 @@ const StyledMenuItem = styled.li`
 `;
 
 const MenuLink = styled(Link).attrs(() => ({
-  activeStyle: activeStyle,
+  activeStyle,
   isPartiallyActive: true,
 }))`
   &,
@@ -166,7 +170,3 @@ const ExternalLink = styled(OutboundLink)`
     color: ${colors.purpleDark};
   }
 `;
-
-const activeStyle = {
-  color: colors.orangeLight,
-};

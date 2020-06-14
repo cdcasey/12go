@@ -9,7 +9,8 @@
   "extends": ["airbnb", "eslint-config-prettier", "prettier/react"],
   "plugins": ["react", "prettier"],
   "rules": {
-    "strict": ["error", "never"]
+    "strict": ["error", "never"],
+    "react/jsx-fragments": [2, "element"]
   },
   "env": {
     "browser": true

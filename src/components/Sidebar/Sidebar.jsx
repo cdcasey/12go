@@ -79,7 +79,7 @@ const Divider = styled.hr`
   height: 3px;
 
   ${breakpointsDown.tablet} {
-    display: ${props => (props.mobile ? '' : 'none')};
+    display: ${(props) => (props.mobile ? '' : 'none')};
     width: 85vw;
   }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function TwitterIcon() {
   return (
     <IconLink
       href="https://twitter.com/onetogrowonpod"

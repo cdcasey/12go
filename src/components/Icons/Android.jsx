@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function AndroidIcon() {
   return (
     <IconLink
       href="https://subscribeonandroid.com/www.onetogrowonpod.com/feed/podcast"

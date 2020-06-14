@@ -71,7 +71,7 @@ function LayoutComponent(data, children) {
 const Layout = ({ children }) => (
   <StaticQuery
     query={layoutQuery}
-    render={data => LayoutComponent(data, children)}
+    render={(data) => LayoutComponent(data, children)}
   />
 );
 

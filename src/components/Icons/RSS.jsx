@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function RSSIcon() {
   return (
     <IconLink
       href="https://www.onetogrowonpod.com/feed/podcast"

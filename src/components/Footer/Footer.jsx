@@ -9,7 +9,7 @@ import FooterImage from './FooterImage';
 import IconContainer from '../Icons/IconContainer';
 import { breakpointsDown } from '../../constants/breakpoints';
 
-export default props => {
+export default () => {
   return (
     <Footer>
       <FooterTagsArea>

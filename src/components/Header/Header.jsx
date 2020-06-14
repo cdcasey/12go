@@ -1,6 +1,6 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import HeaderImage from './HeaderImage';
@@ -18,11 +18,8 @@ const HeaderComponent = ({ siteTitle, description }) => (
 );
 
 HeaderComponent.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-HeaderComponent.defaultProps = {
-  siteTitle: ``,
+  siteTitle: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default HeaderComponent;
