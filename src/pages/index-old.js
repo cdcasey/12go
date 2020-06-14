@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -24,7 +25,7 @@ const IndexPage = ({ data }) => {
         ]}
       />
       <h1>Hi 12go people!!!</h1>
-      {edges.map(edge => {
+      {edges.map((edge) => {
         const { node } = edge;
         return (
           <div key={node.id}>

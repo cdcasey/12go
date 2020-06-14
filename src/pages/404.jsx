@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -8,6 +9,10 @@ import SEO from '../components/SEO';
 import { colors } from '../constants/colors';
 import { breakpointsDown } from '../constants/breakpoints';
 import { PostContent } from '../components/PageStyles';
+
+const imagePropTypes = {
+  className: PropTypes.string.isRequired,
+};
 
 const Image = ({ className }) => (
   <StaticQuery
@@ -22,7 +27,7 @@ const Image = ({ className }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Img
         fluid={data.placeholderImage.childImageSharp.fluid}
         className={className}
@@ -30,6 +35,8 @@ const Image = ({ className }) => (
     )}
   />
 );
+
+Image.propTypes = imagePropTypes;
 
 const NotFoundPage = () => (
   <Layout>

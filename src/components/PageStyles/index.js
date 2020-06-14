@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import { colors } from '../../constants/colors';
 
-export const PostContent = styled.div.attrs(props => ({
+export const PostContent = styled.div.attrs(() => ({
   className: 'post-content',
 }))`
   margin-top: 0.3rem;
@@ -28,7 +28,7 @@ export const PostContent = styled.div.attrs(props => ({
   }
 `;
 
-export const SectionTitle = styled.h2.attrs(props => ({
+export const SectionTitle = styled.h2.attrs(() => ({
   className: 'section-title',
 }))`
   margin-top: 4rem;
@@ -36,7 +36,7 @@ export const SectionTitle = styled.h2.attrs(props => ({
   font-weight: normal;
 `;
 
-export const PostTitle = styled.h1.attrs(props => ({
+export const PostTitle = styled.h1.attrs(() => ({
   className: 'post-title',
 }))`
   font-size: 4rem;

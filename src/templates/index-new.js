@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -14,7 +15,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <h1>Hi 12go people!!!</h1>
-      {edges.map(edge => {
+      {edges.map((edge) => {
         const { node } = edge;
         return (
           <div key={node.id}>
