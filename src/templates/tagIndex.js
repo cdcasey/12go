@@ -31,6 +31,7 @@ const TagIndexPage = ({ data }) => {
     </Layout>
   );
 };
+
 export default TagIndexPage;
 
 export const query = graphql`
