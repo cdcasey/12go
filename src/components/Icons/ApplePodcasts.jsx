@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function ApplePodcastsIcon() {
   return (
     <IconLink
       href="https://itunes.apple.com/us/podcast/coming-soon/id1437683662?i=1000420674402&mt=2&app=podcast"

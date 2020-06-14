@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function SpotifyIcon() {
   return (
     <IconLink
       href="https://open.spotify.com/show/2N8ibfalcLcqK5qVOD6WKI"

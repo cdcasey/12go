@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function EnvelopeIcon() {
   return (
     <IconLink
       href="mailto:onetogrowonpod@gmail.com"

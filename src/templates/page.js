@@ -1,7 +1,19 @@
+/* eslint-disable react/no-danger */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
+
+const propTypes = {
+  data: PropTypes.shape({
+    wordpressPage: PropTypes.shape({
+      title: PropTypes.string,
+      content: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 const PageTemplate = ({ data }) => {
   // const siteMetadata = this.props.data.site.siteMetadata;
@@ -18,6 +30,8 @@ const PageTemplate = ({ data }) => {
     </Layout>
   );
 };
+
+PageTemplate.propTypes = propTypes;
 
 export default PageTemplate;
 

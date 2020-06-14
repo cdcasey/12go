@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconLink from './IconLink';
 
-export default function() {
+export default function StitcherIcon() {
   return (
     <IconLink
       href="https://www.stitcher.com/s?fid=240925&refid=stpr"

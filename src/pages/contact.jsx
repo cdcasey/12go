@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
 import { PostContent, PostTitle, SectionTitle } from '../components/PageStyles';
 
-export default function() {
+export default function ContactPage() {
   return (
     <PageLayout>
       <SEO title="Contact" />

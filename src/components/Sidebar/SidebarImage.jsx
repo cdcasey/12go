@@ -96,7 +96,7 @@ const Image = ({ imageNumber, className }) => {
   return (
     <StaticQuery
       query={query}
-      render={data => {
+      render={(data) => {
         return (
           <StyledFigure>
             <Img

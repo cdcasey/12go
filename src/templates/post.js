@@ -1,8 +1,21 @@
+/* eslint-disable react/no-danger */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import PageLayout from '../components/Layout/PageLayout';
 import styles from './post.module.scss';
+
+const propTypes = {
+  data: PropTypes.shape({
+    wordpressPost: PropTypes.shape({
+      title: PropTypes.string,
+      content: PropTypes.string,
+      date: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 const PostTemplate = ({ data }) => {
   const post = data.wordpressPost;
@@ -21,6 +34,8 @@ const PostTemplate = ({ data }) => {
     </PageLayout>
   );
 };
+
+PostTemplate.propTypes = propTypes;
 
 export default PostTemplate;
 

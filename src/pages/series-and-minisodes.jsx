@@ -10,7 +10,7 @@ import {
   SiteLink,
 } from '../components/PageStyles';
 
-export default function() {
+export default function SeriesPage() {
   return (
     <PageLayout>
       <SEO title="Series and Minisodes" />

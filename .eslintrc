@@ -1,0 +1,18 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["airbnb", "eslint-config-prettier", "prettier/react"],
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "strict": ["error", "never"],
+    "react/jsx-fragments": [2, "element"]
+  },
+  "env": {
+    "browser": true
+  }
+}

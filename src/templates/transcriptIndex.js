@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
@@ -6,6 +8,14 @@ import PreviewLink from '../components/PreviewLink/PreviewLink';
 import styles from './index.module.scss';
 import SEO from '../components/SEO';
 import { PostTitle } from '../components/PageStyles';
+
+const propTypes = {
+  data: PropTypes.shape({
+    allWordpressPost: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
+  }).isRequired,
+};
 
 const TagIndexPage = ({ data }) => {
   const { edges } = data.allWordpressPost;
@@ -31,6 +41,9 @@ const TagIndexPage = ({ data }) => {
     </Layout>
   );
 };
+
+TagIndexPage.propTypes = propTypes;
+
 export default TagIndexPage;
 
 export const query = graphql`

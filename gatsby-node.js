@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const pageTemplate = path.resolve('./src/templates/page.js');
+    // const pageTemplate = path.resolve('./src/templates/page.js');
     const postTemplate = path.resolve('./src/templates/post.js');
     const tagTemplate = path.resolve('./src/templates/tagIndex.js');
     const transcriptTemplate = path.resolve(
@@ -87,7 +87,8 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(queryAll).then((result) => {
         if (result.errors) {
-          console.log(result.errors);
+          // eslint-disable-next-line no-console
+          console.error(result.errors);
           reject(result.errors);
         }
 
@@ -138,7 +139,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         createPaginatedPages({
           edges,
-          createPage: createPage,
+          createPage,
           pageTemplate: 'src/templates/index.js',
           pageLength: 12,
           pathPrefix: 'page',
@@ -161,7 +162,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // THIS COULD REALLY BE SOMETHING IN /pages WITH A PAGE QUERY
         // Transcripts
-        edges.forEach((edge) => {
+        edges.forEach(() => {
           createPage({
             path: `transcripts/`,
             component: slash(transcriptTemplate),
