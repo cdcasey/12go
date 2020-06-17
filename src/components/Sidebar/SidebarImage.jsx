@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -92,6 +93,15 @@ const IMAGE_INFO = {
   },
 };
 
+const propTypes = {
+  imageNumber: PropTypes.number.isRequired,
+  className: PropTypes.string,
+};
+
+const defaultProps = {
+  className: '',
+};
+
 const Image = ({ imageNumber, className }) => {
   return (
     <StaticQuery
@@ -111,6 +121,9 @@ const Image = ({ imageNumber, className }) => {
     />
   );
 };
+
+Image.propTypes = propTypes;
+Image.defaultProps = defaultProps;
 
 export default Image;
 
