@@ -66,21 +66,6 @@ export default function PressPage() {
         </p>
 
         <p>
-          <strong>Catherine Arjet</strong> is a <em>One to Grow On</em>{' '}
-          producer. She is an avid supporter of new media and its role in public
-          education. Catherine has written for a variety of publications such as{' '}
-          <em>The Odyssey</em> and her college newspaper,{' '}
-          <em>The Purple and White</em>, where she was the opinions editor. In
-          addition to writing, Catherine is passionate about STEM education and
-          volunteered with youth environmental service organization Discover
-          Green for two years. She is a graduate of Millsaps College in Jackson,
-          Mississippi where she double-majored in Global Business and English.
-          She is currently pursuing a masters of Global Policy Studies at the
-          University of Texas at Austin and works as a legal writer. In her
-          spare time, Catherine enjoys bad crime shows and good coffee.{' '}
-        </p>
-
-        <p>
           <strong>Chris Casey</strong> is a host of <em>One to Grow On</em>. A
           long-time lover of podcasts, he is thrilled to be learning about
           agriculture from his daughter along with the audience. Chris is a
@@ -100,6 +85,12 @@ export default function PressPage() {
           <br />
           Superfoods music is written and performed by{' '}
           <a href="https://www.kckatalbas.com/">KC Katalbas</a>.
+          <br />
+          Transcripts by{' '}
+          <a href="https://www.linkedin.com/in/maureen-wawira-3b18b4154/">
+            Maureen Wawira
+          </a>
+          .
         </p>
       </PostContent>
 
@@ -126,21 +117,6 @@ export default function PressPage() {
 
       <SectionTitle>Gallery</SectionTitle>
       <Gallery>
-        <GalleryItem>
-          <Figure>
-            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg">
-              <img
-                src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic.jpeg"
-                alt="woman standing and smiling in front of leafy plants"
-              />
-            </a>
-            <Caption>
-              Catherine Arjet
-              <br />
-              Headshot
-            </Caption>
-          </Figure>
-        </GalleryItem>
         <GalleryItem>
           <Figure>
             <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/IMG_5692_square-1024x1024.jpg">
@@ -173,13 +149,13 @@ export default function PressPage() {
         </GalleryItem>
         <GalleryItem>
           <Figure>
-            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/2019/03/IMG_4016.jpg">
+            <a href="https://12go.onetogrowonpod.com/wp-content/uploads/IMG_1128.jpg">
               <img
-                src="https://12go.onetogrowonpod.com/wp-content/uploads/2019/03/IMG_4016.jpg"
-                alt="A man and two women smiling at the camera"
+                src="https://12go.onetogrowonpod.com/wp-content/uploads/IMG_1128.jpg"
+                alt="A man and a woman smiling at the camera, in a greenhouse"
               />
             </a>
-            <Caption>Catherine Arjet, Chris Casey, Hallie Casey</Caption>
+            <Caption>Chris Casey, Hallie Casey</Caption>
           </Figure>
         </GalleryItem>
         <GalleryItem>

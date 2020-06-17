@@ -46,7 +46,6 @@ const Sidebar = styled.div.attrs(() => ({
   justify-self: self-end;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
   width: 200px;
   align-self: flex-start;
 

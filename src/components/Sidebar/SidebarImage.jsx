@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -64,8 +65,8 @@ const IMAGE_INFO = {
     caption: 'Chris getting ready to record.',
   },
   2: {
-    alt: 'Hallie and Catherine smiling at the camera while on a hike',
-    caption: 'Hallie and Catherine on a hike.',
+    alt: 'Hallie in a greenhouse while smiling at the camera.',
+    caption: 'Hallie in a greenhouse.',
   },
   3: {
     alt:
@@ -74,8 +75,8 @@ const IMAGE_INFO = {
   },
   4: {
     alt:
-      "Hallie and Catherine smiling at the camera while at the farmer's market",
-    caption: "Hallie and Catherine at the farmer's market.",
+      'A man and a woman smiling at the camera while standing in a greenhouse',
+    caption: 'Chris visiting Hallie at her greenhouse at Texas State.',
   },
   5: {
     alt: 'Chris and Hallie smiling at the camera while on a hike',
@@ -83,13 +84,22 @@ const IMAGE_INFO = {
   },
   6: {
     alt:
-      'Catherine and Hallie smiling at the camera in front of a sign that says Life is Peachy',
-    caption: 'Catherine and Hallie at the Fredericksburg Farm Stand.',
+      'A woman smiling with her arms spread out wide while standing in front of a corn field',
+    caption: 'Hallie in front of her favorite tall grass.',
   },
   7: {
     alt: 'Hallie and Chris smiling at the camera while at lunch together',
     caption: 'Hallie and Chris at lunch together.',
   },
+};
+
+const propTypes = {
+  imageNumber: PropTypes.number.isRequired,
+  className: PropTypes.string,
+};
+
+const defaultProps = {
+  className: '',
 };
 
 const Image = ({ imageNumber, className }) => {
@@ -112,10 +122,14 @@ const Image = ({ imageNumber, className }) => {
   );
 };
 
+Image.propTypes = propTypes;
+Image.defaultProps = defaultProps;
+
 export default Image;
 
 // Sometimes the caption ends up on top of the figure. Maybe this helps?
 const StyledFigure = styled.figure`
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
 

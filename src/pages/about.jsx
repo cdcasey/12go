@@ -56,29 +56,6 @@ export default function () {
       <PostContent>
         <figure>
           <img
-            src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-CA-bio-pic-300x300.jpeg"
-            alt=""
-          />
-        </figure>
-        <p>
-          <strong>Catherine Arjet</strong> is a <i>One to Grow On</i> producer.
-          She is an avid supporter of new media and its role in public
-          education. Catherine has written for a variety of publications such as{' '}
-          <i>The Odyssey</i> and her college newspaper,{' '}
-          <i>The Purple and White</i>, where she was the opinions editor.In
-          addition to writing, Catherine is passionate about STEM education and
-          volunteered with Discover Green for two years.She is a graduate of
-          Millsaps College in Jackson, Mississippi where she double - majored in
-          Global Business and English.Catherine is originally from Austin, Texas
-          and currently lives in Chicago, Illinois where she works as a legal
-          writer.In her spare time, Catherine enjoys bad crime shows and good
-          coffee.
-        </p>
-      </PostContent>
-      <Clear />
-      <PostContent>
-        <figure>
-          <img
             src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/cdc-300x300.jpg"
             alt="Chris popping out of a window in a production of Taming of the Shrew"
           />
