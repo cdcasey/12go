@@ -129,6 +129,7 @@ export default Image;
 
 // Sometimes the caption ends up on top of the figure. Maybe this helps?
 const StyledFigure = styled.figure`
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
 
