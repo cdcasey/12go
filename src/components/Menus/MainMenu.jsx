@@ -73,13 +73,9 @@ function MainMenuItems({ data }) {
 }
 */
 
-function MainMenuItems() {
-  // const isPartiallyActive = ({ isPartiallyCurrent }) => {
-  //   return isPartiallyCurrent;
-  // };
-
+function MainMenu(data) {
   return (
-    <React.Fragment>
+    <StyledMenuList>
       <StyledMenuItem>
         <MenuLink to="/" activeStyle={activeStyle}>
           Home
@@ -87,6 +83,22 @@ function MainMenuItems() {
       </StyledMenuItem>
       <StyledMenuItem>
         <MenuLink to="/about">About</MenuLink>
+        <StyledDropDownMenuList>
+          <StyledMenuItem>
+            <MenuLink to="/press">Press Kit</MenuLink>
+          </StyledMenuItem>
+        </StyledDropDownMenuList>
+      </StyledMenuItem>
+      <StyledMenuItem>
+        <MenuLink to="/">Episodes</MenuLink>
+        <StyledDropDownMenuList>
+          <StyledMenuItem>
+            <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
+          </StyledMenuItem>
+          <StyledMenuItem>
+            <MenuLink to="/transcripts">Transcripts</MenuLink>
+          </StyledMenuItem>
+        </StyledDropDownMenuList>
       </StyledMenuItem>
       <StyledMenuItem>
         <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
@@ -118,14 +130,6 @@ function MainMenuItems() {
           Listener Survey
         </ExternalLink>
       </StyledMenuItem> */}
-    </React.Fragment>
-  );
-}
-
-function MainMenu(data) {
-  return (
-    <StyledMenuList>
-      <MainMenuItems data={data} />
     </StyledMenuList>
   );
 }
@@ -144,7 +148,25 @@ const StyledMenuList = styled.ul`
   }
 `;
 
+const StyledDropDownMenuList = styled.ul`
+  position: absolute;
+  display: none;
+  list-style-type: none;
+  background-color: ${colors.white};
+  z-index: 1;
+
+  ${breakpointsDown.tablet} {
+    flex-direction: column;
+    row-gap: 0.4rem;
+  }
+`;
+
 const StyledMenuItem = styled.li`
+  &:hover ${StyledDropDownMenuList} {
+    display: flex;
+    flex-direction: column;
+  }
+
   margin-right: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
@@ -160,6 +182,9 @@ const MenuLink = styled(Link).attrs(() => ({
     text-decoration: none;
     color: ${colors.purpleDark};
   }
+  &:hover {
+    background-color: ${colors.greenLight};
+  }
 `;
 
 const ExternalLink = styled(OutboundLink)`
@@ -168,5 +193,8 @@ const ExternalLink = styled(OutboundLink)`
   &:visited {
     text-decoration: none;
     color: ${colors.purpleDark};
+  }
+  &:hover {
+    background-color: ${colors.greenLight};
   }
 `;
