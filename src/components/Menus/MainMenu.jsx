@@ -181,6 +181,8 @@ const MenuLink = styled(Link).attrs(() => ({
   &:visited {
     text-decoration: none;
     color: ${colors.purpleDark};
+    display: inline-block;
+    width: 100%;
   }
   &:hover {
     background-color: ${colors.greenLight};
