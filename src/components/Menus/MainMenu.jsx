@@ -73,7 +73,7 @@ function MainMenuItems({ data }) {
 }
 */
 
-function MainMenu(data) {
+function MainMenu() {
   return (
     <StyledMenuList>
       <StyledMenuItem>
