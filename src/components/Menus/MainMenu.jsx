@@ -77,19 +77,6 @@ function MainMenu() {
   return (
     <StyledMenuList>
       <StyledMenuItem>
-        <MenuLink to="/" activeStyle={activeStyle}>
-          Home
-        </MenuLink>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/about">About</MenuLink>
-        <StyledDropDownMenuList>
-          <StyledMenuItem>
-            <MenuLink to="/press">Press Kit</MenuLink>
-          </StyledMenuItem>
-        </StyledDropDownMenuList>
-      </StyledMenuItem>
-      <StyledMenuItem>
         <MenuLink to="/">Episodes</MenuLink>
         <StyledDropDownMenuList>
           <StyledMenuItem>
@@ -100,18 +87,19 @@ function MainMenu() {
           </StyledMenuItem>
         </StyledDropDownMenuList>
       </StyledMenuItem>
+
       <StyledMenuItem>
-        <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
+        <MenuLink to="/about">About</MenuLink>
+        <StyledDropDownMenuList>
+          <StyledMenuItem>
+            <MenuLink to="/press">Press Kit</MenuLink>
+          </StyledMenuItem>
+          <StyledMenuItem>
+            <MenuLink to="/contact">Contact</MenuLink>
+          </StyledMenuItem>
+        </StyledDropDownMenuList>
       </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/contact">Contact</MenuLink>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/press">Press Kit</MenuLink>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/transcripts">Transcripts</MenuLink>
-      </StyledMenuItem>
+
       <StyledMenuItem>
         <ExternalLink
           href="https://www.patreon.com/onetogrowonpod"
@@ -158,6 +146,11 @@ const StyledDropDownMenuList = styled.ul`
   ${breakpointsDown.tablet} {
     flex-direction: column;
     row-gap: 0.4rem;
+    display: inline-block;
+    position: unset;
+    z-index: unset;
+    margin-left: 1rem;
+    margin-bottom: 0.4rem;
   }
 `;
 
