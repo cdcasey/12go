@@ -9,7 +9,7 @@ import {
   Clear,
 } from '../components/PageStyles';
 
-export default function () {
+export default function UnstyledPageLayout() {
   return (
     <PageLayout>
       <SEO title="About" />
@@ -84,14 +84,14 @@ export default function () {
           Throughout her six years in the industry, friends, family and virtual
           strangers alike have repeatedly asked Hallie the same few questions
           about agriculture.This experience, plus her work with multiple science
-          education non - profits, led her to recognize that there wasn't a lot
-          of basic agricultural and plant science education available to the
+          education non-profits, led her to recognize that there wasn’t a lot of
+          basic agricultural and plant science education available to the
           general public. A podcast seemed like the perfect way to fix this.
         </p>
         <p>
-          So, she called Catherine, her long - time best friend, and couldn't
-          stop talking about the idea. Catherine was immediately on-board and
-          they began scheming.
+          So, she called Catherine, her long-time best friend, and couldn’t stop
+          talking about the idea. Catherine was immediately on-board and they
+          began scheming.
         </p>
       </PostContent>
       <Clear />
@@ -105,18 +105,18 @@ export default function () {
         </figure>
         <p>
           After months of planning, research, and administrative tasks, the next
-          step was finding a co - host.They were nervous that they wouldn't find
+          step was finding a co-host.They were nervous that they wouldn’t find
           someone else who was as interested in the topic and excited to learn
           about it, but after Hallie got into a long conversation with her dad
-          about the "organic" and "natural" labels, it was obvious he was the
+          about the “organic” and “natural” labels, it was obvious he was the
           perfect choice.
         </p>
         <p>
           After that, it was time to get this show on the road, or, in this
-          case, on the internet.After recording, editing, re - recording,
-          getting feedback, and re - recording(again) we were able to launch One
-          to Grow On.This is a podcast almost a year in the making and we hope
-          you have as much fun listening to it as we had making it!
+          case, on the internet. After recording, editing, re-recording, getting
+          feedback, and re-recording (again) we were able to launch One to Grow
+          On.This is a podcast almost a year in the making and we hope you have
+          as much fun listening to it as we had making it!
         </p>
       </PostContent>
     </PageLayout>

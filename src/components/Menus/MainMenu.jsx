@@ -73,33 +73,33 @@ function MainMenuItems({ data }) {
 }
 */
 
-function MainMenuItems() {
-  // const isPartiallyActive = ({ isPartiallyCurrent }) => {
-  //   return isPartiallyCurrent;
-  // };
-
+function MainMenu() {
   return (
-    <React.Fragment>
+    <StyledMenuList>
       <StyledMenuItem>
-        <MenuLink to="/" activeStyle={activeStyle}>
-          Home
-        </MenuLink>
+        <MenuLink to="/">Episodes</MenuLink>
+        <StyledDropDownMenuList>
+          <StyledMenuItem>
+            <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
+          </StyledMenuItem>
+          <StyledMenuItem>
+            <MenuLink to="/transcripts">Transcripts</MenuLink>
+          </StyledMenuItem>
+        </StyledDropDownMenuList>
       </StyledMenuItem>
+
       <StyledMenuItem>
         <MenuLink to="/about">About</MenuLink>
+        <StyledDropDownMenuList>
+          <StyledMenuItem>
+            <MenuLink to="/press">Press Kit</MenuLink>
+          </StyledMenuItem>
+          <StyledMenuItem>
+            <MenuLink to="/contact">Contact</MenuLink>
+          </StyledMenuItem>
+        </StyledDropDownMenuList>
       </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/contact">Contact</MenuLink>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/press">Press Kit</MenuLink>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <MenuLink to="/transcripts">Transcripts</MenuLink>
-      </StyledMenuItem>
+
       <StyledMenuItem>
         <ExternalLink
           href="https://www.patreon.com/onetogrowonpod"
@@ -118,14 +118,6 @@ function MainMenuItems() {
           Listener Survey
         </ExternalLink>
       </StyledMenuItem> */}
-    </React.Fragment>
-  );
-}
-
-function MainMenu(data) {
-  return (
-    <StyledMenuList>
-      <MainMenuItems data={data} />
     </StyledMenuList>
   );
 }
@@ -140,11 +132,32 @@ const StyledMenuList = styled.ul`
 
   ${breakpointsDown.tablet} {
     flex-direction: column;
-    row-gap: 0.4rem;
+  }
+`;
+
+const StyledDropDownMenuList = styled.ul`
+  position: absolute;
+  display: none;
+  list-style-type: none;
+  background-color: ${colors.white};
+  z-index: 1;
+
+  ${breakpointsDown.tablet} {
+    flex-direction: column;
+    display: inline-block;
+    position: unset;
+    z-index: unset;
+    margin-left: 1rem;
+    margin-bottom: 0.4rem;
   }
 `;
 
 const StyledMenuItem = styled.li`
+  &:hover ${StyledDropDownMenuList} {
+    display: flex;
+    flex-direction: column;
+  }
+
   margin-right: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
@@ -159,6 +172,15 @@ const MenuLink = styled(Link).attrs(() => ({
   &:visited {
     text-decoration: none;
     color: ${colors.purpleDark};
+    display: inline-block;
+    width: 100%;
+  }
+  &:hover {
+    background-color: ${colors.greenLight};
+
+    ${breakpointsDown.tablet} {
+      background-color: unset;
+    }
   }
 `;
 
@@ -168,5 +190,9 @@ const ExternalLink = styled(OutboundLink)`
   &:visited {
     text-decoration: none;
     color: ${colors.purpleDark};
+  }
+  &:hover {
+    background-color: ${colors.greenLight};
+    background-color: unset;
   }
 `;
