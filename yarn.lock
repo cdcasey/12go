@@ -6318,7 +6318,7 @@ gatsby-recipes@^0.1.48:
     ws "^7.3.0"
     xstate "^4.11.0"
 
-gatsby-source-filesystem@^2.3.18:
+gatsby-source-filesystem@^2.3.14, gatsby-source-filesystem@^2.3.18:
   version "2.3.18"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.18.tgz#b86d914d3c94b2e5e48bdcb2ce04b1ec12272181"
   integrity sha512-HcPhm8yIYrpSVCVOiCzE8dGOKfv78Dvw8p86COE/EbvqRyXQ7x2N+v5dZSluSejtoXck0vISa2kJCGPTGzcsbw==
@@ -6339,10 +6339,10 @@ gatsby-source-filesystem@^2.3.18:
     valid-url "^1.0.9"
     xstate "^4.11.0"
 
-gatsby-source-wordpress@^3.3.15:
-  version "3.3.19"
-  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-3.3.19.tgz#e7221e003fbcc61f0c79ac843bf420e6565413d5"
-  integrity sha512-LGYJ86oAhScaWbWaKSgIcQnqP0jeArB3rA40EV2rBVSKjNegO4sP7u1zMZIQhr/1HY/lROUesrgiG7Hir8Ytbw==
+gatsby-source-wordpress@3.3.15:
+  version "3.3.15"
+  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-3.3.15.tgz#0847ea64412e0be4bb4b75a1b491adadd8b40b09"
+  integrity sha512-n3olUPaq4hadpsRAUtObp+pNg6YZT8AkBwGUhKdAVuXEbpz+/BJ/9y6ZmtBh7NqiR5+q4eVjxvFX+vLJPfXEIw==
   dependencies:
     "@babel/runtime" "^7.10.3"
     axios "^0.19.2"
@@ -6350,7 +6350,7 @@ gatsby-source-wordpress@^3.3.15:
     bluebird "^3.7.2"
     deep-map "^1.5.0"
     deep-map-keys "^1.2.0"
-    gatsby-source-filesystem "^2.3.18"
+    gatsby-source-filesystem "^2.3.14"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
     minimatch "^3.0.4"
