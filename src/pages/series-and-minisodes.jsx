@@ -51,6 +51,18 @@ export default function SeriesPage() {
             challenges facing the agriculture industry today.
           </p>
         </SeriesItem>
+        <SeriesItem>
+          <SeriesTitle>
+            <SiteLink to="/tag/local-food/">Local Food</SiteLink>
+          </SeriesTitle>
+          <p>
+            In this three-part series, Hallie and Chris interview different
+            players within the local food system. Our hosts explore the joys and
+            stuggles of local farming, learn about the history and current-day
+            importance of farmer&rsquo;s markets, and talk about the importance
+            of local food in the supply chain.
+          </p>
+        </SeriesItem>
       </SeriesSection>
       <SectionTitle>Special Episodes</SectionTitle>
       <PostContent>
@@ -86,6 +98,17 @@ export default function SeriesPage() {
             background in agriculture and so often finds herself shocked and
             surprised when doing research for the show. These episodes are fun,
             chatty, and will almost always surprise you.
+          </p>
+        </SeriesItem>
+        <SeriesItem>
+          <SeriesTitle>
+            <SiteLink to="/tag/crops/">Crops</SiteLink>
+          </SeriesTitle>
+          <p>
+            One of our favorite types of episodes is our crop profile episodes.
+            In these special episodes, Hallie and Chris take a deep-dive into
+            crop science, agronomic history, postharvest practices, and other
+            fascinating facts that tell the story of a crop.
           </p>
         </SeriesItem>
       </SeriesSection>
