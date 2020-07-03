@@ -6339,7 +6339,7 @@ gatsby-source-filesystem@^2.3.18:
     valid-url "^1.0.9"
     xstate "^4.11.0"
 
-gatsby-source-wordpress@3.3.19:
+gatsby-source-wordpress@^3.3.19:
   version "3.3.19"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-3.3.19.tgz#e7221e003fbcc61f0c79ac843bf420e6565413d5"
   integrity sha512-LGYJ86oAhScaWbWaKSgIcQnqP0jeArB3rA40EV2rBVSKjNegO4sP7u1zMZIQhr/1HY/lROUesrgiG7Hir8Ytbw==
