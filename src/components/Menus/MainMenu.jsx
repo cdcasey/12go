@@ -132,7 +132,6 @@ const StyledMenuList = styled.ul`
 
   ${breakpointsDown.tablet} {
     flex-direction: column;
-    row-gap: 0.4rem;
   }
 `;
 
@@ -145,7 +144,6 @@ const StyledDropDownMenuList = styled.ul`
 
   ${breakpointsDown.tablet} {
     flex-direction: column;
-    row-gap: 0.4rem;
     display: inline-block;
     position: unset;
     z-index: unset;
@@ -179,6 +177,10 @@ const MenuLink = styled(Link).attrs(() => ({
   }
   &:hover {
     background-color: ${colors.greenLight};
+
+    ${breakpointsDown.tablet} {
+      background-color: unset;
+    }
   }
 `;
 
@@ -191,5 +193,6 @@ const ExternalLink = styled(OutboundLink)`
   }
   &:hover {
     background-color: ${colors.greenLight};
+    background-color: unset;
   }
 `;
