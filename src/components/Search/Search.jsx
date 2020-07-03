@@ -33,7 +33,7 @@ export default function SearchBar() {
           title="Search this site"
           alt="Search Text"
           placeholder="Search"
-          maxlength="256"
+          maxLength="256"
         />
         <input
           type="hidden"

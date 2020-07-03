@@ -31,7 +31,7 @@ function TagMenuItems({ data }) {
   return edges.map(({ node }) => {
     return (
       <React.Fragment key={node.id}>
-        <TagLink to={'/tag/' + node.slug} nodeCount={node.count}>
+        <TagLink to={`/tag/${node.slug}`} nodeCount={node.count}>
           {node.name}
         </TagLink>{' '}
       </React.Fragment>

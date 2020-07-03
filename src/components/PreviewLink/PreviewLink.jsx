@@ -1,26 +1,49 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
+import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 import { colors } from '../../constants/colors';
 
-export default ({ path, slug, title, date, excerpt, bgUrl }) => (
-  <PreviewLink to={path}>
-    <PreviewContainer
-      key={slug}
-      style={{
-        backgroundImage: `url(${bgUrl})`,
-      }}
-    >
-      <PreviewLinkBand>
-        <h3 dangerouslySetInnerHTML={{ __html: title }} />
-        {date}
-      </PreviewLinkBand>
-    </PreviewContainer>
+const propTypes = {
+  path: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  bgUrl: PropTypes.string.isRequired,
+};
 
-    <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-  </PreviewLink>
-);
+export default function UnstyledPreviewLink({
+  path,
+  slug,
+  title,
+  date,
+  excerpt,
+  bgUrl,
+}) {
+  return (
+    <PreviewLink to={path}>
+      <PreviewContainer
+        key={slug}
+        style={{
+          backgroundImage: `url(${bgUrl})`,
+        }}
+      >
+        <PreviewLinkBand>
+          <h3 dangerouslySetInnerHTML={{ __html: title }} />
+          {date}
+        </PreviewLinkBand>
+      </PreviewContainer>
+
+      <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+    </PreviewLink>
+  );
+}
+
+UnstyledPreviewLink.propTypes = propTypes;
 
 const PreviewLink = styled(Link)`
   text-decoration: none;

@@ -98,7 +98,7 @@ export default function PressPage() {
       <PostContent>
         <p>
           <em>One to Grow On</em> is released every other Tuesday on all
-          podcasting platforms. If you're looking for us between episodes, check
+          podcasting platforms. If you’re looking for us between episodes, check
           out @onetogrowonpod on{' '}
           <a href="http://www.instagram.com/onetogrowonpod">Instagram</a>,{' '}
           <a href="http://www.twitter.com/onetogrowonpod">Twitter</a>, and{' '}
