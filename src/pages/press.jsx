@@ -14,22 +14,23 @@ export default function PressPage() {
       <SectionTitle>What We Do</SectionTitle>
       <PostContent>
         <p>
-          <em>One to Grow On</em> is a podcast where we dig into questions about
-          agriculture and try to understand how food production impacts us and
-          our world. Each episode, hosts Hallie and Chris pick an area of
-          agriculture or food production to discuss. Listen for plant facts, dad
-          jokes, and the stories behind your food.
+          <em>One to Grow On</em>
+          is a podcast where we dig into questions about agriculture and try to
+          understand how food production impacts us and our world. Each episode,
+          hosts Hallie and Chris pick an area of agriculture or food production
+          to discuss. Listen for plant facts, dad jokes, and the stories behind
+          your food.
         </p>
 
         <p>
-          <em>One to Grow On</em> is an older kid-friendly podcast that is safe
-          and appropriate for listeners of all ages. There are a few clearly
-          marked episodes that contain content that may not be suitable for all
-          ages
+          <em>One to Grow On</em>
+          is an older kid-friendly podcast that is safe and appropriate for
+          listeners of all ages. There are a few clearly marked episodes that
+          contain content that may not be suitable for all ages
         </p>
 
         <p>
-          Our episodes are published every other Tuesday and run 20-40 minutes.
+          Our episodes are published every other Tuesday and run 25-40 minutes.
           You don’t need to listen in order; scroll through episode titles or
           explore episodes by subject matter on our website.
         </p>
@@ -49,20 +50,20 @@ export default function PressPage() {
         />
       </PostContent>
 
-      <SectionTitle>Who We Are </SectionTitle>
+      <SectionTitle>Who We Are</SectionTitle>
       <PostContent>
         <p>
-          <strong>Hallie Casey</strong> is a <em>One to Grow On</em> host and
-          producer. She is a native Texan and passionate about agricultural
-          sustainability and communication. Her love of science communication
-          began at 12 when she co-founded Discover Green, a statewide non-profit
-          focused on promoting youth leadership in environmental activism. She
-          continued to work in science communication focused on agriculture and
-          plant science, primarily through work in online video. Hallie got a
-          bachelor’s in agribusiness from Texas State University and a master’s
-          in International Agricultural Development at the University of
-          California, Davis. She now lives in Austin, Texas. While not working,
-          she enjoys mystery novels and lemon tarts.
+          <strong>Hallie Casey</strong> is a <em>One to Grow On</em>
+          host and producer. She is a native Texan and passionate about
+          agricultural sustainability and communication. Her love of science
+          communication began at 12 when she co-founded Discover Green, a
+          statewide non-profit focused on promoting youth leadership in
+          environmental activism. She continued to work in science communication
+          focused on agriculture and plant science, primarily through work in
+          online video. Hallie got a bachelor’s in agribusiness from Texas State
+          University and a master’s in International Agricultural Development at
+          the University of California, Davis. She now lives in Austin, Texas.
+          While not working, she enjoys mystery novels and lemon tarts.
         </p>
 
         <p>
@@ -97,9 +98,9 @@ export default function PressPage() {
       <SectionTitle>Where to Find Us</SectionTitle>
       <PostContent>
         <p>
-          <em>One to Grow On</em> is released every other Tuesday on all
-          podcasting platforms. If you’re looking for us between episodes, check
-          out @onetogrowonpod on{' '}
+          <em>One to Grow On</em>
+          is released every other Tuesday on all podcasting platforms. If you’re
+          looking for us between episodes, check out @onetogrowonpod on{' '}
           <a href="http://www.instagram.com/onetogrowonpod">Instagram</a>,{' '}
           <a href="http://www.twitter.com/onetogrowonpod">Twitter</a>, and{' '}
           <a href="https://www.facebook.com/onetogrowonpod">Facebook</a>.
