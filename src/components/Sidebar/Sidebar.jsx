@@ -27,7 +27,7 @@ export default () => {
         <li>- Mama Casey</li>
         <li>- Shianne</li>
         <li>- Patrick</li>
-        <li>- Christopher</li>
+        <li>- Stephen</li>
       </PatronList>
       <Divider />
       <StyledSidebarImage imageNumber={imageNumbers[0]} />
