@@ -9,7 +9,9 @@ const config = {
     title: `On to Grow On`,
     subtitle: `Understanding how food production impacts ourselves and our world`,
     description: `One to Grow On is a podcast where we dig into questions about agriculture and try to understand how food production impacts us and our world.`,
-    author: `@onetogrowonpod, Hallie Casey, Chris Casey, Catherine Arjet`,
+    author: `@onetogrowonpod, Hallie Casey, Chris Casey`,
+    url: `https://www.onetogrowonpod.com`,
+    twitterUsername: `@onetogrowonpod`,
   },
   plugins: [
     `gatsby-plugin-sass`,
