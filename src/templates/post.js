@@ -6,6 +6,7 @@ import { graphql } from 'gatsby';
 
 import PageLayout from '../components/Layout/PageLayout';
 import styles from './post.module.scss';
+import SEO from '../components/SEO';
 
 const propTypes = {
   data: PropTypes.shape({
@@ -13,6 +14,7 @@ const propTypes = {
       title: PropTypes.string,
       content: PropTypes.string,
       date: PropTypes.string,
+      excerpt: PropTypes.string,
     }),
   }).isRequired,
 };
@@ -22,15 +24,10 @@ const PostTemplate = ({ data }) => {
 
   return (
     <PageLayout>
-      <h1
-        className={styles.postTitle}
-        dangerouslySetInnerHTML={{ __html: post.title }}
-      />
+      <SEO title={post.title} description={post.excerpt} />
+      <h1 className={styles.postTitle} dangerouslySetInnerHTML={{ __html: post.title }} />
       <div dangerouslySetInnerHTML={{ __html: post.date.split('T')[0] }} />
-      <div
-        className={styles.postContent}
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content }} />
     </PageLayout>
   );
 };
@@ -45,6 +42,7 @@ export const pageQuery = graphql`
       title
       content
       date
+      excerpt
     }
     site {
       siteMetadata {
