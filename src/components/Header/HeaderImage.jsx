@@ -19,6 +19,7 @@ import { breakpointsDown } from '../../constants/breakpoints';
 const Image = () => {
   const isLive = typeof window !== 'undefined';
   // const isHome = isLive ? window.location.pathname === '/' : false;
+  console.log('ISLIVE', isLive);
   const isHome = React.useMemo(() => {
     return isLive ? window.location.pathname === '/' : false;
   }, [isLive]);
