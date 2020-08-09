@@ -32,7 +32,7 @@ const Image = () => (
     render={(data) => (
       <StyledImg
         fluid={data.placeholderImage.childImageSharp.fluid}
-        isHome={window.location.pathname === '/'}
+        isHome={window?.location.pathname === '/' || false}
       />
     )}
   />
