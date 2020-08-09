@@ -30,17 +30,21 @@ const Image = () => (
       }
     `}
     render={(data) => (
-      <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />
+      <StyledImg
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        isHome={window.location.pathname === '/'}
+      />
     )}
   />
 );
+
 export default Image;
 
 const StyledImg = styled(Img)`
-  height: 450px;
+  height: ${(props) => (props.isHome ? 450 : 200)}px;
 
   ${breakpointsDown.laptop} {
-    height: 350px;
+    height: ${(props) => (props.isHome ? 350 : 200)}px;
   }
 
   ${breakpointsDown.tablet} {

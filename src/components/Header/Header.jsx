@@ -28,6 +28,8 @@ const Header = styled.header`
   margin-bottom: 5rem;
   text-align: center;
   position: relative;
+  overflow: hidden;
+  z-index: 0;
 
   & a,
   a:link,
