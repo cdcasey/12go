@@ -16,27 +16,32 @@ import { breakpointsDown } from '../../constants/breakpoints';
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "12GO_YTHeader.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid
+const Image = () => {
+  const isLive = typeof window !== 'undefined';
+  // const isHome = isLive ? window.location.pathname === '/' : false;
+  const isHome = React.useMemo(() => {
+    return isLive ? window.location.pathname === '/' : false;
+  }, [isLive]);
+  console.log('ISHOME', isHome);
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          placeholderImage: file(relativePath: { eq: "12GO_YTHeader.png" }) {
+            childImageSharp {
+              fluid(maxWidth: 1200) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-      }
-    `}
-    render={(data) => (
-      <StyledImg
-        fluid={data.placeholderImage.childImageSharp.fluid}
-        isHome={typeof window !== 'undefined' ? window.location.pathname === '/' : false}
-      />
-    )}
-  />
-);
+      `}
+      render={(data) => (
+        <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} isHome={isHome} />
+      )}
+    />
+  );
+};
 
 export default Image;
 
