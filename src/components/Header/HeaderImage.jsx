@@ -47,7 +47,11 @@ const Image = () => {
 export default Image;
 
 const StyledImg = styled(Img)`
-  height: ${(props) => (props.isHome ? 450 : 200)}px;
+  height: ${(props) => {
+    console.log('PROPS', props);
+
+    return props.isHome ? 450 : 200;
+  }}px;
 
   ${breakpointsDown.laptop} {
     height: ${(props) => (props.isHome ? 350 : 200)}px;
