@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import { useLocation } from '@reach/router';
 
 import { breakpointsDown } from '../../constants/breakpoints';
 
@@ -17,13 +18,11 @@ import { breakpointsDown } from '../../constants/breakpoints';
  */
 
 const Image = () => {
-  const isLive = typeof window !== 'undefined';
-  // const isHome = isLive ? window.location.pathname === '/' : false;
-  console.log('ISLIVE', isLive);
-  const isHome = React.useMemo(() => {
-    return isLive ? window.location.pathname === '/' : false;
-  }, [isLive]);
+  const location = useLocation();
+
+  const isHome = location.pathname === '/';
   console.log('ISHOME', isHome);
+  console.log('LOCATION IMAGE', location);
   return (
     <StaticQuery
       query={graphql`
