@@ -19,10 +19,8 @@ import { breakpointsDown } from '../../constants/breakpoints';
 
 const Image = () => {
   const location = useLocation();
-
   const isHome = location.pathname === '/';
-  console.log('ISHOME', isHome);
-  console.log('LOCATION IMAGE', location);
+
   return (
     <StaticQuery
       query={graphql`
@@ -37,7 +35,7 @@ const Image = () => {
         }
       `}
       render={(data) => (
-        <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} isHome={isHome} />
+        <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} needsBigHeader={isHome} />
       )}
     />
   );
@@ -46,14 +44,10 @@ const Image = () => {
 export default Image;
 
 const StyledImg = styled(Img)`
-  height: ${(props) => {
-    console.log('PROPS', props);
-
-    return props.isHome ? 450 : 200;
-  }}px;
+  height: ${(props) => (props.needsBigHeader ? 450 : 200)}px;
 
   ${breakpointsDown.laptop} {
-    height: ${(props) => (props.isHome ? 350 : 200)}px;
+    height: ${(props) => (props.needsBigHeader ? 350 : 200)}px;
   }
 
   ${breakpointsDown.tablet} {
