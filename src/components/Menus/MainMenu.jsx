@@ -95,6 +95,9 @@ function MainMenu() {
             <MenuLink to="/press">Press Kit</MenuLink>
           </StyledMenuItem>
           <StyledMenuItem>
+            <MenuLink to="/collaborations">Collaborations</MenuLink>
+          </StyledMenuItem>
+          <StyledMenuItem>
             <MenuLink to="/contact">Contact</MenuLink>
           </StyledMenuItem>
         </StyledDropDownMenuList>
