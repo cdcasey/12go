@@ -52,15 +52,15 @@ export default function PressPage() {
       <SectionTitle>Who We Are</SectionTitle>
       <PostContent>
         <p>
-          <strong>Hallie Casey</strong> is a <em>One to Grow On</em>
-          host and producer. She is a native Texan and passionate about agricultural sustainability
-          and communication. Her love of science communication began at 12 when she co-founded
-          Discover Green, a statewide non-profit focused on promoting youth leadership in
-          environmental activism. She continued to work in science communication focused on
-          agriculture and plant science, primarily through work in online video. Hallie got a
-          bachelor’s in agribusiness from Texas State University and a master’s in International
-          Agricultural Development at the University of California, Davis. She now lives in Austin,
-          Texas. While not working, she enjoys mystery novels and lemon tarts.
+          <strong>Hallie Casey</strong> is a <em>One to Grow On</em> host and producer. She is a
+          native Texan and passionate about agricultural sustainability and communication. Her love
+          of science communication began at 12 when she co-founded Discover Green, a statewide
+          non-profit focused on promoting youth leadership in environmental activism. She continued
+          to work in science communication focused on agriculture and plant science, primarily
+          through work in online video. Hallie got a bachelor’s in agribusiness from Texas State
+          University and a master’s in International Agricultural Development at the University of
+          California, Davis. She now lives in Austin, Texas. While not working, she enjoys mystery
+          novels and lemon tarts.
         </p>
 
         <p>
