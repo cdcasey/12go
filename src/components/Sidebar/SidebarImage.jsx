@@ -74,17 +74,15 @@ const IMAGE_INFO = {
     caption: 'Hallie, Chris, and Catherine celebrating one year of podcasting!',
   },
   4: {
-    alt:
-      'A man and a woman smiling at the camera while standing in a greenhouse',
-    caption: 'Chris visiting Hallie at her greenhouse at Texas State.',
+    alt: 'A man and a woman smiling at the camera while standing in a greenhouse',
+    caption: 'Chris visiting Hallie at the greenhouse at Texas State.',
   },
   5: {
     alt: 'Chris and Hallie smiling at the camera while on a hike',
     caption: 'Chris and Hallie on a hike.',
   },
   6: {
-    alt:
-      'A woman smiling with her arms spread out wide while standing in front of a corn field',
+    alt: 'A woman smiling with her arms spread out wide while standing in front of a corn field',
     caption: 'Hallie in front of her favorite tall grass.',
   },
   7: {
