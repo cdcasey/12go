@@ -14,18 +14,16 @@ export default function PressPage() {
       <SectionTitle>What We Do</SectionTitle>
       <PostContent>
         <p>
-          <em>One to Grow On</em>
-          is a podcast where we dig into questions about agriculture and try to understand how food
-          production impacts us and our world. Each episode, hosts Hallie and Chris pick an area of
-          agriculture or food production to discuss. Listen for plant facts, dad jokes, and the
-          stories behind your food.
+          <em>One to Grow On</em> is a podcast where we dig into questions about agriculture and try
+          to understand how food production impacts us and our world. Each episode, hosts Hallie and
+          Chris pick an area of agriculture or food production to discuss. Listen for plant facts,
+          dad jokes, and the stories behind your food.
         </p>
 
         <p>
-          <em>One to Grow On</em>
-          is an older kid-friendly podcast that is safe and appropriate for listeners of all ages.
-          There are a few clearly marked episodes that contain content that may not be suitable for
-          all ages
+          <em>One to Grow On</em> is an older kid-friendly podcast that is safe and appropriate for
+          listeners of all ages. There are a few clearly marked episodes that contain content that
+          may not be suitable for all ages
         </p>
 
         <p>
@@ -90,9 +88,8 @@ export default function PressPage() {
       <SectionTitle>Where to Find Us</SectionTitle>
       <PostContent>
         <p>
-          <em>One to Grow On</em>
-          is released every other Tuesday on all podcasting platforms. If you’re looking for us
-          between episodes, check out @onetogrowonpod on{' '}
+          <em>One to Grow On</em> is released every other Tuesday on all podcasting platforms. If
+          you’re looking for us between episodes, check out @onetogrowonpod on{' '}
           <a href="http://www.instagram.com/onetogrowonpod">Instagram</a>,{' '}
           <a href="http://www.twitter.com/onetogrowonpod">Twitter</a>, and{' '}
           <a href="https://www.facebook.com/onetogrowonpod">Facebook</a>.
