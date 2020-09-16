@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import { useLocation } from '@reach/router';
 
 import { breakpointsDown } from '../../constants/breakpoints';
 
@@ -16,31 +17,37 @@ import { breakpointsDown } from '../../constants/breakpoints';
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "12GO_YTHeader.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid
+const Image = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          placeholderImage: file(relativePath: { eq: "12GO_YTHeader.png" }) {
+            childImageSharp {
+              fluid(maxWidth: 1200) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-      }
-    `}
-    render={(data) => (
-      <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />
-    )}
-  />
-);
+      `}
+      render={(data) => (
+        <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} needsBigHeader={isHome} />
+      )}
+    />
+  );
+};
+
 export default Image;
 
 const StyledImg = styled(Img)`
-  height: 450px;
+  height: ${(props) => (props.needsBigHeader ? 450 : 200)}px;
 
   ${breakpointsDown.laptop} {
-    height: 350px;
+    height: ${(props) => (props.needsBigHeader ? 350 : 200)}px;
   }
 
   ${breakpointsDown.tablet} {
