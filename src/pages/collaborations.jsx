@@ -6,6 +6,7 @@ import PageLayout from '../components/Layout/PageLayout';
 import { PostTitle, ExternalLink } from '../components/PageStyles';
 
 import CollabImage from '../components/Collaborations/CollabImage';
+import { breakpointsDown } from '../constants/breakpoints';
 
 export default function SeriesPage() {
   return (
@@ -80,6 +81,10 @@ const CollabGallery = styled.div.attrs(() => ({
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.6rem;
+
+  ${breakpointsDown.mobileL} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const SeriesTitle = styled.h3`
