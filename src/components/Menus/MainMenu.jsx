@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { colors } from '../../constants/colors';
 import { breakpointsDown } from '../../constants/breakpoints';
+import { ExternalLink } from '../PageStyles';
 
 const menuQuery = graphql`
   query {
@@ -95,6 +95,9 @@ function MainMenu() {
             <MenuLink to="/press">Press Kit</MenuLink>
           </StyledMenuItem>
           <StyledMenuItem>
+            <MenuLink to="/collaborations">Collaborations</MenuLink>
+          </StyledMenuItem>
+          <StyledMenuItem>
             <MenuLink to="/contact">Contact</MenuLink>
           </StyledMenuItem>
         </StyledDropDownMenuList>
@@ -181,18 +184,5 @@ const MenuLink = styled(Link).attrs(() => ({
     ${breakpointsDown.tablet} {
       background-color: unset;
     }
-  }
-`;
-
-const ExternalLink = styled(OutboundLink)`
-  &,
-  &:link,
-  &:visited {
-    text-decoration: none;
-    color: ${colors.purpleDark};
-  }
-  &:hover {
-    background-color: ${colors.greenLight};
-    background-color: unset;
   }
 `;
