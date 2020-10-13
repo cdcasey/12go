@@ -26,6 +26,18 @@ export const query = graphql`
     spirits: file(relativePath: { eq: "collabs/spirits.png" }) {
       ...squareImage
     }
+
+    farmtraveler: file(relativePath: { eq: "collabs/farmtraveler.jpg" }) {
+      ...squareImage
+    }
+
+    outsidein: file(relativePath: { eq: "collabs/outsidein.png" }) {
+      ...squareImage
+    }
+
+    puttingittogether: file(relativePath: { eq: "collabs/puttingittogether.jpg" }) {
+      ...squareImage
+    }
   }
 `;
 
@@ -38,6 +50,15 @@ const IMAGE_INFO = {
   },
   spirits: {
     alt: 'Spirits logo',
+  },
+  farmtraveler: {
+    alt: 'Farm Traveler logo',
+  },
+  outsidein: {
+    alt: 'Outside In logo',
+  },
+  puttingittogether: {
+    alt: 'Putting It Together logo',
   },
 };
 
