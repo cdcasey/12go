@@ -136,9 +136,9 @@ const StyledFigure = styled.figure`
   }
 `;
 
-const StyledCaption = styled.figcaption`
+export const StyledCaption = styled.figcaption`
   text-align: left;
   width: 100%;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 `;

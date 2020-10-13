@@ -3,6 +3,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 import PageLayout from '../components/Layout/PageLayout';
 import { PostContent, PostTitle, SectionTitle, Clear } from '../components/PageStyles';
+import { StyledCaption } from '../components/Sidebar/SidebarImage';
 
 export default function UnstyledPageLayout() {
   return (
@@ -71,7 +72,7 @@ export default function UnstyledPageLayout() {
             src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-09-29-at-6.08.09-PM-300x292.jpeg"
             alt="two girls making faces in the back seat of a car"
           />
-          <figcaption>Catherine and Hallie, March of 2009</figcaption>
+          <StyledCaption>Catherine and Hallie, March of 2009</StyledCaption>
         </figure>
         <p>
           Throughout her years in the industry, friends, family, and virtual strangers alike
@@ -91,7 +92,7 @@ export default function UnstyledPageLayout() {
             src="https://12go.onetogrowonpod.com/wp-content/uploads/2018/09/12go-e1539314987888-287x300.jpeg"
             alt="A young Hallie sits in Chris's lap while they both wear Troy Aikman jerseys"
           />
-          <figcaption>Chris and Hallie, January 1997.</figcaption>
+          <StyledCaption>Chris and Hallie, January 1997.</StyledCaption>
         </figure>
         <p>
           After months of planning and research, Hallie and Catherine had decided to create a

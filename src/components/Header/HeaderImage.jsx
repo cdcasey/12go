@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+// A Gatsby dep. May change to react-router in the future
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocation } from '@reach/router';
 
