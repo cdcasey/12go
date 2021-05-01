@@ -6,7 +6,10 @@ import styled from 'styled-components';
 import { colors } from '../../constants/colors';
 import { breakpointsDown } from '../../constants/breakpoints';
 import { ExternalLink } from '../PageStyles';
+import { MenuButton } from './MenuButton';
+import Popup from '../Popup';
 
+// TODO: Create a separate pop-up component
 const menuQuery = graphql`
   query {
     allWordpressWpApiMenusMenusItems(filter: { name: { eq: "Top Menu" } }) {
@@ -74,45 +77,51 @@ function MainMenuItems({ data }) {
 */
 
 function MainMenu() {
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+
   return (
-    <StyledMenuList>
-      <StyledMenuItem>
-        <MenuLink to="/">Episodes</MenuLink>
-        <StyledDropDownMenuList>
-          <StyledMenuItem>
-            <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
-          </StyledMenuItem>
-          <StyledMenuItem>
-            <MenuLink to="/transcripts">Transcripts</MenuLink>
-          </StyledMenuItem>
-        </StyledDropDownMenuList>
-      </StyledMenuItem>
+    <React.Fragment>
+      <MenuButton />
+      <StyledMenuList>
+        <StyledMenuItem onClick={() => setMenuIsOpen(!menuIsOpen)}>
+          <MenuLink to={menuIsOpen ? '/' : null}>Episodes</MenuLink>
+          <Popup open={menuIsOpen}>
+            <StyledDropDownMenuList>
+              <StyledMenuItem>
+                <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
+              </StyledMenuItem>
+              <StyledMenuItem>
+                <MenuLink to="/transcripts">Transcripts</MenuLink>
+              </StyledMenuItem>
+            </StyledDropDownMenuList>
+          </Popup>
+        </StyledMenuItem>
 
-      <StyledMenuItem>
-        <MenuLink to="/about">About</MenuLink>
-        <StyledDropDownMenuList>
-          <StyledMenuItem>
-            <MenuLink to="/press">Press Kit</MenuLink>
-          </StyledMenuItem>
-          <StyledMenuItem>
-            <MenuLink to="/collaborations">Collaborations</MenuLink>
-          </StyledMenuItem>
-          <StyledMenuItem>
-            <MenuLink to="/contact">Contact</MenuLink>
-          </StyledMenuItem>
-        </StyledDropDownMenuList>
-      </StyledMenuItem>
+        <StyledMenuItem>
+          <MenuLink to="/about">About</MenuLink>
+          <StyledDropDownMenuList>
+            <StyledMenuItem>
+              <MenuLink to="/press">Press Kit</MenuLink>
+            </StyledMenuItem>
+            <StyledMenuItem>
+              <MenuLink to="/collaborations">Collaborations</MenuLink>
+            </StyledMenuItem>
+            <StyledMenuItem>
+              <MenuLink to="/contact">Contact</MenuLink>
+            </StyledMenuItem>
+          </StyledDropDownMenuList>
+        </StyledMenuItem>
 
-      <StyledMenuItem>
-        <ExternalLink
-          href="https://www.patreon.com/onetogrowonpod"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Support
-        </ExternalLink>
-      </StyledMenuItem>
-      {/* <StyledMenuItem>
+        <StyledMenuItem>
+          <ExternalLink
+            href="https://www.patreon.com/onetogrowonpod"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Support
+          </ExternalLink>
+        </StyledMenuItem>
+        {/* <StyledMenuItem>
         <ExternalLink
           href="https://iteratehq.com/one-to-grow-on-podcast/5e0f6e39756c7500013a92b3"
           target="_blank"
@@ -121,7 +130,8 @@ function MainMenu() {
           Listener Survey
         </ExternalLink>
       </StyledMenuItem> */}
-    </StyledMenuList>
+      </StyledMenuList>
+    </React.Fragment>
   );
 }
 
@@ -130,7 +140,8 @@ MainMenu.propTypes = propTypes;
 export default () => <StaticQuery query={menuQuery} render={MainMenu} />;
 
 const StyledMenuList = styled.ul`
-  display: flex;
+  /* display: flex; */
+  display: none;
   list-style-type: none;
 
   ${breakpointsDown.tablet} {
@@ -139,8 +150,8 @@ const StyledMenuList = styled.ul`
 `;
 
 const StyledDropDownMenuList = styled.ul`
-  position: absolute;
-  display: none;
+  /* position: absolute;
+  display: none; */
   list-style-type: none;
   background-color: ${colors.white};
   z-index: 1;
@@ -156,10 +167,11 @@ const StyledDropDownMenuList = styled.ul`
 `;
 
 const StyledMenuItem = styled.li`
-  &:hover ${StyledDropDownMenuList} {
-    display: flex;
-    flex-direction: column;
-  }
+  /* &:hover ${StyledDropDownMenuList} { */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  /* } */
 
   margin-right: 1rem;
   font-size: 1.8rem;
