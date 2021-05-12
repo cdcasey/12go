@@ -58,7 +58,7 @@ const Header = styled.header`
 
 const Heading = styled.h1`
   font-family: 'Lilita One', cursive;
-  font-size: 6.7vw;
+  font-size: min(6.7vw, 144px);
   letter-spacing: 0.2rem;
 
   ${breakpointsDown.mobileL} {

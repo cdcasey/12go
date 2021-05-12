@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import styled from 'styled-components'
 
 // function makeSearch(params) {
 //   return {
@@ -20,12 +21,8 @@ import React from 'react';
 export default function SearchBar() {
   return (
     // <div id="search" dangerouslySetInnerHTML={makeSearch()} />
-    <form
-      method="get"
-      title="Search Form"
-      action="https://cse.google.com/cse/publicurl"
-    >
-      <div>
+    <form method="get" title="Search Form" action="https://cse.google.com/cse/publicurl">
+      <SearchContainer>
         <input
           type="text"
           id="q"
@@ -35,12 +32,7 @@ export default function SearchBar() {
           placeholder="Search"
           maxLength="256"
         />
-        <input
-          type="hidden"
-          id="cx"
-          name="cx"
-          value="011161646831758772574:-nua5i_nu3i"
-        />
+        <input type="hidden" id="cx" name="cx" value="011161646831758772574:-nua5i_nu3i" />
         <input
           style={{ height: 15 }}
           type="image"
@@ -51,7 +43,14 @@ export default function SearchBar() {
           alt="Go"
           title="Submit Search Query"
         />
-      </div>
+      </SearchContainer>
     </form>
-  );
+  )
 }
+
+const SearchContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  align-items: center;
+`

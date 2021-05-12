@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
-import { colors } from '../../constants/colors';
+import { colors } from '../../constants/colors'
 
 export const PostContent = styled.div.attrs(() => ({
   className: 'post-content',
@@ -27,7 +27,7 @@ export const PostContent = styled.div.attrs(() => ({
       font-style: italic;
     }
   }
-`;
+`
 
 export const SectionTitle = styled.h2.attrs(() => ({
   className: 'section-title',
@@ -35,17 +35,17 @@ export const SectionTitle = styled.h2.attrs(() => ({
   margin-top: 4rem;
   font-size: 3rem;
   font-weight: normal;
-`;
+`
 
 export const PostTitle = styled.h1.attrs(() => ({
   className: 'post-title',
 }))`
   font-size: 4rem;
-`;
+`
 
 export const Clear = styled.div`
   clear: both;
-`;
+`
 
 export const SiteLink = styled(Link).attrs(() => ({
   className: '12goLink',
@@ -59,17 +59,20 @@ export const SiteLink = styled(Link).attrs(() => ({
   &:hover {
     color: ${colors.orangeLight};
   }
-`;
+`
 
 export const ExternalLink = styled(OutboundLink)`
   &,
   &:link,
   &:visited {
+    display: inline-block;
     text-decoration: none;
     color: ${colors.purpleDark};
+    width: 100%;
+    padding: 0 2rem;
+    border-radius: 3px;
   }
   &:hover {
     background-color: ${colors.greenLight};
-    background-color: unset;
   }
-`;
+`
