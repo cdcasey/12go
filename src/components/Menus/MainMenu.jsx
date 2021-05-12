@@ -83,7 +83,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${colors.white};
+  background-color: ${colors.white}e6;
   height: 100vh;
   z-index: 10;
   padding: 9rem 2rem;
