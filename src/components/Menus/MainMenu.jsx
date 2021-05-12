@@ -1,91 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import { colors } from '../../constants/colors';
-import { breakpointsDown } from '../../constants/breakpoints';
-import { ExternalLink } from '../PageStyles';
-import { MenuButton } from './MenuButton';
-import Popup from '../Popup';
-
-// TODO: Create a separate pop-up component
-const menuQuery = graphql`
-  query {
-    allWordpressWpApiMenusMenusItems(filter: { name: { eq: "Top Menu" } }) {
-      edges {
-        node {
-          name
-          items {
-            wordpress_id
-            order
-            wordpress_parent
-            title
-            url
-            attr
-            target
-            classes
-            xfn
-            description
-            object_id
-            object
-            object_slug
-            type
-            type_label
-          }
-        }
-      }
-    }
-  }
-`;
+import { colors } from '../../constants/colors'
+import { ExternalLink } from '../PageStyles'
+import { MenuButton } from './MenuButton'
 
 const activeStyle = {
   color: colors.orangeLight,
-};
+}
 
 const propTypes = {
   data: PropTypes.shape({}).isRequired,
-};
-/*
-function MainMenuItems({ data }) {
-  return data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => {
-    let menuItem;
-    if (item.object_slug === 'support') {
-      menuItem = <a href={item.url}>{item.title}</a>;
-    } else if (item.object_slug === 'home') {
-      menuItem = (
-        <Link to="/" activeClassName={styles.active}>
-          {item.title}
-        </Link>
-      );
-    } else if (item.type === 'custom') {
-      menuItem = (
-        <a href={item.url} activeClassName={styles.active}>
-          {item.title}
-        </a>
-      );
-    } else {
-      menuItem = (
-        <Link to={`/${item.object_slug}`} activeClassName={styles.active}>
-          {item.title}
-        </Link>
-      );
-    }
-    return <li key={item.wordpress_id}>{menuItem}</li>;
-  });
 }
-*/
 
 function MainMenu() {
-  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false)
   return (
     <React.Fragment>
-      <MenuButton />
-      <StyledMenuList>
-        <StyledMenuItem onClick={() => setMenuIsOpen(!menuIsOpen)}>
-          <MenuLink to={menuIsOpen ? '/' : null}>Episodes</MenuLink>
-          <Popup open={menuIsOpen}>
+      <MenuButton open={menuIsOpen} setOpen={setMenuIsOpen} />
+      <StyledNav open={menuIsOpen}>
+        <StyledMenuList>
+          <StyledMenuItem onClick={() => setMenuIsOpen(!menuIsOpen)}>
+            <MenuLink to="/">Episodes</MenuLink>
             <StyledDropDownMenuList>
               <StyledMenuItem>
                 <MenuLink to="/series-and-minisodes">Series and Minisodes</MenuLink>
@@ -94,34 +32,33 @@ function MainMenu() {
                 <MenuLink to="/transcripts">Transcripts</MenuLink>
               </StyledMenuItem>
             </StyledDropDownMenuList>
-          </Popup>
-        </StyledMenuItem>
+          </StyledMenuItem>
 
-        <StyledMenuItem>
-          <MenuLink to="/about">About</MenuLink>
-          <StyledDropDownMenuList>
-            <StyledMenuItem>
-              <MenuLink to="/press">Press Kit</MenuLink>
-            </StyledMenuItem>
-            <StyledMenuItem>
-              <MenuLink to="/collaborations">Collaborations</MenuLink>
-            </StyledMenuItem>
-            <StyledMenuItem>
-              <MenuLink to="/contact">Contact</MenuLink>
-            </StyledMenuItem>
-          </StyledDropDownMenuList>
-        </StyledMenuItem>
+          <StyledMenuItem>
+            <MenuLink to="/about">About</MenuLink>
+            <StyledDropDownMenuList>
+              <StyledMenuItem>
+                <MenuLink to="/press">Press Kit</MenuLink>
+              </StyledMenuItem>
+              <StyledMenuItem>
+                <MenuLink to="/collaborations">Collaborations</MenuLink>
+              </StyledMenuItem>
+              <StyledMenuItem>
+                <MenuLink to="/contact">Contact</MenuLink>
+              </StyledMenuItem>
+            </StyledDropDownMenuList>
+          </StyledMenuItem>
 
-        <StyledMenuItem>
-          <ExternalLink
-            href="https://www.patreon.com/onetogrowonpod"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Support
-          </ExternalLink>
-        </StyledMenuItem>
-        {/* <StyledMenuItem>
+          <StyledMenuItem>
+            <ExternalLink
+              href="https://www.patreon.com/onetogrowonpod"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Support
+            </ExternalLink>
+          </StyledMenuItem>
+          {/* <StyledMenuItem>
         <ExternalLink
           href="https://iteratehq.com/one-to-grow-on-podcast/5e0f6e39756c7500013a92b3"
           target="_blank"
@@ -130,53 +67,45 @@ function MainMenu() {
           Listener Survey
         </ExternalLink>
       </StyledMenuItem> */}
-      </StyledMenuList>
+        </StyledMenuList>
+      </StyledNav>
     </React.Fragment>
-  );
+  )
 }
 
-MainMenu.propTypes = propTypes;
+MainMenu.propTypes = propTypes
 
-export default () => <StaticQuery query={menuQuery} render={MainMenu} />;
+export default MainMenu
+
+const StyledNav = styled.nav`
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+  transition: transform 300ms ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: ${colors.white};
+  height: 100vh;
+  z-index: 10;
+  padding: 9rem 2rem;
+`
 
 const StyledMenuList = styled.ul`
-  /* display: flex; */
-  display: none;
-  list-style-type: none;
-
-  ${breakpointsDown.tablet} {
-    flex-direction: column;
-  }
-`;
-
-const StyledDropDownMenuList = styled.ul`
-  /* position: absolute;
-  display: none; */
-  list-style-type: none;
-  background-color: ${colors.white};
-  z-index: 1;
-
-  ${breakpointsDown.tablet} {
-    flex-direction: column;
-    display: inline-block;
-    position: unset;
-    z-index: unset;
-    margin-left: 1rem;
-    margin-bottom: 0.4rem;
-  }
-`;
-
-const StyledMenuItem = styled.li`
-  /* &:hover ${StyledDropDownMenuList} { */
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  /* } */
+  list-style-type: none;
+`
 
-  margin-right: 1rem;
+const StyledDropDownMenuList = styled.ul`
+  list-style-type: none;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+`
+
+const StyledMenuItem = styled.li`
+  width: 100%;
   font-size: 1.8rem;
   font-weight: bold;
-`;
+`
 
 const MenuLink = styled(Link).attrs(() => ({
   activeStyle,
@@ -189,12 +118,10 @@ const MenuLink = styled(Link).attrs(() => ({
     color: ${colors.purpleDark};
     display: inline-block;
     width: 100%;
+    padding: 0 2rem;
+    border-radius: 3px;
   }
   &:hover {
     background-color: ${colors.greenLight};
-
-    ${breakpointsDown.tablet} {
-      background-color: unset;
-    }
   }
-`;
+`

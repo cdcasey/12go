@@ -1,25 +1,27 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 // import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-// const propTypes = {
-//   open: PropTypes.bool.isRequired,
-//   children: PropTypes.node.isRequired,
-// };
+import { colors } from '../../constants/colors'
 
-export function MenuButton() {
+const propTypes = {
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
+}
+
+export function MenuButton({ open, setOpen }) {
   return (
     <React.Fragment>
-      <StyledMenuCheckbox id="navi-toggle" />
+      <StyledMenuCheckbox id="navi-toggle" onClick={() => setOpen(!open)} />
       <StyledMenuButton htmlFor="navi-toggle">
         <StyledMenuButtonIcon>&nbsp;</StyledMenuButtonIcon>
       </StyledMenuButton>
     </React.Fragment>
-  );
+  )
 }
 
-// MenuButton.propTypes = propTypes;
+MenuButton.propTypes = propTypes
 
 const StyledMenuButtonIcon = styled.div`
   margin-top: 3.4rem;
@@ -29,7 +31,7 @@ const StyledMenuButtonIcon = styled.div`
   &::after {
     width: 3rem;
     height: 2px;
-    background-color: purple;
+    background-color: ${colors.white};
     display: inline-block;
   }
 
@@ -49,12 +51,13 @@ const StyledMenuButtonIcon = styled.div`
   &::after {
     top: 0.8rem;
   }
-`;
+`
 
 const StyledMenuButton = styled.label.attrs(() => ({
   className: 'navigation',
 }))`
-  background-color: $color-white;
+  background-color: ${colors.purpleDark};
+  opacity: 0.98;
   height: 7rem;
   width: 7rem;
   position: fixed;
@@ -62,104 +65,10 @@ const StyledMenuButton = styled.label.attrs(() => ({
   left: 1rem;
   border-radius: 50%;
   z-index: 2000;
-  box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+  box-shadow: 0 1rem 3rem rgba(${colors.black}, 0.1);
   text-align: center;
   cursor: pointer;
-
-  @include respond(tab-port) {
-    top: 4rem;
-    right: 4rem;
-  }
-
-  @include respond(phone) {
-    top: 3rem;
-    right: 3rem;
-  }
-
-  &__background {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    position: fixed;
-    top: 6.5rem;
-    right: 6.5rem;
-    background-image: radial-gradient($color-primary-light, $color-primary-dark);
-    z-index: 1000;
-    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    // transform: scale(80);
-
-    @include respond(tab-port) {
-      top: 4.5rem;
-      right: 4.5rem;
-    }
-
-    @include respond(phone) {
-      top: 3.5rem;
-      right: 3.5rem;
-    }
-  }
-
-  &__nav {
-    height: 100vh;
-    // width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1500;
-
-    // hide the menu
-    // display can't be animated
-    // visibility doesn't animate well
-    opacity: 0;
-    width: 0;
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  &__list {
-    @include centervh;
-    list-style: none;
-    text-align: center;
-    // width: 100%;
-  }
-
-  &__item {
-    margin: 1rem;
-  }
-
-  &__link {
-    &:link,
-    &:visited {
-      display: inline-block;
-      font-size: 3rem;
-      font-weight: 300;
-      padding: 1rem 2rem;
-      color: $color-white;
-      text-decoration: none;
-      text-transform: uppercase;
-      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-      background-size: 220%;
-      transition: all 0.4s;
-
-      span {
-        display: inline-block;
-        margin-right: 1.5rem;
-      }
-    }
-    &:hover,
-    &:active {
-      background-position: 100%;
-      color: $color-primary;
-      transform: translateX(1rem);
-    }
-  }
-
-  &__button:hover &__icon:before {
-    top: -1rem;
-  }
-  &__button:hover &__icon:after {
-    top: 1rem;
-  }
-`;
+`
 
 const StyledMenuCheckbox = styled.input.attrs(() => ({
   type: 'checkbox',
@@ -190,6 +99,6 @@ const StyledMenuCheckbox = styled.input.attrs(() => ({
     transform: rotate(-135deg);
     top: 0;
   }
-`;
+`
 
-export default MenuButton;
+export default MenuButton
