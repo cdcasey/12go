@@ -5,17 +5,17 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import SEO from '../SEO';
-import Header from '../Header/Header';
-import MainMenu from '../Menus/MainMenu';
-import Search from '../Search/Search';
-import Footer from '../Footer/Footer';
-import { breakpointsDown } from '../../constants/breakpoints';
+import SEO from '../SEO'
+import Header from '../Header/Header'
+import MainMenu from '../Menus/MainMenu'
+import Search from '../Search/Search'
+import Footer from '../Footer/Footer'
+import { breakpointsDown } from '../../constants/breakpoints'
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
@@ -24,7 +24,7 @@ const layoutQuery = graphql`
       description
     }
   }
-`;
+`
 
 function LayoutComponent(data, children) {
   return (
@@ -65,21 +65,18 @@ function LayoutComponent(data, children) {
 
       <Footer />
     </React.Fragment>
-  );
+  )
 }
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={layoutQuery}
-    render={(data) => LayoutComponent(data, children)}
-  />
-);
+  <StaticQuery query={layoutQuery} render={(data) => LayoutComponent(data, children)} />
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+export default Layout
 
 // query={graphql`
 // query SiteTitleQuery {
@@ -102,12 +99,12 @@ const LayoutContainer = styled.main.attrs(() => ({
   ${breakpointsDown.laptop} {
     margin: 0 1rem;
   }
-`;
+`
 
 const MainMenuContainer = styled.div.attrs(() => ({
   className: 'mainmenu-container',
 }))`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 1rem;
-`;
+`
