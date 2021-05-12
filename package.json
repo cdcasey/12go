@@ -64,7 +64,7 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "eslint -c .eslintrc --ext .js --ext .jsx --ignore-path .gitignore .",
-    "git": "yarn lint && yarn outdated",
+    "git": "yarn lint",
     "deploy": "git pull && yarn install && yarn build && rsync -avhW --delete-after public/ ../public/"
   },
   "repository": {
