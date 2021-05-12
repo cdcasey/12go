@@ -80,7 +80,7 @@ export default MainMenu
 const StyledNav = styled.nav`
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
   transition: transform 300ms ease-in-out;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: ${colors.white};
