@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import { colors } from '../../constants/colors';
-import { breakpointsDown } from '../../constants/breakpoints';
+import { colors } from '../../constants/colors'
+import { breakpointsDown } from '../../constants/breakpoints'
+import { defaultHover } from '../../constants/animations'
 
 const propTypes = {
   title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-};
+}
 
 export default function StyledIconLink({ title, path, href }) {
   return (
@@ -26,23 +27,26 @@ export default function StyledIconLink({ title, path, href }) {
         <path d={path} />
       </SVGIcon>
     </IconLink>
-  );
+  )
 }
 
-StyledIconLink.propTypes = propTypes;
+StyledIconLink.propTypes = propTypes
 
 const IconLink = styled.a`
   display: inline-block;
+
   &:hover {
     background-color: unset !important;
   }
-`;
+`
 
 const SVGIcon = styled.svg`
   fill: ${colors.white};
+  transition-duration: ${defaultHover};
 
   &:hover {
     fill: ${colors.orangeLight};
+    transition-duration: ${defaultHover};
   }
 
   ${breakpointsDown.tablet} {
@@ -52,4 +56,4 @@ const SVGIcon = styled.svg`
   ${breakpointsDown.mobileM} {
     width: 18px;
   }
-`;
+`

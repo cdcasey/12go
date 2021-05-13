@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import HeaderImage from './HeaderImage';
-import { colors } from '../../constants/colors';
-import { breakpointsDown } from '../../constants/breakpoints';
+import HeaderImage from './HeaderImage'
+import { colors } from '../../constants/colors'
+import { breakpointsDown } from '../../constants/breakpoints'
+import { defaultHover } from '../../constants/animations'
 
 const HeaderComponent = ({ siteTitle, description }) => (
   <Header>
@@ -15,14 +16,14 @@ const HeaderComponent = ({ siteTitle, description }) => (
     </Link>
     <HeaderImage />
   </Header>
-);
+)
 
 HeaderComponent.propTypes = {
   siteTitle: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-};
+}
 
-export default HeaderComponent;
+export default HeaderComponent
 
 const Header = styled.header`
   margin-bottom: 5rem;
@@ -45,16 +46,18 @@ const Header = styled.header`
     background-color: ${colors.white};
     z-index: 100;
     width: 80%;
+    transition-duration: ${defaultHover};
 
     &:hover {
       color: ${colors.orangeLight};
+      transition-duration: ${defaultHover};
     }
 
     ${breakpointsDown.tablet} {
       box-shadow: 0px 0px 60px 40px ${colors.white};
     }
   }
-`;
+`
 
 const Heading = styled.h1`
   font-family: 'Lilita One', cursive;
@@ -64,7 +67,7 @@ const Heading = styled.h1`
   ${breakpointsDown.mobileL} {
     font-size: 3.6rem;
   }
-`;
+`
 
 const Subheading = styled.h2`
   font-size: 2rem;
@@ -72,4 +75,4 @@ const Subheading = styled.h2`
   ${breakpointsDown.tablet} {
     font-size: 1.8rem;
   }
-`;
+`
