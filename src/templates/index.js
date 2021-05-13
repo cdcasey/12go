@@ -7,6 +7,7 @@ import Layout from '../components/Layout/Layout'
 import PreviewLink from '../components/PreviewLink/PreviewLink'
 import { breakpointsDown } from '../constants/breakpoints'
 import colors from '../constants/colors'
+import { defaultHover } from '../constants/animations'
 
 const NavLink = (props) => {
   const url = props.url === '' ? '/' : '/page/' + props.url
@@ -110,10 +111,11 @@ const MoreButton = styled.button`
   border: none;
   background-color: unset;
   cursor: ${(props) => (props.disabled ? '' : 'pointer')};
+  transition-duration: ${defaultHover};
 
   &:hover {
     color: ${(props) => (props.disabled ? '' : colors.orangeDark)};
-    transition-duration: 200ms;
+    transition-duration: ${defaultHover};
   }
 `
 
