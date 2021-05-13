@@ -25,7 +25,7 @@ const queryAll = `
       }
     }
 
-    allWordpressPost(filter: {categories: {elemMatch: {name: {eq: "Episodes"}}}}) {
+    allWordpressPost {
       edges {
         node {
           id

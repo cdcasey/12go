@@ -23,7 +23,15 @@ const IndexPage = ({ pageContext }) => {
   // const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
   // const nextUrl = (index + 1).toString();
 
-  const MAX_POSTS = group.length
+  const episodes = React.useMemo(() => {
+    return group.filter(({ node }) => {
+      const isEpisode =
+        node.categories.filter((category) => category?.slug === 'episodes').length > 0
+      return isEpisode
+    })
+  }, [group])
+
+  const MAX_POSTS = episodes.length
 
   const setPostNum = () => {
     setPostLimit((prevPostLimit) => {
@@ -35,7 +43,7 @@ const IndexPage = ({ pageContext }) => {
 
   const [postLimit, setPostLimit] = React.useState(9)
 
-  const shownPosts = group.slice(0, postLimit)
+  const shownPosts = episodes.slice(0, postLimit)
 
   return (
     <Layout>
