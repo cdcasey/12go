@@ -1,8 +1,8 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
-const { GATSBY_API_URL, GATSBY_API_PROTOCOL, GATSBY_SITE_URL } = process.env;
+const { GATSBY_API_URL, GATSBY_API_PROTOCOL, GATSBY_SITE_URL } = process.env
 
 const config = {
   siteMetadata: {
@@ -14,7 +14,18 @@ const config = {
     twitterUsername: `@onetogrowonpod`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    // `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,6 +53,7 @@ const config = {
       options: {
         baseUrl: GATSBY_API_URL,
         protocol: GATSBY_API_PROTOCOL,
+        // url: `${GATSBY_API_PROTOCOL}$://${GATSBY_API_URL}`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
@@ -69,7 +81,7 @@ const config = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-};
+}
 
 if (process.env.CONTEXT === 'production') {
   const googleAnalyticsConfig = {
@@ -79,8 +91,8 @@ if (process.env.CONTEXT === 'production') {
       anonymize: true,
       head: true,
     },
-  };
-  config.plugins.push(googleAnalyticsConfig);
+  }
+  config.plugins.push(googleAnalyticsConfig)
 }
 
-module.exports = config;
+module.exports = config
