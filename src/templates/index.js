@@ -1,37 +1,51 @@
 /* eslint-disable */
-import React from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
+import React from 'react'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import Layout from '../components/Layout/Layout';
-import PreviewLink from '../components/PreviewLink/PreviewLink';
-import { breakpointsDown } from '../constants/breakpoints';
+import Layout from '../components/Layout/Layout'
+import PreviewLink from '../components/PreviewLink/PreviewLink'
+import { breakpointsDown } from '../constants/breakpoints'
+import colors from '../constants/colors'
 
 const NavLink = (props) => {
-  const url = props.url === '' ? '/' : '/page/' + props.url;
+  const url = props.url === '' ? '/' : '/page/' + props.url
   if (!props.test) {
-    return <Link to={url}>{props.text}</Link>;
+    return <Link to={url}>{props.text}</Link>
   } else {
-    return <span>{props.text}</span>;
+    return <span>{props.text}</span>
   }
-};
+}
 
 const IndexPage = ({ pageContext }) => {
-  const { group, index, first, last, pageCount } = pageContext;
-  const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
-  const nextUrl = (index + 1).toString();
+  const { group, index, first, last, pageCount } = pageContext
+  // const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
+  // const nextUrl = (index + 1).toString();
+
+  const MAX_POSTS = group.length
+
+  const setPostNum = () => {
+    setPostLimit((prevPostLimit) => {
+      let newPostLimit = prevPostLimit + 6
+      newPostLimit = newPostLimit >= MAX_POSTS ? MAX_POSTS : newPostLimit
+      return newPostLimit
+    })
+  }
+
+  const [postLimit, setPostLimit] = React.useState(9)
+
+  const shownPosts = group.slice(0, postLimit)
 
   return (
     <Layout>
       <MainContainer>
-        {group.map(({ node }) => {
+        {shownPosts.map(({ node }) => {
           const isEpisode =
-            node.categories.filter((category) => category?.slug === 'episodes')
-              .length > 0;
+            node.categories.filter((category) => category?.slug === 'episodes').length > 0
 
           const bgUrl = node.featured_media
             ? node.featured_media.localFile?.childImageSharp.fixed.src
-            : '';
+            : ''
 
           if (isEpisode) {
             return (
@@ -44,12 +58,17 @@ const IndexPage = ({ pageContext }) => {
                 excerpt={node.excerpt}
                 bgUrl={bgUrl}
               />
-            );
+            )
           }
-          return null;
+          return null
         })}
       </MainContainer>
-      <PageTurners>
+
+      <MoreButton type="button" onClick={setPostNum} disabled={postLimit >= MAX_POSTS}>
+        {postLimit >= MAX_POSTS ? <span>That&rsquo;s it!</span> : 'More...'}
+      </MoreButton>
+
+      {/* <PageTurners>
         <div className="previousLink">
           <NavLink test={first} url={''} text="<<" />
           &nbsp;&nbsp;
@@ -69,25 +88,41 @@ const IndexPage = ({ pageContext }) => {
           &nbsp;&nbsp;
           <NavLink test={last} url={pageCount} text=">>" />
         </div>
-      </PageTurners>
+      </PageTurners> */}
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 const MainContainer = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-`;
+`
 
-const PageTurners = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 2.5rem;
+const MoreButton = styled.button`
+  margin: auto;
+  display: block;
+  color: ${colors.purpleDark};
+  font-size: 4rem;
+  font-family: 'Lilita One';
+  border: none;
+  background-color: unset;
+  cursor: ${(props) => (props.disabled ? '' : 'pointer')};
 
-  ${breakpointsDown.mobileL} {
-    font-size: 2rem;
+  &:hover {
+    color: ${(props) => (props.disabled ? '' : colors.orangeDark)};
+    transition-duration: 200ms;
   }
-`;
+`
+
+// const PageTurners = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   font-size: 2.5rem;
+
+//   ${breakpointsDown.mobileL} {
+//     font-size: 2rem;
+//   }
+// `
