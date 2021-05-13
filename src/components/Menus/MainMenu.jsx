@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { colors } from '../../constants/colors'
 import { ExternalLink } from '../PageStyles'
 import { MenuButton } from './MenuButton'
+import { defaultHover } from '../../constants/animations'
 
 const activeStyle = {
   color: colors.orangeLight,
@@ -120,8 +121,10 @@ const MenuLink = styled(Link).attrs(() => ({
     width: 100%;
     padding: 0 2rem;
     border-radius: 3px;
+    transition-duration: ${defaultHover};
   }
   &:hover {
     background-color: ${colors.greenLight};
+    transition-duration: ${defaultHover};
   }
 `

@@ -1,9 +1,10 @@
-import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import styled from 'styled-components'
 
-import { colors } from '../../constants/colors';
-import { breakpointsDown } from '../../constants/breakpoints';
+import { colors } from '../../constants/colors'
+import { breakpointsDown } from '../../constants/breakpoints'
+import { defaultHover } from '../../constants/animations'
 
 const tagQuery = graphql`
   query {
@@ -19,14 +20,14 @@ const tagQuery = graphql`
       }
     }
   }
-`;
+`
 
 // const scaler = base => Math.pow(base, 1 / 1.3);
 // const scaler = base => Math.log(base) + 1;
-const scaler = (base) => Math.log(Math.sqrt(base)) + 1.4;
+const scaler = (base) => Math.log(Math.sqrt(base)) + 1.4
 
 function TagMenuItems({ data }) {
-  const { edges } = data.allWordpressTag;
+  const { edges } = data.allWordpressTag
 
   return edges.map(({ node }) => {
     return (
@@ -35,8 +36,8 @@ function TagMenuItems({ data }) {
           {node.name}
         </TagLink>{' '}
       </React.Fragment>
-    );
-  });
+    )
+  })
 }
 
 function TagMenu(data) {
@@ -45,16 +46,16 @@ function TagMenu(data) {
       <TagLabel>Browse by tag: </TagLabel>
       <TagMenuItems data={data} />
     </TagContainer>
-  );
+  )
 }
 
-export default () => <StaticQuery query={tagQuery} render={TagMenu} />;
+export default () => <StaticQuery query={tagQuery} render={TagMenu} />
 
 const TagLabel = styled.div`
   font-family: 'Lilita One';
   font-size: 2.5rem;
   display: inline;
-`;
+`
 
 const TagContainer = styled.div`
   padding: 12px;
@@ -62,20 +63,24 @@ const TagContainer = styled.div`
   ${breakpointsDown.tablet} {
     padding: unset;
   }
-`;
+`
 
 const TagLink = styled(Link)`
   font-size: ${({ nodeCount }) => scaler(Number(nodeCount))}rem;
+  border-radius: 3px;
+  padding: 0 0.2rem;
 
   &,
   &:link,
   &:visited {
     color: ${colors.white};
     text-decoration: none;
+    transition-duration: ${defaultHover};
   }
 
   &:hover {
     color: ${colors.greenDark};
     background-color: ${colors.greenLight};
+    transition-duration: ${defaultHover};
   }
-`;
+`
