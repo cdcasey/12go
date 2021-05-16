@@ -6,10 +6,10 @@
 
 // You can delete this file if you're not using it
 
-const Promise = require(`bluebird`);
-const path = require(`path`);
-const slash = require(`slash`);
-const createPaginatedPages = require('gatsby-paginate');
+const Promise = require(`bluebird`)
+const path = require(`path`)
+const slash = require(`slash`)
+const createPaginatedPages = require('gatsby-paginate')
 
 const queryAll = `
  {
@@ -71,25 +71,23 @@ const queryAll = `
     }
 
   }
-`;
+`
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     // const pageTemplate = path.resolve('./src/templates/page.js');
-    const postTemplate = path.resolve('./src/templates/post.js');
-    const tagTemplate = path.resolve('./src/templates/tagIndex.js');
-    const transcriptTemplate = path.resolve(
-      './src/templates/transcriptIndex.js'
-    );
+    const postTemplate = path.resolve('./src/templates/post.js')
+    const tagTemplate = path.resolve('./src/templates/tagIndex.js')
+    const transcriptTemplate = path.resolve('./src/templates/transcriptIndex.js')
 
     resolve(
       graphql(queryAll).then((result) => {
         if (result.errors) {
           // eslint-disable-next-line no-console
-          console.error(result.errors);
-          reject(result.errors);
+          console.error(result.errors)
+          reject(result.errors)
         }
 
         // Pages
@@ -125,7 +123,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Individual post pages
         // const posts = result.data.allWordpressPost.edges;
-        const { edges } = result.data.allWordpressPost;
+        const { edges } = result.data.allWordpressPost
 
         edges.forEach((edge) => {
           createPage({
@@ -134,21 +132,20 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               id: edge.node.id,
             },
-          });
-        });
+          })
+        })
 
         createPaginatedPages({
           edges,
           createPage,
           pageTemplate: 'src/templates/index.js',
-          pageLength: 12,
+          pageLength: 300,
           pathPrefix: 'page',
-          buildPath: (index, pathPrefix) =>
-            index > 1 ? `${pathPrefix}/${index}` : `/`, // This is optional and this is the default
-        });
+          buildPath: (index, pathPrefix) => (index > 1 ? `${pathPrefix}/${index}` : `/`), // This is optional and this is the default
+        })
 
         // Tags
-        const tagEdges = result.data.allWordpressTag.edges;
+        const tagEdges = result.data.allWordpressTag.edges
 
         tagEdges.forEach((edge) => {
           createPage({
@@ -157,8 +154,8 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               tag: edge.node.slug,
             },
-          });
-        });
+          })
+        })
 
         // THIS COULD REALLY BE SOMETHING IN /pages WITH A PAGE QUERY
         // Transcripts
@@ -169,9 +166,9 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               category: 'transcripts',
             },
-          });
-        });
-      })
-    );
-  });
-};
+          })
+        })
+      }),
+    )
+  })
+}
