@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout/Layout';
-import PreviewLink from '../components/PreviewLink/PreviewLink';
-import styles from './index.module.scss';
-import SEO from '../components/SEO';
-import { PostTitle } from '../components/PageStyles';
+import Layout from '../components/Layout/Layout'
+import PreviewLink from '../components/PreviewLink/PreviewLink'
+import SEO from '../components/SEO'
+import { PostTitle } from '../components/PageStyles'
+import { MainContainer } from '../components/MainContainer'
 
 const propTypes = {
   data: PropTypes.shape({
@@ -15,20 +15,20 @@ const propTypes = {
       edges: PropTypes.arrayOf(PropTypes.shape({})),
     }),
   }).isRequired,
-};
+}
 
 const TagIndexPage = ({ data }) => {
-  const { edges } = data.allWordpressPost;
+  const { edges } = data.allWordpressPost
 
   return (
     <Layout>
       <SEO title="Transcripts" />
       <PostTitle>Transcripts</PostTitle>
-      <div className={styles.mainContainer}>
+      <MainContainer>
         {edges.map(({ node }) => {
           const bgUrl = node.featured_media
             ? node.featured_media.localFile?.childImageSharp.fixed.src
-            : '';
+            : ''
           return (
             <PreviewLink
               key={node.id}
@@ -39,22 +39,20 @@ const TagIndexPage = ({ data }) => {
               excerpt={node.excerpt}
               bgUrl={bgUrl}
             />
-          );
+          )
         })}
-      </div>
+      </MainContainer>
     </Layout>
-  );
-};
+  )
+}
 
-TagIndexPage.propTypes = propTypes;
+TagIndexPage.propTypes = propTypes
 
-export default TagIndexPage;
+export default TagIndexPage
 
 export const query = graphql`
-  query($category: String!) {
-    allWordpressPost(
-      filter: { categories: { elemMatch: { slug: { eq: $category } } } }
-    ) {
+  query {
+    allWordpressPost(filter: { categories: { elemMatch: { slug: { eq: "transcripts" } } } }) {
       edges {
         node {
           id
@@ -84,4 +82,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

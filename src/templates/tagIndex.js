@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout/Layout';
-import PreviewLink from '../components/PreviewLink/PreviewLink';
-import styles from './index.module.scss';
+import Layout from '../components/Layout/Layout'
+import PreviewLink from '../components/PreviewLink/PreviewLink'
+import styles from './index.module.scss'
 
 const propTypes = {
   data: PropTypes.shape({
@@ -13,10 +13,10 @@ const propTypes = {
       edges: PropTypes.arrayOf(PropTypes.shape({})),
     }),
   }).isRequired,
-};
+}
 
 const TagIndexPage = ({ data }) => {
-  const { edges } = data.allWordpressPost;
+  const { edges } = data.allWordpressPost
 
   return (
     <Layout>
@@ -24,7 +24,7 @@ const TagIndexPage = ({ data }) => {
         {edges.map(({ node }) => {
           const bgUrl = node.featured_media
             ? node.featured_media.localFile?.childImageSharp.fixed.src
-            : '';
+            : ''
           return (
             <PreviewLink
               key={node.id}
@@ -35,19 +35,19 @@ const TagIndexPage = ({ data }) => {
               excerpt={node.excerpt}
               bgUrl={bgUrl}
             />
-          );
+          )
         })}
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-TagIndexPage.propTypes = propTypes;
+TagIndexPage.propTypes = propTypes
 
-export default TagIndexPage;
+export default TagIndexPage
 
 export const query = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     allWordpressPost(filter: { tags: { elemMatch: { slug: { eq: $tag } } } }) {
       edges {
         node {
@@ -69,13 +69,8 @@ export const query = graphql`
               }
             }
           }
-          tags {
-            id
-            slug
-            link
-          }
         }
       }
     }
   }
-`;
+`

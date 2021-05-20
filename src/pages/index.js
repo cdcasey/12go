@@ -7,6 +7,7 @@ import Layout from '../components/Layout/Layout'
 import PreviewLink from '../components/PreviewLink/PreviewLink'
 import colors from '../constants/colors'
 import { defaultHover } from '../constants/animations'
+import { MainContainer } from '../components/MainContainer'
 
 const IndexPage = ({ data }) => {
   const { edges } = data.allWordpressPost
@@ -78,12 +79,6 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-`
 
 const MoreButton = styled.button`
   margin: auto;

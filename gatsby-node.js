@@ -127,18 +127,6 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
-
-        // THIS COULD REALLY BE SOMETHING IN /pages WITH A PAGE QUERY
-        // Transcripts
-        edges.forEach(() => {
-          createPage({
-            path: `transcripts/`,
-            component: slash(transcriptTemplate),
-            context: {
-              category: 'transcripts',
-            },
-          })
-        })
       }),
     )
   })
