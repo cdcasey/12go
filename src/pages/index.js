@@ -5,27 +5,13 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout/Layout'
 import PreviewLink from '../components/PreviewLink/PreviewLink'
-import { breakpointsDown } from '../constants/breakpoints'
 import colors from '../constants/colors'
 import { defaultHover } from '../constants/animations'
 
-const NavLink = (props) => {
-  const url = props.url === '' ? '/' : '/page/' + props.url
-  if (!props.test) {
-    return <Link to={url}>{props.text}</Link>
-  } else {
-    return <span>{props.text}</span>
-  }
-}
-
-const IndexPage = (props) => {
-  console.log({ props })
-  const { data, context } = props
-
+const IndexPage = ({ data }) => {
   const { edges } = data.allWordpressPost
 
   const previewLinks = React.useMemo(() => {
-    console.log('MOMO')
     return edges.map(({ node }) => {
       const bgUrl = node.featured_media
         ? node.featured_media.localFile?.childImageSharp.fixed.src
