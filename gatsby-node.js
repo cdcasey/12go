@@ -59,7 +59,6 @@ exports.createPages = ({ graphql, actions }) => {
     // const pageTemplate = path.resolve('./src/templates/page.js');
     const postTemplate = path.resolve('./src/templates/post.js')
     const tagTemplate = path.resolve('./src/templates/tagIndex.js')
-    const transcriptTemplate = path.resolve('./src/templates/transcriptIndex.js')
 
     resolve(
       graphql(queryAll).then((result) => {
