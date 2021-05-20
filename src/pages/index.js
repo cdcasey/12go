@@ -18,20 +18,33 @@ const NavLink = (props) => {
   }
 }
 
-const IndexPage = ({ pageContext }) => {
-  const { group, index, first, last, pageCount } = pageContext
-  // const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
-  // const nextUrl = (index + 1).toString();
+const IndexPage = (props) => {
+  console.log({ props })
+  const { data, context } = props
 
-  const episodes = React.useMemo(() => {
-    return group.filter(({ node }) => {
-      const isEpisode =
-        node.categories.filter((category) => category?.slug === 'episodes').length > 0
-      return isEpisode
+  const { edges } = data.allWordpressPost
+
+  const previewLinks = React.useMemo(() => {
+    console.log('MOMO')
+    return edges.map(({ node }) => {
+      const bgUrl = node.featured_media
+        ? node.featured_media.localFile?.childImageSharp.fixed.src
+        : ''
+      return (
+        <PreviewLink
+          key={node.id}
+          path={node.path}
+          slug={node.slug}
+          title={node.title}
+          date={node.date}
+          excerpt={node.excerpt}
+          bgUrl={bgUrl}
+        />
+      )
     })
-  }, [group])
+  }, [edges])
 
-  const MAX_POSTS = episodes.length
+  const MAX_POSTS = edges.length
 
   const setPostNum = () => {
     setPostLimit((prevPostLimit) => {
@@ -43,35 +56,11 @@ const IndexPage = ({ pageContext }) => {
 
   const [postLimit, setPostLimit] = React.useState(9)
 
-  const shownPosts = episodes.slice(0, postLimit)
+  const shownPosts = previewLinks.slice(0, postLimit)
 
   return (
     <Layout>
-      <MainContainer>
-        {shownPosts.map(({ node }) => {
-          const isEpisode =
-            node.categories.filter((category) => category?.slug === 'episodes').length > 0
-
-          const bgUrl = node.featured_media
-            ? node.featured_media.localFile?.childImageSharp.fixed.src
-            : ''
-
-          if (isEpisode) {
-            return (
-              <PreviewLink
-                key={node.id}
-                path={node.path}
-                slug={node.slug}
-                title={node.title}
-                date={node.date}
-                excerpt={node.excerpt}
-                bgUrl={bgUrl}
-              />
-            )
-          }
-          return null
-        })}
-      </MainContainer>
+      <MainContainer>{shownPosts}</MainContainer>
 
       <MoreButton type="button" onClick={setPostNum} disabled={postLimit >= MAX_POSTS}>
         {postLimit >= MAX_POSTS ? <span>That&rsquo;s it!</span> : 'More...'}
@@ -136,3 +125,32 @@ const MoreButton = styled.button`
 //     font-size: 2rem;
 //   }
 // `
+
+export const query = graphql`
+  query {
+    allWordpressPost(filter: { categories: { elemMatch: { slug: { eq: "episodes" } } } }) {
+      edges {
+        node {
+          id
+          slug
+          path
+          title
+          date(formatString: "MMMM DD, YYYY")
+          excerpt
+          featured_media {
+            localFile {
+              childImageSharp {
+                fixed(width: 300, height: 200) {
+                  width
+                  height
+                  src
+                  srcSet
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

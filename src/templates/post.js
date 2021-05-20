@@ -1,12 +1,12 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
-import PageLayout from '../components/Layout/PageLayout';
-import styles from './post.module.scss';
-import SEO from '../components/SEO';
+import PageLayout from '../components/Layout/PageLayout'
+import styles from './post.module.scss'
+import SEO from '../components/SEO'
 
 const propTypes = {
   data: PropTypes.shape({
@@ -17,10 +17,10 @@ const propTypes = {
       excerpt: PropTypes.string,
     }),
   }).isRequired,
-};
+}
 
 const PostTemplate = ({ data }) => {
-  const post = data.wordpressPost;
+  const post = data.wordpressPost
 
   return (
     <PageLayout>
@@ -29,12 +29,12 @@ const PostTemplate = ({ data }) => {
       <div dangerouslySetInnerHTML={{ __html: post.date.split('T')[0] }} />
       <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content }} />
     </PageLayout>
-  );
-};
+  )
+}
 
-PostTemplate.propTypes = propTypes;
+PostTemplate.propTypes = propTypes
 
-export default PostTemplate;
+export default PostTemplate
 
 export const pageQuery = graphql`
   query currentPostQuery($id: String!) {
@@ -44,11 +44,5 @@ export const pageQuery = graphql`
       date
       excerpt
     }
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
   }
-`;
+`

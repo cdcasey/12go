@@ -9,12 +9,11 @@
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
-const createPaginatedPages = require('gatsby-paginate')
 
-const queryAll = `
- {
-
-    allWordpressPage {
+/**
+ * SAVE FOR LATER
+ *
+ *     allWordpressPage {
       edges {
         node {
           id
@@ -25,35 +24,15 @@ const queryAll = `
       }
     }
 
+ */
+
+const queryAll = `
+ {
     allWordpressPost {
       edges {
         node {
           id
           slug
-          path
-          status
-          template
-          format
-          title
-          date(formatString: "MMMM DD, YYYY")
-          excerpt
-          featured_media {
-            localFile {
-              childImageSharp {
-                fixed(width:300, height:200) {
-                  width
-                  height
-                  src
-                  srcSet
-                }
-              }
-            }
-          }
-          categories {
-            id
-            name
-            slug
-          }
         }
       }
     }
@@ -131,17 +110,9 @@ exports.createPages = ({ graphql, actions }) => {
             component: slash(postTemplate),
             context: {
               id: edge.node.id,
+              category: 'episodes',
             },
           })
-        })
-
-        createPaginatedPages({
-          edges,
-          createPage,
-          pageTemplate: 'src/templates/index.js',
-          pageLength: 300,
-          pathPrefix: 'page',
-          buildPath: (index, pathPrefix) => (index > 1 ? `${pathPrefix}/${index}` : `/`), // This is optional and this is the default
         })
 
         // Tags
