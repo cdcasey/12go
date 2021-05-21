@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import PageLayout from '../components/Layout/PageLayout'
-import styles from './post.module.scss'
+import * as styles from './post.module.scss'
 import SEO from '../components/SEO'
 
 const propTypes = {

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout/Layout'
