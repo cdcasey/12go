@@ -8,7 +8,7 @@ import { defaultHover } from '../../constants/animations'
 
 const tagQuery = graphql`
   query {
-    allWordpressTag {
+    allWpTag {
       edges {
         node {
           id
@@ -27,7 +27,7 @@ const tagQuery = graphql`
 const scaler = (base) => Math.log(Math.sqrt(base)) + 1.4
 
 function TagMenuItems({ data }) {
-  const { edges } = data.allWordpressTag
+  const { edges } = data.allWpTag
 
   return edges.map(({ node }) => {
     return (

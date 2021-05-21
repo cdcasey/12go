@@ -19,14 +19,17 @@ import { breakpointsDown } from '../../constants/breakpoints'
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
-    wordpressSiteMetadata {
-      name
-      description
+    site {
+      siteMetadata {
+        title
+        description
+      }
     }
   }
 `
 
 function LayoutComponent(data, children) {
+  console.log({ data })
   return (
     <React.Fragment>
       <SEO
@@ -57,8 +60,8 @@ function LayoutComponent(data, children) {
       </MainMenuContainer>
 
       <Header
-        siteTitle={data.wordpressSiteMetadata.name}
-        description={data.wordpressSiteMetadata.description}
+        siteTitle={data.site.siteMetadata.title}
+        description={data.site.siteMetadata.description}
       />
 
       <LayoutContainer>{children}</LayoutContainer>

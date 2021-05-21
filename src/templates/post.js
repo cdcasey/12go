@@ -10,7 +10,7 @@ import SEO from '../components/SEO'
 
 const propTypes = {
   data: PropTypes.shape({
-    wordpressPost: PropTypes.shape({
+    wpPost: PropTypes.shape({
       title: PropTypes.string,
       content: PropTypes.string,
       date: PropTypes.string,
@@ -20,7 +20,7 @@ const propTypes = {
 }
 
 const PostTemplate = ({ data }) => {
-  const post = data.wordpressPost
+  const post = data.wpPost
 
   return (
     <PageLayout>
@@ -38,7 +38,7 @@ export default PostTemplate
 
 export const pageQuery = graphql`
   query currentPostQuery($id: String!) {
-    wordpressPost(id: { eq: $id }) {
+    wpPost(id: { eq: $id }) {
       title
       content
       date

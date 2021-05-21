@@ -1,8 +1,8 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
-const { GATSBY_API_URL, GATSBY_API_PROTOCOL, GATSBY_SITE_URL } = process.env;
+const { GATSBY_API_URL, GATSBY_API_ENDPOINT, GATSBY_SITE_URL } = process.env
 
 const config = {
   siteMetadata: {
@@ -40,26 +40,33 @@ const config = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: GATSBY_API_URL,
-        protocol: GATSBY_API_PROTOCOL,
+        // baseUrl: GATSBY_API_URL,
+        // protocol: GATSBY_API_PROTOCOL,
+        url: `${GATSBY_API_URL}/${GATSBY_API_ENDPOINT}`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
         // conert links in source posts to links for the deployed site
-        searchAndReplaceContentUrls: {
-          sourceUrl: `${GATSBY_API_PROTOCOL}://${GATSBY_API_URL}`,
-          replacementUrl: `${GATSBY_API_PROTOCOL}://${GATSBY_SITE_URL}`,
-        },
-        includedRoutes: [
-          '**/posts',
-          '**/pages',
-          '**/users',
-          '**/tags',
-          '**/menus',
-          '**/media',
-          '**/categories',
+        // searchAndReplaceContentUrls: {
+        //   sourceUrl: `${GATSBY_API_URL}`,
+        //   replacementUrl: `${GATSBY_SITE_URL}`,
+        // },
+        searchAndReplace: [
+          {
+            search: `${GATSBY_API_URL}`,
+            replace: `${GATSBY_SITE_URL}`,
+          },
         ],
+        // includedRoutes: [
+        //   '**/posts',
+        //   '**/pages',
+        //   '**/users',
+        //   '**/tags',
+        //   '**/menus',
+        //   '**/media',
+        //   '**/categories',
+        // ],
         verboseOutput: true,
       },
     },
@@ -69,7 +76,7 @@ const config = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-};
+}
 
 if (process.env.CONTEXT === 'production') {
   const googleAnalyticsConfig = {
@@ -79,8 +86,8 @@ if (process.env.CONTEXT === 'production') {
       anonymize: true,
       head: true,
     },
-  };
-  config.plugins.push(googleAnalyticsConfig);
+  }
+  config.plugins.push(googleAnalyticsConfig)
 }
 
-module.exports = config;
+module.exports = config

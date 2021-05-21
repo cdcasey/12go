@@ -9,18 +9,19 @@ import colors from '../constants/colors'
 import { defaultHover } from '../constants/animations'
 import { MainContainer } from '../components/MainContainer'
 
-const IndexPage = ({ data }) => {
-  const { edges } = data.allWordpressPost
+const IndexPage = (props) => {
+  console.log({ props })
+  const { edges } = props.data.allWpPost
 
   const previewLinks = React.useMemo(() => {
     return edges.map(({ node }) => {
-      const bgUrl = node.featured_media
-        ? node.featured_media.localFile?.childImageSharp.fixed.src
+      const bgUrl = node.featuredImage
+        ? node.featuredImage.node.localFile?.childImageSharp.fixed.src
         : ''
       return (
         <PreviewLink
           key={node.id}
-          path={node.path}
+          uri={node.uri}
           slug={node.slug}
           title={node.title}
           date={node.date}
@@ -109,23 +110,25 @@ const MoreButton = styled.button`
 
 export const query = graphql`
   query {
-    allWordpressPost(filter: { categories: { elemMatch: { slug: { eq: "episodes" } } } }) {
+    allWpPost(filter: { categories: { nodes: { elemMatch: { slug: { eq: "episodes" } } } } }) {
       edges {
         node {
           id
           slug
-          path
+          uri
           title
           date(formatString: "MMMM DD, YYYY")
           excerpt
-          featured_media {
-            localFile {
-              childImageSharp {
-                fixed(width: 300, height: 200) {
-                  width
-                  height
-                  src
-                  srcSet
+          featuredImage {
+            node {
+              localFile {
+                childImageSharp {
+                  fixed(width: 300, height: 200) {
+                    width
+                    height
+                    src
+                    srcSet
+                  }
                 }
               }
             }
