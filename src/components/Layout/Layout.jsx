@@ -29,7 +29,6 @@ const layoutQuery = graphql`
 `
 
 function LayoutComponent(data, children) {
-  console.log({ data })
   return (
     <React.Fragment>
       <SEO
