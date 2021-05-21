@@ -9,9 +9,8 @@ import colors from '../constants/colors'
 import { defaultHover } from '../constants/animations'
 import { MainContainer } from '../components/MainContainer'
 
-const IndexPage = (props) => {
-  console.log({ props })
-  const { edges } = props.data.allWpPost
+const IndexPage = ({ data }) => {
+  const { edges } = data.allWpPost
 
   const previewLinks = React.useMemo(() => {
     return edges.map(({ node }) => {
