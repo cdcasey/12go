@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/Layout'
 import PreviewLink from '../components/PreviewLink/PreviewLink'
-import styles from './index.module.scss'
+import { MainContainer } from '../components/MainContainer'
 
 const propTypes = {
   data: PropTypes.shape({
@@ -20,7 +20,7 @@ const TagIndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className={styles.mainContainer}>
+      <MainContainer>
         {edges.map(({ node }) => {
           const bgUrl = node.featured_media
             ? node.featured_media.localFile?.childImageSharp.fixed.src
@@ -37,7 +37,7 @@ const TagIndexPage = ({ data }) => {
             />
           )
         })}
-      </div>
+      </MainContainer>
     </Layout>
   )
 }
@@ -47,7 +47,7 @@ TagIndexPage.propTypes = propTypes
 export default TagIndexPage
 
 export const query = graphql`
-  query ($tag: String) {
+  query($tag: String) {
     allWordpressPost(filter: { tags: { elemMatch: { slug: { eq: $tag } } } }) {
       edges {
         node {
