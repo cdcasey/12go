@@ -16,13 +16,14 @@ import MainMenu from '../Menus/MainMenu'
 import Search from '../Search/Search'
 import Footer from '../Footer/Footer'
 import { breakpointsDown } from '../../constants/breakpoints'
+import GlobaloStyles from '../../styles/globalStyles'
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
         title
-        description
+        subtitle
       }
     }
   }
@@ -31,6 +32,7 @@ const layoutQuery = graphql`
 function LayoutComponent(data, children) {
   return (
     <React.Fragment>
+      <GlobaloStyles />
       <SEO
         title="One to Grow On"
         keywords={[
@@ -58,10 +60,7 @@ function LayoutComponent(data, children) {
         <Search />
       </MainMenuContainer>
 
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        description={data.site.siteMetadata.description}
-      />
+      <Header siteTitle={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
 
       <LayoutContainer>{children}</LayoutContainer>
 
