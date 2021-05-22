@@ -1,12 +1,12 @@
-import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
 // A Gatsby dep. May change to react-router in the future
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useLocation } from '@reach/router';
+// eslint-disable-next-line import/no-unresolved
+import { useLocation } from '@reach/router'
 
-import { breakpointsDown } from '../../constants/breakpoints';
+import { breakpointsDown } from '../../constants/breakpoints'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -20,8 +20,8 @@ import { breakpointsDown } from '../../constants/breakpoints';
  */
 
 const Image = () => {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   return (
     <StaticQuery
@@ -40,10 +40,10 @@ const Image = () => {
         <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} needsBigHeader={isHome} />
       )}
     />
-  );
-};
+  )
+}
 
-export default Image;
+export default Image
 
 const StyledImg = styled(Img)`
   height: ${(props) => (props.needsBigHeader ? 450 : 200)}px;
@@ -55,4 +55,4 @@ const StyledImg = styled(Img)`
   ${breakpointsDown.tablet} {
     height: 200px;
   }
-`;
+`

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { breakpointsDown, breakpointsUp } from '../constants/breakpoints'
+import { breakpointsUp } from '../constants/breakpoints'
 
 const GlobalStyle = createGlobalStyle`
 /* Universal reset */

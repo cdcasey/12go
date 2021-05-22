@@ -1,37 +1,35 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-import { colors } from '../../constants/colors';
-import spacing from '../../constants/spacing';
-import Tags from '../Tags/Tags';
-import FooterImage from './FooterImage';
-import IconContainer from '../Icons/IconContainer';
-import { breakpointsDown } from '../../constants/breakpoints';
+import { colors } from '../../constants/colors'
+import spacing from '../../constants/spacing'
+import Tags from '../Tags/Tags'
+import FooterImage from './FooterImage'
+import IconContainer from '../Icons/IconContainer'
+import { breakpointsDown } from '../../constants/breakpoints'
 
-export default () => {
-  return (
-    <Footer>
-      <FooterTagsArea>
-        <Tags />
-      </FooterTagsArea>
+export default () => (
+  <Footer>
+    <FooterTagsArea>
+      <Tags />
+    </FooterTagsArea>
 
-      <FooterImageArea>
-        <Link to="/">
-          <MyFooterImage />
-        </Link>
-        <div style={{ textAlign: 'center' }}>
-          © {new Date().getFullYear()},{` `}
-          One to Grow On
-        </div>
-      </FooterImageArea>
+    <FooterImageArea>
+      <Link to="/">
+        <MyFooterImage />
+      </Link>
+      <div style={{ textAlign: 'center' }}>
+        © {new Date().getFullYear()},{` `}
+        One to Grow On
+      </div>
+    </FooterImageArea>
 
-      <FooterIconsArea>
-        <IconContainer />
-      </FooterIconsArea>
-    </Footer>
-  );
-};
+    <FooterIconsArea>
+      <IconContainer />
+    </FooterIconsArea>
+  </Footer>
+)
 
 const Footer = styled.footer.attrs(() => ({
   className: 'footer1',
@@ -49,26 +47,26 @@ const Footer = styled.footer.attrs(() => ({
     /* grid-template-rows: 1fr 1fr 1fr; */
     grid-row-gap: 16px;
     grid-template-areas:
-      "tags"
-      "icons"
-      "image"; 
-      /* flex-direction: column; */
-      /* row-gap: ${spacing(3)}; */
-      /* width: 100%; */
+      'tags'
+      'icons'
+      'image';
+    /* flex-direction: column; */
+    /* row-gap: ${spacing(3)}; */
+    /* width: 100%; */
   }
-`;
+`
 
 const FooterTagsArea = styled.div`
   grid-area: tags;
-`;
+`
 
 const FooterImageArea = styled.div`
   grid-area: image;
-`;
+`
 
 const FooterIconsArea = styled.div`
   grid-area: icons;
-`;
+`
 // const FooterItem = styled.div.attrs(() => ({
 //   className: 'footer__item',
 // }))`
@@ -89,4 +87,4 @@ const MyFooterImage = styled(FooterImage).attrs(() => ({
   ${breakpointsDown.tablet} {
     max-width: 325px;
   }
-`;
+`

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
 
-import { breakpointsDown } from '../../constants/breakpoints';
+import { breakpointsDown } from '../../constants/breakpoints'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -25,7 +25,7 @@ export const squareImage = graphql`
       }
     }
   }
-`;
+`
 
 export const query = graphql`
   query {
@@ -57,7 +57,7 @@ export const query = graphql`
       ...squareImage
     }
   }
-`;
+`
 
 const IMAGE_INFO = {
   1: {
@@ -69,8 +69,7 @@ const IMAGE_INFO = {
     caption: 'Hallie in a greenhouse.',
   },
   3: {
-    alt:
-      'Hallie, Chris, and Catherine smiling at the camera and celebrating one year of podcasting',
+    alt: 'Hallie, Chris, and Catherine smiling at the camera and celebrating one year of podcasting',
     caption: 'Hallie, Chris, and Catherine celebrating one year of podcasting!',
   },
   4: {
@@ -89,41 +88,37 @@ const IMAGE_INFO = {
     alt: 'Hallie and Chris smiling at the camera while at lunch together',
     caption: 'Hallie and Chris at lunch together.',
   },
-};
+}
 
 const propTypes = {
   imageNumber: PropTypes.number.isRequired,
   className: PropTypes.string,
-};
+}
 
 const defaultProps = {
   className: '',
-};
+}
 
-const Image = ({ imageNumber, className }) => {
-  return (
-    <StaticQuery
-      query={query}
-      render={(data) => {
-        return (
-          <StyledFigure>
-            <Img
-              fluid={data[`image${imageNumber}`].childImageSharp.fluid}
-              alt={IMAGE_INFO[imageNumber].alt}
-              className={className}
-            />
-            <StyledCaption>{IMAGE_INFO[imageNumber].caption}</StyledCaption>
-          </StyledFigure>
-        );
-      }}
-    />
-  );
-};
+const Image = ({ imageNumber, className }) => (
+  <StaticQuery
+    query={query}
+    render={(data) => (
+      <StyledFigure>
+        <Img
+          fluid={data[`image${imageNumber}`].childImageSharp.fluid}
+          alt={IMAGE_INFO[imageNumber].alt}
+          className={className}
+        />
+        <StyledCaption>{IMAGE_INFO[imageNumber].caption}</StyledCaption>
+      </StyledFigure>
+    )}
+  />
+)
 
-Image.propTypes = propTypes;
-Image.defaultProps = defaultProps;
+Image.propTypes = propTypes
+Image.defaultProps = defaultProps
 
-export default Image;
+export default Image
 
 // Sometimes the caption ends up on top of the figure. Maybe this helps?
 const StyledFigure = styled.figure`
@@ -134,11 +129,11 @@ const StyledFigure = styled.figure`
   ${breakpointsDown.tablet} {
     display: none;
   }
-`;
+`
 
 export const StyledCaption = styled.figcaption`
   text-align: left;
   width: 100%;
   font-style: italic;
   font-size: 1.4rem;
-`;
+`

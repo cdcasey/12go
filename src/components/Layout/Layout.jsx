@@ -30,6 +30,9 @@ const layoutQuery = graphql`
 `
 
 function LayoutComponent(data, children) {
+  // eslint-disable-next-line react/destructuring-assignment
+  const { title, subtitle } = data.site.siteMetadata
+
   return (
     <React.Fragment>
       <GlobaloStyles />
@@ -60,7 +63,7 @@ function LayoutComponent(data, children) {
         <Search />
       </MainMenuContainer>
 
-      <Header siteTitle={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
+      <Header siteTitle={title} subtitle={subtitle} />
 
       <LayoutContainer>{children}</LayoutContainer>
 
