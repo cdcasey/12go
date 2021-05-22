@@ -37,6 +37,11 @@ body {
   box-sizing: border-box;
   /* padding: 3rem; */
 }
+
+:any-link {
+  color: #4c9342;
+  text-decoration: none;
+}
 `
 
 export default GlobalStyle
