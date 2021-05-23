@@ -91,6 +91,7 @@ const Image = ({ image, className }) => (
 )
 
 const StyledImg = styled(Img)`
+  border-radius: 4px;
   transition-duration: ${defaultHover};
 
   &:hover {
