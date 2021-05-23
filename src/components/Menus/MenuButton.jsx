@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'gatsby';
 import styled from 'styled-components'
 
 import { colors } from '../../constants/colors'
@@ -13,7 +12,7 @@ const propTypes = {
 export function MenuButton({ open, setOpen }) {
   return (
     <React.Fragment>
-      <StyledMenuCheckbox id="navi-toggle" onClick={() => setOpen(!open)} />
+      <StyledMenuCheckbox id="navi-toggle" onClick={() => setOpen(!open)} checked={open} />
       <StyledMenuButton htmlFor="navi-toggle">
         <StyledMenuButtonIcon>&nbsp;</StyledMenuButtonIcon>
       </StyledMenuButton>
