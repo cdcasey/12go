@@ -182,7 +182,7 @@ const CollabEpisodeDate = styled.div`
   font-style: italic;
 `
 
-export const CollabLink = styled(OutboundLink)`
+const CollabLink = styled(OutboundLink)`
   &,
   &:link,
   &:visited {
