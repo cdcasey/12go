@@ -52,7 +52,10 @@ export default TagIndexPage
 
 export const query = graphql`
   query {
-    allWpPost(filter: { categories: { nodes: { elemMatch: { slug: { eq: "transcripts" } } } } }) {
+    allWpPost(
+      sort: { fields: date, order: DESC }
+      filter: { categories: { nodes: { elemMatch: { slug: { eq: "transcripts" } } } } }
+    ) {
       edges {
         node {
           id
