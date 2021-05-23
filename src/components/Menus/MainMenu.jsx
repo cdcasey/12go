@@ -21,9 +21,9 @@ function MainMenu() {
   return (
     <React.Fragment>
       <MenuButton open={menuIsOpen} setOpen={setMenuIsOpen} />
-      <StyledNav open={menuIsOpen}>
+      <StyledNav open={menuIsOpen} onClick={() => setMenuIsOpen(!menuIsOpen)}>
         <StyledMenuList>
-          <StyledMenuItem onClick={() => setMenuIsOpen(!menuIsOpen)}>
+          <StyledMenuItem>
             <MenuLink to="/">Episodes</MenuLink>
             <StyledDropDownMenuList>
               <StyledMenuItem>
