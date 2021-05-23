@@ -3,14 +3,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import PageLayout from '../components/Layout/PageLayout'
-import styles from './post.module.scss'
 import SEO from '../components/SEO'
 
 const propTypes = {
   data: PropTypes.shape({
-    wordpressPost: PropTypes.shape({
+    wpPost: PropTypes.shape({
       title: PropTypes.string,
       content: PropTypes.string,
       date: PropTypes.string,
@@ -20,14 +20,14 @@ const propTypes = {
 }
 
 const PostTemplate = ({ data }) => {
-  const post = data.wordpressPost
+  const post = data.wpPost
 
   return (
     <PageLayout>
       <SEO title={post.title} description={post.excerpt} />
-      <h1 className={styles.postTitle} dangerouslySetInnerHTML={{ __html: post.title }} />
+      <PostTitle dangerouslySetInnerHTML={{ __html: post.title }} />
       <div dangerouslySetInnerHTML={{ __html: post.date.split('T')[0] }} />
-      <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content }} />
+      <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
     </PageLayout>
   )
 }
@@ -38,11 +38,33 @@ export default PostTemplate
 
 export const pageQuery = graphql`
   query currentPostQuery($id: String!) {
-    wordpressPost(id: { eq: $id }) {
+    wpPost(id: { eq: $id }) {
       title
       content
       date
       excerpt
     }
   }
+`
+
+const PostContent = styled.div`
+  margin-top: 2rem;
+  font-size: 1.7rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    float: left;
+    margin: 5px 20px 5px 0;
+  }
+
+  iframe.blubrryplayer {
+    margin-top: 2rem;
+  }
+`
+
+const PostTitle = styled.h1`
+  font-size: 4rem;
 `

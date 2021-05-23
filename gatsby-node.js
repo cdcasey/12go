@@ -28,7 +28,7 @@ const slash = require(`slash`)
 
 const queryAll = `
  {
-    allWordpressPost {
+    allWpPost {
       edges {
         node {
           id
@@ -37,7 +37,7 @@ const queryAll = `
       }
     }
 
-    allWordpressTag {
+    allWpTag {
       edges {
         node {
           id
@@ -100,8 +100,7 @@ exports.createPages = ({ graphql, actions }) => {
         // });
 
         // Individual post pages
-        // const posts = result.data.allWordpressPost.edges;
-        const { edges } = result.data.allWordpressPost
+        const { edges } = result.data.allWpPost
 
         edges.forEach((edge) => {
           createPage({
@@ -115,7 +114,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         // Tags
-        const tagEdges = result.data.allWordpressTag.edges
+        const tagEdges = result.data.allWpTag.edges
 
         tagEdges.forEach((edge) => {
           createPage({

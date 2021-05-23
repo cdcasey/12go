@@ -7,7 +7,7 @@
       "jsx": true
     }
   },
-  "extends": ["airbnb", "eslint-config-prettier", "prettier/react"],
+  "extends": ["airbnb", "prettier"],
   "plugins": ["react", "prettier"],
   "rules": {
     "strict": ["error", "never"],

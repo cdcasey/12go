@@ -1,24 +1,24 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout/Layout'
 
 const propTypes = {
   data: PropTypes.shape({
-    wordpressPage: PropTypes.shape({
+    wpPage: PropTypes.shape({
       title: PropTypes.string,
       content: PropTypes.string,
     }),
   }).isRequired,
-};
+}
 
 const PageTemplate = ({ data }) => {
   // const siteMetadata = this.props.data.site.siteMetadata;
 
-  const currentPage = data.wordpressPage;
+  const currentPage = data.wpPage
 
   return (
     <Layout>
@@ -28,16 +28,16 @@ const PageTemplate = ({ data }) => {
       {/* <p dangerouslySetInnerHTML={{ __html: currentPage.date }} />
         <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} /> */}
     </Layout>
-  );
-};
+  )
+}
 
-PageTemplate.propTypes = propTypes;
+PageTemplate.propTypes = propTypes
 
-export default PageTemplate;
+export default PageTemplate
 
 export const pageQuery = graphql`
   query currentPageQuery($id: String!) {
-    wordpressPage(id: { eq: $id }) {
+    wpPage(id: { eq: $id }) {
       title
       content
       slug
@@ -52,4 +52,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

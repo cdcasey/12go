@@ -9,7 +9,7 @@ import { colors } from '../../constants/colors'
 import { defaultHover } from '../../constants/animations'
 
 const propTypes = {
-  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -17,9 +17,9 @@ const propTypes = {
   bgUrl: PropTypes.string.isRequired,
 }
 
-export default function UnstyledPreviewLink({ path, slug, title, date, excerpt, bgUrl }) {
+export default function UnstyledPreviewLink({ uri, slug, title, date, excerpt, bgUrl }) {
   return (
-    <PreviewLink to={path}>
+    <PreviewLink to={uri}>
       <PreviewContainer
         key={slug}
         style={{

@@ -8,11 +8,11 @@ import { colors } from '../../constants/colors'
 import { breakpointsDown } from '../../constants/breakpoints'
 import { defaultHover } from '../../constants/animations'
 
-const HeaderComponent = ({ siteTitle, description }) => (
+const HeaderComponent = ({ siteTitle, subtitle }) => (
   <Header>
     <Link to="/">
       <Heading>{siteTitle}</Heading>
-      <Subheading>{description}</Subheading>
+      <Subheading>{subtitle}</Subheading>
     </Link>
     <HeaderImage />
   </Header>
@@ -20,7 +20,7 @@ const HeaderComponent = ({ siteTitle, description }) => (
 
 HeaderComponent.propTypes = {
   siteTitle: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
 }
 
 export default HeaderComponent

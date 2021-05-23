@@ -16,19 +16,26 @@ import MainMenu from '../Menus/MainMenu'
 import Search from '../Search/Search'
 import Footer from '../Footer/Footer'
 import { breakpointsDown } from '../../constants/breakpoints'
+import GlobaloStyles from '../../styles/globalStyles'
 
 const layoutQuery = graphql`
   query SiteTitleQuery {
-    wordpressSiteMetadata {
-      name
-      description
+    site {
+      siteMetadata {
+        title
+        subtitle
+      }
     }
   }
 `
 
 function LayoutComponent(data, children) {
+  // eslint-disable-next-line react/destructuring-assignment
+  const { title, subtitle } = data.site.siteMetadata
+
   return (
     <React.Fragment>
+      <GlobaloStyles />
       <SEO
         title="One to Grow On"
         keywords={[
@@ -56,10 +63,7 @@ function LayoutComponent(data, children) {
         <Search />
       </MainMenuContainer>
 
-      <Header
-        siteTitle={data.wordpressSiteMetadata.name}
-        description={data.wordpressSiteMetadata.description}
-      />
+      <Header siteTitle={title} subtitle={subtitle} />
 
       <LayoutContainer>{children}</LayoutContainer>
 

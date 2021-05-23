@@ -11,14 +11,14 @@ import { MainContainer } from '../components/MainContainer'
 
 const propTypes = {
   data: PropTypes.shape({
-    allWordpressPost: PropTypes.shape({
+    allWpPost: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({})),
     }),
   }).isRequired,
 }
 
 const TagIndexPage = ({ data }) => {
-  const { edges } = data.allWordpressPost
+  const { edges } = data.allWpPost
 
   return (
     <Layout>
@@ -26,13 +26,13 @@ const TagIndexPage = ({ data }) => {
       <PostTitle>Transcripts</PostTitle>
       <MainContainer>
         {edges.map(({ node }) => {
-          const bgUrl = node.featured_media
-            ? node.featured_media.localFile?.childImageSharp.fixed.src
+          const bgUrl = node.featuredImage.node
+            ? node.featuredImage.node.localFile?.childImageSharp.fixed.src
             : ''
           return (
             <PreviewLink
               key={node.id}
-              path={node.path}
+              uri={node.uri}
               slug={node.slug}
               title={node.title}
               date={node.date}
@@ -52,31 +52,28 @@ export default TagIndexPage
 
 export const query = graphql`
   query {
-    allWordpressPost(filter: { categories: { elemMatch: { slug: { eq: "transcripts" } } } }) {
+    allWpPost(filter: { categories: { nodes: { elemMatch: { slug: { eq: "transcripts" } } } } }) {
       edges {
         node {
           id
           slug
-          path
+          uri
           title
           date(formatString: "MMMM DD, YYYY")
           excerpt
-          featured_media {
-            localFile {
-              childImageSharp {
-                fixed(width: 300, height: 200) {
-                  width
-                  height
-                  src
-                  srcSet
+          featuredImage {
+            node {
+              localFile {
+                childImageSharp {
+                  fixed(width: 300, height: 200) {
+                    width
+                    height
+                    src
+                    srcSet
+                  }
                 }
               }
             }
-          }
-          categories {
-            id
-            name
-            slug
           }
         }
       }

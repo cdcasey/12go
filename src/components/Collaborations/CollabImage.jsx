@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export const squareImage = graphql`
   fragment squareImage on File {
@@ -11,7 +11,7 @@ export const squareImage = graphql`
       }
     }
   }
-`;
+`
 
 export const query = graphql`
   query {
@@ -39,7 +39,7 @@ export const query = graphql`
       ...squareImage
     }
   }
-`;
+`
 
 const IMAGE_INFO = {
   horticulturati: {
@@ -60,35 +60,33 @@ const IMAGE_INFO = {
   puttingittogether: {
     alt: 'Putting It Together logo',
   },
-};
+}
 
 const propTypes = {
   image: PropTypes.string.isRequired,
   className: PropTypes.string,
-};
+}
 
 const defaultProps = {
   className: '',
-};
+}
 
 const Image = ({ image, className }) => (
   <StaticQuery
     query={query}
-    render={(data) => {
-      return (
-        <figure>
-          <Img
-            fluid={data[`${image}`].childImageSharp.fluid}
-            alt={IMAGE_INFO[image].alt}
-            className={className}
-          />
-        </figure>
-      );
-    }}
+    render={(data) => (
+      <figure>
+        <Img
+          fluid={data[`${image}`].childImageSharp.fluid}
+          alt={IMAGE_INFO[image].alt}
+          className={className}
+        />
+      </figure>
+    )}
   />
-);
+)
 
-Image.propTypes = propTypes;
-Image.defaultProps = defaultProps;
+Image.propTypes = propTypes
+Image.defaultProps = defaultProps
 
-export default Image;
+export default Image
