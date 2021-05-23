@@ -47,8 +47,11 @@ TagIndexPage.propTypes = propTypes
 export default TagIndexPage
 
 export const query = graphql`
-  query($tag: String) {
-    allWpPost(filter: { tags: { nodes: { elemMatch: { slug: { eq: $tag } } } } }) {
+  query ($tag: String) {
+    allWpPost(
+      sort: { fields: date, order: DESC }
+      filter: { tags: { nodes: { elemMatch: { slug: { eq: $tag } } } } }
+    ) {
       edges {
         node {
           id

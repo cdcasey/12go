@@ -109,7 +109,10 @@ const MoreButton = styled.button`
 
 export const query = graphql`
   query {
-    allWpPost(filter: { categories: { nodes: { elemMatch: { slug: { eq: "episodes" } } } } }) {
+    allWpPost(
+      sort: { fields: date, order: DESC }
+      filter: { categories: { nodes: { elemMatch: { slug: { eq: "episodes" } } } } }
+    ) {
       edges {
         node {
           id
