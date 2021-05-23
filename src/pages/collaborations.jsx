@@ -1,12 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
-import SEO from '../components/SEO';
-import PageLayout from '../components/Layout/PageLayout';
-import { PostTitle, ExternalLink, SectionTitle } from '../components/PageStyles';
-
-import CollabImage from '../components/Collaborations/CollabImage';
-import { breakpointsDown } from '../constants/breakpoints';
+import SEO from '../components/SEO'
+import PageLayout from '../components/Layout/PageLayout'
+import { PostTitle, SectionTitle } from '../components/PageStyles'
+import CollabImage from '../components/Collaborations/CollabImage'
+import { colors } from '../constants/colors'
+import { defaultHover } from '../constants/animations'
+import { breakpointsDown } from '../constants/breakpoints'
 
 export default function SeriesPage() {
   return (
@@ -16,14 +18,14 @@ export default function SeriesPage() {
       <SectionTitle>Listen to us elsewhere!</SectionTitle>
       <CollabGallery>
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="http://outsideinradio.org/shows/rice-is-food "
           >
             <CollabImage image="outsidein" />
             <SeriesTitle>Outside In</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>Rice is Food and Other Stories</CollabEpisodeTitle>
           <CollabEpisodeDate>September, 2020</CollabEpisodeDate>
           <p>
@@ -34,14 +36,14 @@ export default function SeriesPage() {
         </div>
 
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.planthropologypod.com/home/deepdive-halliecasey"
           >
             <CollabImage image="planthropology" />
             <SeriesTitle>Planthropology</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>Deep Dive- Fixing Food Systems w/ Hallie Casey</CollabEpisodeTitle>
           <CollabEpisodeDate>August, 2020</CollabEpisodeDate>
           <p>
@@ -52,14 +54,14 @@ export default function SeriesPage() {
         </div>
 
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://thefarmtraveler.com/2020/07/22/podcast-episode-66-one-to-grow-on-podcast/ "
           >
             <CollabImage image="farmtraveler" />
             <SeriesTitle>Farm Traveller</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>Podcast Episode 66: One to Grow On Podcast</CollabEpisodeTitle>
           <CollabEpisodeDate>July, 2020</CollabEpisodeDate>
           <p>
@@ -70,14 +72,14 @@ export default function SeriesPage() {
         </div>
 
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://horticulturati.libsyn.com/local-food-living-soil-with-hallie-casey"
           >
             <CollabImage image="horticulturati" />
             <SeriesTitle>Horticulturati</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>Local Food & Living Soil (with Hallie Casey)</CollabEpisodeTitle>
           <CollabEpisodeDate>April, 2020</CollabEpisodeDate>
           <p>
@@ -87,14 +89,14 @@ export default function SeriesPage() {
         </div>
 
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://puttingittogether.transistor.fm/s6/10"
           >
             <CollabImage image="puttingittogether" />
             <SeriesTitle>Putting It Together</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>
             Getting Married Today – Company (with Hallie Casey)
           </CollabEpisodeTitle>
@@ -107,14 +109,14 @@ export default function SeriesPage() {
         </div>
 
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.planthropologypod.com/home/halliecasey"
           >
             <CollabImage image="planthropology" />
             <SeriesTitle>Planthropology</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>
             Episode 5: Hallie Casey- Science Communication, One to Grow On, and Giant Entomology
             Books
@@ -128,14 +130,14 @@ export default function SeriesPage() {
         </div>
 
         <div>
-          <ExternalLink
+          <CollabLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://spiritspodcast.com/episodes/gods-goddesses-of-agriculture?rq=hallie"
           >
             <CollabImage image="spirits" />
             <SeriesTitle>Spirits</SeriesTitle>
-          </ExternalLink>
+          </CollabLink>
           <CollabEpisodeTitle>
             Episode 144: Gods & Goddesses of Agriculture (with Hallie Casey and Catherine Arjet)
           </CollabEpisodeTitle>
@@ -147,7 +149,7 @@ export default function SeriesPage() {
         </div>
       </CollabGallery>
     </PageLayout>
-  );
+  )
 }
 
 const CollabGallery = styled.div.attrs(() => ({
@@ -161,7 +163,7 @@ const CollabGallery = styled.div.attrs(() => ({
   ${breakpointsDown.mobileL} {
     grid-template-columns: repeat(2, 1fr);
   }
-`;
+`
 
 const SeriesTitle = styled.h3`
   font-family: 'Lilita One', cursive;
@@ -169,13 +171,32 @@ const SeriesTitle = styled.h3`
   font-size: 2rem;
   font-weight: normal;
   margin-bottom: 0.3rem;
-`;
+`
 
 const CollabEpisodeTitle = styled.div`
   font-weight: bold;
-`;
+`
 
 const CollabEpisodeDate = styled.div`
   margin-bottom: 0.5rem;
   font-style: italic;
-`;
+`
+
+export const CollabLink = styled(OutboundLink)`
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: ${colors.purpleDark};
+    width: 100%;
+    border-radius: 3px;
+    transition-duration: ${defaultHover};
+  }
+
+  &:hover {
+    color: ${colors.orangeLight};
+    transition-duration: ${defaultHover};
+    /* box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(60, 155, 160, 0.14),
+      0px 2px 10px -1px rgba(60, 155, 160, 0.12); */
+`

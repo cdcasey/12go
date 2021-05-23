@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import { colors } from '../../constants/colors'
-import { ExternalLink } from '../PageStyles'
 import { MenuButton } from './MenuButton'
 import { defaultHover } from '../../constants/animations'
 
@@ -51,22 +51,22 @@ function MainMenu() {
           </StyledMenuItem>
 
           <StyledMenuItem>
-            <ExternalLink
+            <OLink
               href="https://www.patreon.com/onetogrowonpod"
               target="_blank"
               rel="noopener noreferrer"
             >
               Support
-            </ExternalLink>
+            </OLink>
           </StyledMenuItem>
           {/* <StyledMenuItem>
-        <ExternalLink
+        <Olink
           href="https://iteratehq.com/one-to-grow-on-podcast/5e0f6e39756c7500013a92b3"
           target="_blank"
           rel="noopener noreferrer"
         >
           Listener Survey
-        </ExternalLink>
+        </Olink>
       </StyledMenuItem> */}
         </StyledMenuList>
       </StyledNav>
@@ -108,10 +108,7 @@ const StyledMenuItem = styled.li`
   font-weight: bold;
 `
 
-const MenuLink = styled(Link).attrs(() => ({
-  activeStyle,
-  isPartiallyActive: true,
-}))`
+const LinkStyles = css`
   &,
   &:link,
   &:visited {
@@ -127,4 +124,17 @@ const MenuLink = styled(Link).attrs(() => ({
     background-color: ${colors.greenLight};
     transition-duration: ${defaultHover};
   }
+`
+
+const MenuLink = styled(Link).attrs(() => ({
+  activeStyle,
+  isPartiallyActive: true,
+}))`
+  ${LinkStyles}
+`
+const OLink = styled(OutboundLink).attrs(() => ({
+  activeStyle,
+  isPartiallyActive: true,
+}))`
+  ${LinkStyles}
 `

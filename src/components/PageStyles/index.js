@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import { colors } from '../../constants/colors'
 
@@ -58,21 +57,5 @@ export const SiteLink = styled(Link).attrs(() => ({
 
   &:hover {
     color: ${colors.orangeLight};
-  }
-`
-
-export const ExternalLink = styled(OutboundLink)`
-  &,
-  &:link,
-  &:visited {
-    display: inline-block;
-    text-decoration: none;
-    color: ${colors.purpleDark};
-    width: 100%;
-    padding: 0 2rem;
-    border-radius: 3px;
-  }
-  &:hover {
-    background-color: ${colors.greenLight};
   }
 `
