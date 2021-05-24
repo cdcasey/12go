@@ -21,13 +21,16 @@ const propTypes = {
 
 const PostTemplate = ({ data }) => {
   const post = data.wpPost
+  const datePublished = post.date.split('T')[0]
 
   return (
     <PageLayout>
       <SEO title={post.title} description={post.excerpt} />
-      <PostTitle dangerouslySetInnerHTML={{ __html: post.title }} />
-      <div dangerouslySetInnerHTML={{ __html: post.date.split('T')[0] }} />
-      <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
+      <article>
+        <PostTitle dangerouslySetInnerHTML={{ __html: post.title }} />
+        <time dateTime={datePublished} dangerouslySetInnerHTML={{ __html: datePublished }} />
+        <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
+      </article>
     </PageLayout>
   )
 }
@@ -47,7 +50,7 @@ export const pageQuery = graphql`
   }
 `
 
-const PostContent = styled.div`
+const PostContent = styled.section`
   margin-top: 2rem;
   font-size: 1.7rem;
 
