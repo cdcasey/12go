@@ -1,10 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-// A Gatsby dep. May change to react-router in the future
-// eslint-disable-next-line import/no-unresolved
-import { useLocation } from '@reach/router'
 
 import { breakpointsDown } from '../../constants/breakpoints'
 
@@ -19,28 +17,27 @@ import { breakpointsDown } from '../../constants/breakpoints'
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = () => {
-  const location = useLocation()
-  const isHome = location.pathname === '/'
-
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          placeholderImage: file(relativePath: { eq: "12GO_YTHeader.png" }) {
-            childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+const Image = ({ isHome }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "12GO_YTHeader.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
-      `}
-      render={(data) => (
-        <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} needsBigHeader={isHome} />
-      )}
-    />
-  )
+      }
+    `}
+    render={(data) => (
+      <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} needsBigHeader={isHome} />
+    )}
+  />
+)
+
+Image.propTypes = {
+  isHome: PropTypes.bool.isRequired,
 }
 
 export default Image

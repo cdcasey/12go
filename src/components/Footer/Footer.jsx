@@ -56,15 +56,15 @@ const Footer = styled.footer.attrs(() => ({
   }
 `
 
-const FooterTagsArea = styled.div`
+const FooterTagsArea = styled.section`
   grid-area: tags;
 `
 
-const FooterImageArea = styled.div`
+const FooterImageArea = styled.section`
   grid-area: image;
 `
 
-const FooterIconsArea = styled.div`
+const FooterIconsArea = styled.section`
   grid-area: icons;
 `
 // const FooterItem = styled.div.attrs(() => ({

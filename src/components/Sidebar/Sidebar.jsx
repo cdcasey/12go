@@ -1,19 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import SidebarImage from './SidebarImage';
-import { breakpointsDown } from '../../constants/breakpoints';
-import spacing from '../../constants/spacing';
+import SidebarImage from './SidebarImage'
+import { breakpointsDown } from '../../constants/breakpoints'
+import spacing from '../../constants/spacing'
 
 export default () => {
-  const min = 1;
-  const max = 7;
+  const min = 1
+  const max = 7
 
-  const imageNumbers = [];
+  const imageNumbers = []
   while (imageNumbers.length < 3) {
-    const imageNumber = Math.floor(Math.random() * (max - min) + min);
+    const imageNumber = Math.floor(Math.random() * (max - min) + min)
     if (imageNumbers.indexOf(imageNumber) === -1) {
-      imageNumbers.push(imageNumber);
+      imageNumbers.push(imageNumber)
     }
   }
 
@@ -36,10 +36,10 @@ export default () => {
       <StyledSidebarImage imageNumber={imageNumbers[2]} />
       <Divider />
     </Sidebar>
-  );
-};
+  )
+}
 
-const Sidebar = styled.div.attrs(() => ({
+const Sidebar = styled.aside.attrs(() => ({
   className: 'sidebar',
 }))`
   /* margin-top: 8rem; */
@@ -56,19 +56,19 @@ const Sidebar = styled.div.attrs(() => ({
     margin-bottom: 4rem;
     align-self: start;
   }
-`;
+`
 
 const PatronList = styled.ul.attrs(() => ({
   className: 'patron-list',
 }))`
   list-style-type: none;
-`;
+`
 
 const StyledSidebarImage = styled(SidebarImage).attrs(() => ({
   className: 'sidebar-image',
 }))`
   width: 200px;
-`;
+`
 
 const Divider = styled.hr`
   color: rgba(0, 0, 0, 0.2);
@@ -82,4 +82,4 @@ const Divider = styled.hr`
     display: ${(props) => (props.mobile ? '' : 'none')};
     width: 85vw;
   }
-`;
+`
