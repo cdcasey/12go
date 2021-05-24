@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 import { breakpointsUp } from '../constants/breakpoints'
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Cabin');
+
 /* Universal reset */
 *,
 *::after,
