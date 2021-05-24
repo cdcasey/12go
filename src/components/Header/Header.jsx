@@ -1,22 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+// A Gatsby dep. May change to react-router in the future
+// eslint-disable-next-line import/no-unresolved
+import { useLocation } from '@reach/router'
 
 import HeaderImage from './HeaderImage'
 import { colors } from '../../constants/colors'
 import { breakpointsDown } from '../../constants/breakpoints'
 import { defaultHover } from '../../constants/animations'
 
-const HeaderComponent = ({ siteTitle, subtitle }) => (
-  <Header>
-    <Link to="/">
-      <Heading>{siteTitle}</Heading>
-      <Subheading>{subtitle}</Subheading>
-    </Link>
-    <HeaderImage />
-  </Header>
-)
+const HeaderComponent = ({ siteTitle, subtitle }) => {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
+  return (
+    <Header>
+      <Link to="/">
+        {isHome ? (
+          <HomeHeading>{siteTitle}</HomeHeading>
+        ) : (
+          <NonHomeHeading>{siteTitle}</NonHomeHeading>
+        )}
+        <Subheading>{subtitle}</Subheading>
+      </Link>
+      <HeaderImage isHome={isHome} />
+    </Header>
+  )
+}
 
 HeaderComponent.propTypes = {
   siteTitle: PropTypes.string.isRequired,
@@ -59,7 +71,7 @@ const Header = styled.header`
   }
 `
 
-const Heading = styled.h1`
+const HeadingStyles = css`
   font-family: 'Lilita One', cursive;
   font-size: min(6.7vw, 144px);
   letter-spacing: 0.2rem;
@@ -69,8 +81,17 @@ const Heading = styled.h1`
   }
 `
 
-const Subheading = styled.h2`
+const HomeHeading = styled.h1`
+  ${HeadingStyles}
+`
+
+const NonHomeHeading = styled.h2`
+  ${HeadingStyles}
+`
+
+const Subheading = styled.p`
   font-size: 2rem;
+  font-weight: bold;
 
   ${breakpointsDown.tablet} {
     font-size: 1.8rem;
