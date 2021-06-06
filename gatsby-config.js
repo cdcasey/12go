@@ -85,33 +85,17 @@ const config = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        // baseUrl: GATSBY_API_URL,
-        // protocol: GATSBY_API_PROTOCOL,
         url: `${GATSBY_API_URL}/${GATSBY_API_ENDPOINT}`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
-        // conert links in source posts to links for the deployed site
-        // searchAndReplaceContentUrls: {
-        //   sourceUrl: `${GATSBY_API_URL}`,
-        //   replacementUrl: `${GATSBY_SITE_URL}`,
-        // },
         searchAndReplace: [
           {
             search: `${GATSBY_API_URL}`,
             replace: `${GATSBY_SITE_URL}`,
           },
         ],
-        // includedRoutes: [
-        //   '**/posts',
-        //   '**/pages',
-        //   '**/users',
-        //   '**/tags',
-        //   '**/menus',
-        //   '**/media',
-        //   '**/categories',
-        // ],
         verboseOutput: true,
       },
     },
