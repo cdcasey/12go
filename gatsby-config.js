@@ -11,9 +11,55 @@ const config = {
     description: `One to Grow On is a podcast where we dig into questions about agriculture and try to understand how food production impacts us and our world.`,
     author: `@onetogrowonpod, Hallie Casey, Chris Casey`,
     url: `https://www.onetogrowonpod.com`,
+    siteUrl: `https://www.onetogrowonpod.com`,
     twitterUsername: `@onetogrowonpod`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}}) {
+            nodes {
+              ... on WpPost {
+                uri
+                modifiedGmt
+              }
+              ... on WpPage {
+                uri
+                modifiedGmt
+              }
+            }
+          }
+        }
+        `,
+        resolveSiteUrl: () => GATSBY_SITE_URL,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allWpContentNode: { nodes: allWpNodes },
+        }) => {
+          const wpNodeMap = allWpNodes.reduce((acc, node) => {
+            const { uri } = node
+            acc[uri] = node
+            return acc
+          })
+
+          const pageMap = allPages.map((page) => ({ ...page, ...wpNodeMap[page.path] }))
+
+          return pageMap
+        },
+        serialize: ({ path, modifiedGmt }) => ({
+          url: path,
+          lastmod: modifiedGmt,
+        }),
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -39,33 +85,17 @@ const config = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        // baseUrl: GATSBY_API_URL,
-        // protocol: GATSBY_API_PROTOCOL,
         url: `${GATSBY_API_URL}/${GATSBY_API_ENDPOINT}`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
-        // conert links in source posts to links for the deployed site
-        // searchAndReplaceContentUrls: {
-        //   sourceUrl: `${GATSBY_API_URL}`,
-        //   replacementUrl: `${GATSBY_SITE_URL}`,
-        // },
         searchAndReplace: [
           {
             search: `${GATSBY_API_URL}`,
             replace: `${GATSBY_SITE_URL}`,
           },
         ],
-        // includedRoutes: [
-        //   '**/posts',
-        //   '**/pages',
-        //   '**/users',
-        //   '**/tags',
-        //   '**/menus',
-        //   '**/media',
-        //   '**/categories',
-        // ],
         verboseOutput: true,
       },
     },
