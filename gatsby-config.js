@@ -15,7 +15,51 @@ const config = {
     twitterUsername: `@onetogrowonpod`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}}) {
+            nodes {
+              ... on WpPost {
+                uri
+                modifiedGmt
+              }
+              ... on WpPage {
+                uri
+                modifiedGmt
+              }
+            }
+          }
+        }
+        `,
+        resolveSiteUrl: () => GATSBY_SITE_URL,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allWpContentNode: { nodes: allWpNodes },
+        }) => {
+          const wpNodeMap = allWpNodes.reduce((acc, node) => {
+            const { uri } = node
+            acc[uri] = node
+            return acc
+          })
+
+          const pageMap = allPages.map((page) => ({ ...page, ...wpNodeMap[page.path] }))
+
+          return pageMap
+        },
+        serialize: ({ path, modifiedGmt }) => ({
+          url: path,
+          lastmod: modifiedGmt,
+        }),
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
