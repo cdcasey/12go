@@ -6,7 +6,7 @@ const { GATSBY_API_URL, GATSBY_API_ENDPOINT, GATSBY_SITE_URL } = process.env
 
 const config = {
   siteMetadata: {
-    title: `On to Grow On`,
+    title: `One to Grow On`,
     subtitle: `Understanding how food production impacts ourselves and our world`,
     description: `One to Grow On is a podcast where we dig into questions about agriculture and try to understand how food production impacts us and our world.`,
     author: `@onetogrowonpod, Hallie Casey, Chris Casey`,
