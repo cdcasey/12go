@@ -8,6 +8,7 @@ import PreviewLink from '../components/PreviewLink/PreviewLink'
 import colors from '../constants/colors'
 import { defaultHover } from '../constants/animations'
 import { MainContainer } from '../components/MainContainer'
+import { useLocalStorage } from '../hooks'
 
 const IndexPage = ({ data }) => {
   const { edges } = data.allWpPost
@@ -41,7 +42,8 @@ const IndexPage = ({ data }) => {
     })
   }
 
-  const [postLimit, setPostLimit] = React.useState(9)
+  // const [postLimit, setPostLimit] = React.useState(9)
+  const [postLimit, setPostLimit] = useLocalStorage('postLimit', 9)
 
   const shownPosts = previewLinks.slice(0, postLimit)
 
