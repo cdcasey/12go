@@ -38,7 +38,7 @@ const PostTemplate = ({ pageContext }) => {
       <PageTurners>
         {next && (
           <div className="nextLink" style={{ display: 'flex' }}>
-            <Link to={next.uri} style={{ display: 'flex' }}>
+            <Link to={next.uri} style={{ display: 'flex', alignItems: 'flex-start' }}>
               <div style={{ marginRight: '.4rem' }}>&lt;- </div>
               <div>{next.title}</div>
             </Link>
@@ -47,8 +47,8 @@ const PostTemplate = ({ pageContext }) => {
 
         {previous && (
           <div className="previousLink" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Link to={previous.uri} style={{ display: 'flex' }}>
-              <div>{previous.title}</div>
+            <Link to={previous.uri} style={{ display: 'flex', alignItems: 'flex-start' }}>
+              <div style={{ textAlign: 'right' }}>{previous.title}</div>
               <div style={{ marginLeft: '.4rem' }}>-&gt;</div>
             </Link>
           </div>
@@ -101,8 +101,4 @@ const PageTurners = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 1.4rem;
-
-  ${breakpointsUp.mobileL} {
-    font-size: 1.7rem;
-  }
 `
