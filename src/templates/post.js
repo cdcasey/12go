@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 import PageLayout from '../components/Layout/PageLayout'
@@ -19,8 +19,10 @@ const propTypes = {
   }).isRequired,
 }
 
-const PostTemplate = ({ data }) => {
-  const post = data.wpPost
+const PostTemplate = ({ pageContext }) => {
+  console.log(pageContext)
+  const { edge } = pageContext
+  const { node: post, previous, next } = edge
   const datePublished = post.date.split('T')[0]
 
   return (
@@ -31,6 +33,9 @@ const PostTemplate = ({ data }) => {
         <time dateTime={datePublished} dangerouslySetInnerHTML={{ __html: datePublished }} />
         <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>
+      {previous && <Link to={previous.uri}>{previous.title}</Link>}
+      <br />
+      {next && <Link to={next.uri}>{next.title}</Link>}
     </PageLayout>
   )
 }
@@ -39,16 +44,17 @@ PostTemplate.propTypes = propTypes
 
 export default PostTemplate
 
-export const pageQuery = graphql`
-  query currentPostQuery($id: String!) {
-    wpPost(id: { eq: $id }) {
-      title
-      content
-      date
-      excerpt
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query currentPostQuery($id: String!) {
+//     wpPost(id: { eq: $id }) {
+//       id
+//       title
+//       content
+//       date
+//       excerpt
+//     }
+//   }
+// `
 
 const PostContent = styled.section`
   margin-top: 2rem;

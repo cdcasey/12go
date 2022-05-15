@@ -29,11 +29,31 @@ const slash = require(`slash`)
 const queryAll = `
  {
     allWpPost {
+
+
       edges {
+        previous {
+          id
+          title
+          slug
+          uri
+        }
         node {
           id
           slug
+          title
+          content
+          date
+          excerpt
         }
+        next {
+          id
+          title
+          slug
+          uri
+        }
+
+
       }
     }
 
@@ -109,6 +129,7 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               id: edge.node.id,
               category: 'episodes',
+              edge,
             },
           })
         })
