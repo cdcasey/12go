@@ -7,6 +7,7 @@ import styled from 'styled-components'
 
 import PageLayout from '../components/Layout/PageLayout'
 import SEO from '../components/SEO'
+import { breakpointsUp } from '../constants/breakpoints'
 
 const propTypes = {
   data: PropTypes.shape({
@@ -33,9 +34,26 @@ const PostTemplate = ({ pageContext }) => {
         <time dateTime={datePublished} dangerouslySetInnerHTML={{ __html: datePublished }} />
         <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>
-      {previous && <Link to={previous.uri}>{previous.title}</Link>}
-      <br />
-      {next && <Link to={next.uri}>{next.title}</Link>}
+
+      <PageTurners>
+        {next && (
+          <div className="nextLink" style={{ display: 'flex' }}>
+            <Link to={next.uri} style={{ display: 'flex' }}>
+              <div style={{ marginRight: '.4rem' }}>&lt;- </div>
+              <div>{next.title}</div>
+            </Link>
+          </div>
+        )}
+
+        {previous && (
+          <div className="previousLink" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Link to={previous.uri} style={{ display: 'flex' }}>
+              <div>{previous.title}</div>
+              <div style={{ marginLeft: '.4rem' }}>-&gt;</div>
+            </Link>
+          </div>
+        )}
+      </PageTurners>
     </PageLayout>
   )
 }
@@ -76,4 +94,15 @@ const PostContent = styled.section`
 
 const PostTitle = styled.h1`
   font-size: 4rem;
+`
+
+const PageTurners = styled.div`
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.4rem;
+
+  ${breakpointsUp.mobileL} {
+    font-size: 1.7rem;
+  }
 `
