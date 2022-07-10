@@ -1,5 +1,5 @@
-# Let's turn off the redirect for now since requests to 12go. shouldn't redirect
-# https://www.onetogrowonpod.com/feed/podcast/   https://feeds.podcastmirror.com/onetogrowon 301
+# Let's try a redirect only from the main page
+https://www.onetogrowonpod.com/feed/podcast/   https://feeds.podcastmirror.com/onetogrowon 301
 # /feed/podcast/   https://feeds.podcastmirror.com/onetogrowon 301
 /group         https://www.facebook.com/groups/2433752683575058/ 301
 /discord         https://discordapp.com/invite/YcCCNJv 301
